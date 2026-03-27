@@ -83,8 +83,7 @@ const HeroNav = () => {
         >
             <div className="max-w-7xl mx-auto flex justify-between items-center">
                 <div className="flex items-center gap-2">
-                    <span className="text-2xl font-bold">⎎</span>
-                    <span className="text-xl font-bold" style={{ fontFamily: "'Inter', sans-serif" }}>Woven</span>
+                    <img src="/logo.svg" alt="Dra. Chayanne Calegari" className="h-12 md:h-16 w-auto" />
                 </div>
             </div>
         </motion.nav>

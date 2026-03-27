@@ -54,7 +54,7 @@ export const Footer = () => {
             © 2026 Dra. Chayanne - CRM/PR 36.452
           </p>
           <p className="text-[9px] text-zinc-300 uppercase tracking-[0.2em] font-medium">
-            Desenvolvido por <span className="text-zinc-400">Antigravity</span>
+            Desenvolvido por <span className="text-zinc-400">Xcompany</span>
           </p>
         </div>
       </div>

@@ -1,0 +1,14 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon Circle & Silhouette -->
+  <circle cx="100" cy="100" r="90" stroke="#c19717" stroke-width="4" />
+  <path d="M100 60C105.523 60 110 55.5228 110 50C110 44.4772 105.523 40 100 40C94.4772 40 90 44.4772 90 50C90 55.5228 94.4772 60 100 60Z" fill="#c19717" />
+  <path d="M100 70C85 70 70 85 60 110C65 105 75 100 100 100C125 100 135 105 140 110C130 85 115 70 100 70Z" fill="#c19717" />
+  <path d="M100 110C100 110 90 140 80 170" stroke="#c19717" stroke-width="6" stroke-linecap="round" />
+  <path d="M100 110C100 110 110 140 120 170" stroke="#c19717" stroke-width="6" stroke-linecap="round" />
+  
+  <!-- Text -->
+  <text x="210" y="85" fill="#c19717" font-family="Playfair Display, serif" font-size="44" font-weight="bold">DRA.</text>
+  <text x="210" y="130" fill="#c19717" font-family="Playfair Display, serif" font-size="36" font-weight="bold">CHAYANNE</text>
+  <text x="210" y="170" fill="#c19717" font-family="Playfair Display, serif" font-size="36" font-weight="bold">CALEGARI</text>
+  <text x="210" y="195" fill="#c19717" font-family="Inter, sans-serif" font-size="16" letter-spacing="0.1em">CRM - SC 22074</text>
+</svg>
