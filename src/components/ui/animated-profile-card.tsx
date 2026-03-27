@@ -171,6 +171,9 @@ IdentityCardBody.displayName = "IdentityCardBody";
 
 // ------------------ Animated Container ------------------
 
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+
 export interface RevealCardProps extends React.HTMLAttributes<HTMLDivElement> {
   base: React.ReactNode;
   overlay: React.ReactNode;
@@ -188,14 +191,22 @@ export const RevealCardContainer = forwardRef<HTMLDivElement, RevealCardProps>(
       textOnAccent = "#fff",
       mutedOnAccent = "rgba(255,255,255,0.8)",
       className,
+      onClick,
       ...rest
     },
     ref
   ) => {
     const holderRef = useRef<HTMLDivElement>(null);
     const overlayRef = useRef<HTMLDivElement>(null);
-    // Removed next-themes useTheme as we are in a custom branding environment
-    const overlayMode = "dark"; // Force dark overlay for medical premium look
+    const [isMobile, setIsMobile] = useState(false);
+    const overlayMode = "dark"; 
+
+    useEffect(() => {
+      const checkMobile = () => setIsMobile(window.innerWidth < 768);
+      checkMobile();
+      window.addEventListener('resize', checkMobile);
+      return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const assignRef = useCallback(
       (el: HTMLDivElement | null) => {
@@ -231,11 +242,27 @@ export const RevealCardContainer = forwardRef<HTMLDivElement, RevealCardProps>(
       });
     };
 
+    const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+      if (isMobile) {
+        reveal();
+        // Delay the actual click action slightly to show the animation
+        setTimeout(() => {
+          if (onClick) onClick(e);
+        }, 400);
+      } else {
+        if (onClick) onClick(e);
+      }
+    };
+
     return (
-      <div
+      <motion.div
         ref={assignRef}
-        onMouseEnter={reveal}
-        onMouseLeave={conceal}
+        onMouseEnter={!isMobile ? reveal : undefined}
+        onMouseLeave={!isMobile ? conceal : undefined}
+        onViewportEnter={isMobile ? reveal : undefined}
+        onViewportLeave={isMobile ? conceal : undefined}
+        viewport={{ amount: 0.8 }}
+        onClick={handleClick}
         style={
           {
             "--accent-color": accent,
@@ -245,7 +272,7 @@ export const RevealCardContainer = forwardRef<HTMLDivElement, RevealCardProps>(
           } as React.CSSProperties
         }
         className={cn(
-          "relative w-full md:w-[350px] overflow-hidden rounded-3xl border-2 transition-all duration-500",
+          "relative w-full md:w-[350px] overflow-hidden rounded-3xl border-2 transition-all duration-500 cursor-pointer",
           className
         )}
         {...rest}
@@ -257,7 +284,7 @@ export const RevealCardContainer = forwardRef<HTMLDivElement, RevealCardProps>(
         >
           {overlay}
         </div>
-      </div>
+      </motion.div>
     );
   }
 );

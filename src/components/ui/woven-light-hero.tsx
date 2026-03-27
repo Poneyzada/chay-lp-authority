@@ -166,18 +166,39 @@ export const WovenCanvas = () => {
     const points = new THREE.Points(geometry, material);
     scene.add(points);
 
+    let lastMouseMoveTime = 0;
     const handleMouseMove = (event: MouseEvent) => {
         // Map mouse to [-5, 5] range for better interaction coverage at z=5
         mouse.x = (event.clientX / window.innerWidth) * 10 - 5;
         mouse.y = -(event.clientY / window.innerHeight) * 10 + 5;
+        lastMouseMoveTime = clock.getElapsedTime();
     };
     window.addEventListener('mousemove', handleMouseMove);
+
+    // Touch support for mobile
+    const handleTouchMove = (event: TouchEvent) => {
+        if (event.touches.length > 0) {
+            mouse.x = (event.touches[0].clientX / window.innerWidth) * 10 - 5;
+            mouse.y = -(event.touches[0].clientY / window.innerHeight) * 10 + 5;
+            lastMouseMoveTime = clock.getElapsedTime();
+        }
+    };
+    window.addEventListener('touchmove', handleTouchMove);
 
     const animate = () => {
         requestAnimationFrame(animate);
         const elapsedTime = clock.getElapsedTime();
         
-        const mouseWorld = new THREE.Vector3(mouse.x, mouse.y, 0);
+        let targetX = mouse.x;
+        let targetY = mouse.y;
+
+        // Auto-drift if no movement for 2 seconds
+        if (elapsedTime - lastMouseMoveTime > 2) {
+          targetX = Math.cos(elapsedTime * 0.3) * 2;
+          targetY = Math.sin(elapsedTime * 0.5) * 1.5;
+        }
+
+        const mouseWorld = new THREE.Vector3(targetX, targetY, 0);
 
         for (let i = 0; i < particleCount; i++) {
             const ix = i * 3;
