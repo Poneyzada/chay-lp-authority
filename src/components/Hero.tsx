@@ -64,9 +64,9 @@ export const Hero = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
                 
                 <div className="flex items-center gap-4 text-left">
                   <div className="flex -space-x-3">
-                    {[1,2,3].map(i => (
-                      <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-zinc-100 overflow-hidden">
-                        <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="Patient" />
+                    {[26, 32, 45].map(id => (
+                      <div key={id} className="w-10 h-10 rounded-full border-2 border-white bg-zinc-100 overflow-hidden shadow-sm">
+                        <img src={`https://i.pravatar.cc/100?img=${id}`} alt="Paciente" />
                       </div>
                     ))}
                   </div>
