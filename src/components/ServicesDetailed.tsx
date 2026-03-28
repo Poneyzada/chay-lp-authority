@@ -41,12 +41,12 @@ const ServiceLensCard = ({ icon: Icon, title, desc }: { icon: LucideIcon; title:
         {/* Base Layer: Scrolling faint data chips */}
         <div className="absolute inset-0 flex items-center px-6 pointer-events-none">
           <motion.div
-            className="flex gap-4 whitespace-nowrap opacity-10"
+            className="flex gap-4 whitespace-nowrap opacity-15"
             animate={{ x: ["0%", "-50%"] }}
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           >
             {Array(6).fill(desc).map((t, i) => (
-              <div key={i} className="px-3 py-1 border border-zinc-400 rounded-lg text-[10px] font-bold uppercase tracking-tighter text-zinc-500">
+              <div key={i} className="px-3 py-1 border border-zinc-300 rounded-lg text-[10px] font-bold uppercase tracking-tighter text-zinc-600">
                 {t}
               </div>
             ))}
@@ -95,7 +95,7 @@ const ServiceLensCard = ({ icon: Icon, title, desc }: { icon: LucideIcon; title:
       </motion.div>
 
       {/* External Title */}
-      <h3 className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] px-2">{title}</h3>
+      <h3 className="text-[10px] font-black text-zinc-900 uppercase tracking-[0.2em] px-2">{title}</h3>
     </div>
   );
 };
@@ -118,7 +118,7 @@ export const ServicesDetailed = () => {
                 <span className="text-gold italic font-serif">Oferecidos.</span>
               </h2>
               <div className="h-0.5 w-20 bg-zinc-900 mb-8" />
-              <p className="text-zinc-500 text-sm leading-relaxed mb-8">
+              <p className="text-zinc-600 text-sm leading-relaxed mb-8">
                 Abordagem integral focada em hormônios, metabolismo, longevidade e medicina de precisão através de protocolos científicos.
               </p>
             </motion.div>
