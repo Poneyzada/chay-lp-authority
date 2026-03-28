@@ -10,9 +10,9 @@ export const WovenLightHero = () => {
   const buttonControls = useAnimation();
 
   useEffect(() => {
-    // Add a more elegant font
+    // Add fonts
     const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400&display=swap';
+    link.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
 
@@ -35,14 +35,19 @@ export const WovenLightHero = () => {
     }
   }, [textControls, buttonControls]);
 
-  const headline = "Woven by Light";
+  const headline = "Autoridade Médica em";
+  const subheadline = "Saúde e Vitalidade Hormonal";
   
   return (
-    <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-black dark:bg-white text-white dark:text-zinc-900">
+    <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-white text-zinc-900">
       <WovenCanvas />
+      
+      {/* Subtle overlay for text clarity */}
+      <div className="absolute inset-0 bg-white/40 pointer-events-none" />
+      
       <HeroNav />
-      <div className="relative z-10 text-center px-4">
-        <h1 className="text-6xl md:text-8xl" style={{ fontFamily: "'Playfair Display', serif", textShadow: '0 0 50px rgba(255, 255, 255, 0.3)' }}>
+      <div className="relative z-10 text-center px-4 max-w-4xl backdrop-blur-[2px] py-8 rounded-full">
+        <h1 className="text-4xl md:text-7xl font-bold tracking-tight mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
             {headline.split(" ").map((word, i) => (
                 <span key={i} className="inline-block">
                     {word.split("").map((char, j) => (
@@ -50,22 +55,40 @@ export const WovenLightHero = () => {
                             {char}
                         </motion.span>
                     ))}
-                    {i < headline.split(" ").length - 1 && <span>&nbsp;</span>}
+                    {i < headline.split(" ").length - 1 && <span className="opacity-0">&nbsp;</span>}
                 </span>
             ))}
         </h1>
+        <h2 className="text-3xl md:text-5xl font-italic text-gold mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
+             {subheadline.split(" ").map((word, i) => (
+                <span key={i} className="inline-block mr-3">
+                    {word.split("").map((char, j) => (
+                        <motion.span key={j} custom={headline.length + i * 5 + j} initial={{ opacity: 0, y: 30 }} animate={textControls} style={{ display: 'inline-block' }}>
+                            {char}
+                        </motion.span>
+                    ))}
+                </span>
+            ))}
+        </h2>
+
         <motion.p
-          custom={headline.length}
+          custom={headline.length + subheadline.length}
           initial={{ opacity: 0, y: 30 }}
           animate={textControls}
-          className="mx-auto mt-6 max-w-xl text-lg text-slate-300 dark:text-slate-600"
-          style={{ fontFamily: "'Inter', sans-serif" }}
+          className="mx-auto mt-6 max-w-2xl text-lg md:text-xl text-zinc-800 font-medium font-serif"
         >
-          An interactive tapestry of light and motion, crafted with code and creativity.
+          O acompanhamento científico que você precisa para resgatar sua melhor versão.
         </motion.p>
+        
         <motion.div initial={{ opacity: 0 }} animate={buttonControls} className="mt-10">
-          <button className="rounded-full border-2 border-white/20 bg-white/10 px-8 py-3 font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20 dark:border-slate-800/20 dark:bg-slate-800/5 dark:text-slate-800 dark:hover:bg-slate-800/10" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Explore the Weave
+          <button 
+            onClick={() => {
+                const el = document.getElementById('agendamento');
+                if(el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="rounded-full border-2 border-zinc-900 bg-zinc-900 px-10 py-4 font-bold text-white transition-all hover:scale-105 hover:bg-zinc-800 shadow-xl"
+          >
+            AGENDAR MINHA AVALIAÇÃO VIP
           </button>
         </motion.div>
       </div>
@@ -90,7 +113,7 @@ const HeroNav = () => {
     );
 };
 
-// --- Three.js Canvas Component ---
+// --- Three.js DNA Canvas Component ---
 export const WovenCanvas = () => {
   const mountRef = useRef<HTMLDivElement>(null);
 
@@ -99,7 +122,7 @@ export const WovenCanvas = () => {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 5;
+    camera.position.z = 8;
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -108,25 +131,33 @@ export const WovenCanvas = () => {
     const mouse = new THREE.Vector2(0, 0);
     const clock = new THREE.Clock();
 
-    // FORCE VISIBILITY FOR LIGHT MODE (White Background)
-    // We use "NormalBlending" and darker/more saturated colors
-    const isDarkMode = true; 
-
-    // --- Woven Silk ---
-    const particleCount = 40000;
+    // --- DNA Double Helix ---
+    const particleCount = 20000;
     const positions = new Float32Array(particleCount * 3);
     const originalPositions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
     const velocities = new Float32Array(particleCount * 3);
 
     const geometry = new THREE.BufferGeometry();
-    const torusKnot = new THREE.TorusKnotGeometry(1.5, 0.4, 300, 40);
+    
+    // Parameters
+    const helixRadius = 1.8;
+    const helixHeight = 15;
+    const turns = 4;
 
     for (let i = 0; i < particleCount; i++) {
-        const vertexIndex = i % torusKnot.attributes.position.count;
-        const x = torusKnot.attributes.position.getX(vertexIndex) + (Math.random() - 0.5) * 0.1;
-        const y = torusKnot.attributes.position.getY(vertexIndex) + (Math.random() - 0.5) * 0.1;
-        const z = torusKnot.attributes.position.getZ(vertexIndex) + (Math.random() - 0.5) * 0.1;
+        const t = (i / particleCount) * turns * Math.PI * 2;
+        const side = i % 2 === 0 ? 1 : -1;
+        
+        // Main strands
+        let x = Math.cos(t) * helixRadius * side;
+        let z = Math.sin(t) * helixRadius * side;
+        let y = (i / particleCount) * helixHeight - (helixHeight / 2);
+
+        // Add some noise/volume
+        x += (Math.random() - 0.5) * 0.4;
+        z += (Math.random() - 0.5) * 0.4;
+        y += (Math.random() - 0.5) * 0.2;
         
         positions[i * 3] = x;
         positions[i * 3 + 1] = y;
@@ -136,12 +167,23 @@ export const WovenCanvas = () => {
         originalPositions[i * 3 + 2] = z;
 
         const color = new THREE.Color();
-        // Use Gold and Zinc tones
-        if (Math.random() > 0.8) {
-          color.setHex(0xc19717); // Gold
+        const rand = Math.random();
+        
+        // Biological Palette
+        if (rand > 0.95) {
+          color.setHex(0xef4444); // Red (Phosphates)
+        } else if (rand > 0.85) {
+          color.setHex(0xffffff); // White
+        } else if (rand > 0.6) {
+          color.setHex(0x4ade80); // Green (Adenine)
+        } else if (rand > 0.4) {
+          color.setHex(0x60a5fa); // Blue (Thymine)
+        } else if (rand > 0.2) {
+          color.setHex(0xfacc15); // Yellow (Guanine)
         } else {
-          color.setHex(0x3f3f46); // Zinc-700
+          color.setHex(0xf472b6); // Pink (Cytosine)
         }
+        
         colors[i * 3] = color.r;
         colors[i * 3 + 1] = color.g;
         colors[i * 3 + 2] = color.b;
@@ -155,11 +197,11 @@ export const WovenCanvas = () => {
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
     const material = new THREE.PointsMaterial({
-        size: 0.035, // Slightly larger particles
+        size: 0.04,
         vertexColors: true,
-        blending: THREE.NormalBlending, // CRITICAL for white background
+        blending: THREE.NormalBlending,
         transparent: true,
-        opacity: 0.6,
+        opacity: 0.7,
     });
 
     const points = new THREE.Points(geometry, material);
@@ -167,14 +209,12 @@ export const WovenCanvas = () => {
 
     let lastMouseMoveTime = 0;
     const handleMouseMove = (event: MouseEvent) => {
-        // Map mouse to [-5, 5] range for better interaction coverage at z=5
         mouse.x = (event.clientX / window.innerWidth) * 10 - 5;
         mouse.y = -(event.clientY / window.innerHeight) * 10 + 5;
         lastMouseMoveTime = clock.getElapsedTime();
     };
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Touch support for mobile
     const handleTouchMove = (event: TouchEvent) => {
         if (event.touches.length > 0) {
             mouse.x = (event.touches[0].clientX / window.innerWidth) * 10 - 5;
@@ -191,10 +231,9 @@ export const WovenCanvas = () => {
         let targetX = mouse.x;
         let targetY = mouse.y;
 
-        // Auto-drift if no movement for 2 seconds
         if (elapsedTime - lastMouseMoveTime > 2) {
-          targetX = Math.cos(elapsedTime * 0.3) * 2;
-          targetY = Math.sin(elapsedTime * 0.5) * 1.5;
+          targetX = Math.cos(elapsedTime * 0.5) * 3;
+          targetY = Math.sin(elapsedTime * 0.3) * 2;
         }
 
         const mouseWorld = new THREE.Vector3(targetX, targetY, 0);
@@ -209,18 +248,15 @@ export const WovenCanvas = () => {
             const velocity = new THREE.Vector3(velocities[ix], velocities[iy], velocities[iz]);
 
             const dist = currentPos.distanceTo(mouseWorld);
-            if (dist < 2.0) {
-                const force = (2.0 - dist) * 0.02;
+            if (dist < 2.5) {
+                const force = (2.5 - dist) * 0.015;
                 const direction = new THREE.Vector3().subVectors(currentPos, mouseWorld).normalize();
                 velocity.add(direction.multiplyScalar(force));
             }
 
-            // Return to original position
             const returnForce = new THREE.Vector3().subVectors(originalPos, currentPos).multiplyScalar(0.005);
             velocity.add(returnForce);
-            
-            // Damping
-            velocity.multiplyScalar(0.92);
+            velocity.multiplyScalar(0.94);
 
             positions[ix] += velocity.x;
             positions[iy] += velocity.y;
@@ -232,8 +268,8 @@ export const WovenCanvas = () => {
         }
         geometry.attributes.position.needsUpdate = true;
 
-        points.rotation.y = elapsedTime * 0.1;
-        points.rotation.x = Math.sin(elapsedTime * 0.5) * 0.1;
+        points.rotation.y = elapsedTime * 0.2; // DNA Rotation
+        points.rotation.z = Math.sin(elapsedTime * 0.1) * 0.1;
         renderer.render(scene, camera);
     };
     animate();
@@ -248,9 +284,10 @@ export const WovenCanvas = () => {
     return () => {
         window.removeEventListener('resize', handleResize);
         window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('touchmove', handleTouchMove);
         mountRef.current?.removeChild(renderer.domElement);
     };
   }, []);
 
-  return <div ref={mountRef} className="absolute inset-0 z-0" />;
+  return <div ref={mountRef} className="absolute inset-0 z-0 bg-white" />;
 };
