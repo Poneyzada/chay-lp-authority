@@ -28,69 +28,75 @@ const ServiceLensCard = ({ icon: Icon, title, desc }: { icon: LucideIcon; title:
   };
 
   return (
-    <motion.div
-      ref={containerRef}
-      onMouseMove={handleMouseMove}
-      className="group relative h-32 rounded-3xl border border-zinc-100 bg-zinc-50/50 overflow-hidden cursor-none transition-all hover:shadow-xl hover:shadow-gold/5 hover:-translate-y-1"
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        show: { opacity: 1, y: 0 }
-      }}
-    >
-      {/* Base Layer: Scrolling faint text */}
-      <div className="absolute inset-0 flex items-center px-6 pointer-events-none">
-        <motion.div
-           className="flex gap-4 whitespace-nowrap opacity-10"
-           animate={{ x: ["0%", "-50%"] }}
-           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        >
-          {Array(4).fill(desc).map((t, i) => (
-            <span key={i} className="text-sm font-bold uppercase tracking-widest text-zinc-400">{t}</span>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* Reveal Layer: High contrast sharp text */}
+    <div className="flex flex-col gap-4">
       <motion.div
-        className="absolute inset-0 flex items-center px-6 bg-white z-10 pointer-events-none"
-        style={{ clipPath }}
-      >
-         <motion.div
-           className="flex gap-4 whitespace-nowrap"
-           animate={{ x: ["0%", "-50%"] }}
-           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        >
-          {Array(4).fill(desc).map((t, i) => (
-            <span key={i} className="text-sm font-bold uppercase tracking-widest text-gold scale-110">{t}</span>
-          ))}
-        </motion.div>
-      </motion.div>
-
-      {/* Static Info Overlay */}
-      <div className="absolute inset-0 flex flex-col justify-center px-8 z-20 pointer-events-none">
-        <div className="flex items-center gap-4">
-          <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-zinc-400 group-hover:text-gold transition-colors duration-500">
-            <Icon size={20} />
-          </div>
-          <h3 className="text-xs font-black text-zinc-900 uppercase tracking-[0.2em]">{title}</h3>
-        </div>
-      </div>
-
-      {/* Custom Lens Indicator */}
-      <motion.div
-        className="absolute w-20 h-20 border-2 border-gold/20 rounded-full pointer-events-none z-30 flex items-center justify-center"
-        style={{ 
-          x: mouseX, 
-          y: mouseY,
-          left: -40,
-          top: -40,
-          opacity: 0,
+        ref={containerRef}
+        onMouseMove={handleMouseMove}
+        className="group relative h-24 rounded-2xl border border-zinc-100 bg-zinc-50/50 overflow-hidden cursor-none transition-all hover:shadow-lg hover:shadow-gold/5"
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          show: { opacity: 1, y: 0 }
         }}
-        whileHover={{ opacity: 1 }}
       >
-        <div className="w-1 h-1 bg-gold rounded-full" />
+        {/* Base Layer: Scrolling faint data chips */}
+        <div className="absolute inset-0 flex items-center px-6 pointer-events-none">
+          <motion.div
+            className="flex gap-4 whitespace-nowrap opacity-10"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          >
+            {Array(6).fill(desc).map((t, i) => (
+              <div key={i} className="px-3 py-1 border border-zinc-400 rounded-lg text-[10px] font-bold uppercase tracking-tighter text-zinc-500">
+                {t}
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Reveal Layer: High contrast sharp data chips */}
+        <motion.div
+          className="absolute inset-0 flex items-center px-6 bg-white z-10 pointer-events-none"
+          style={{ clipPath }}
+        >
+          <motion.div
+            className="flex gap-4 whitespace-nowrap"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          >
+            {Array(6).fill(desc).map((t, i) => (
+              <div key={i} className="px-3 py-1 border border-gold/30 bg-gold/5 rounded-lg text-[10px] font-bold uppercase tracking-tighter text-gold scale-110">
+                {t}
+              </div>
+            ))}
+          </motion.div>
+        </motion.div>
+
+        {/* Static Icon Overlay */}
+        <div className="absolute inset-y-0 left-8 flex items-center z-20 pointer-events-none">
+          <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-zinc-400 group-hover:text-gold transition-colors duration-500">
+            <Icon size={18} />
+          </div>
+        </div>
+
+        {/* Custom Lens Indicator */}
+        <motion.div
+          className="absolute w-20 h-20 border border-gold/30 rounded-full pointer-events-none z-30 flex items-center justify-center"
+          style={{ 
+            x: mouseX, 
+            y: mouseY,
+            left: -40,
+            top: -40,
+            opacity: 0,
+          }}
+          whileHover={{ opacity: 1 }}
+        >
+          <div className="w-1.5 h-1.5 bg-gold rounded-full shadow-[0_0_10px_rgba(193,151,23,0.5)]" />
+        </motion.div>
       </motion.div>
-    </motion.div>
+
+      {/* External Title */}
+      <h3 className="text-[10px] font-black text-zinc-400 uppercase tracking-[0.2em] px-2">{title}</h3>
+    </div>
   );
 };
 
