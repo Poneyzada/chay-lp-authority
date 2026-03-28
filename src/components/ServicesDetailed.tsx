@@ -1,20 +1,102 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Search, FlaskConical, Activity, Zap, ShieldCheck, Soup, GraduationCap } from 'lucide-react';
+import React, { useRef } from 'react';
+import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
+import { Search, FlaskConical, Activity, Zap, ShieldCheck, Soup, GraduationCap, LucideIcon } from 'lucide-react';
 
 const services = [
   { icon: Search, title: 'Avaliação Médica Completa', desc: 'Investigação profunda da causa real dos sintomas.' },
   { icon: FlaskConical, title: 'Interpretação de Exames', desc: 'Análise estratégica correlacionando clínica e laboratório.' },
-  { icon: Activity, title: 'Gestão Hormonal & Metabólica', desc: 'Tratamento de fadiga, ganho de peso e queda de libido.' },
-  { icon: Zap, title: 'Emagrecimento Médico', desc: 'Protocolos seguros focados em gordura e massa muscular.' },
-  { icon: ShieldCheck, title: 'Terapias Hormonais & Implantes', desc: 'Indicação criteriosa e acompanhamento especializado.' },
+  { icon: Activity, title: 'Gestão Hormonal & Metabólica', desc: 'Tratamento de fadiga, ganho de peso e libido.' },
+  { icon: Zap, title: 'Emagrecimento Médico', desc: 'Protocolos focados em gordura e massa muscular.' },
+  { icon: ShieldCheck, title: 'Terapias & Implantes', desc: 'Acompanhamento especializado e indicação criteriosa.' },
   { icon: Soup, title: 'Soroterapia & Nutrologia', desc: 'Suporte energético e nutricional de alta precisão.' },
-  { icon: GraduationCap, title: 'Abordagem Multidisciplinar', desc: 'Integração com parceiros para potencializar resultados.' }
+  { icon: GraduationCap, title: 'Abordagem Integral', desc: 'Integração para potencializar resultados duradouros.' }
 ];
+
+const ServiceLensCard = ({ icon: Icon, title, desc }: { icon: LucideIcon; title: string; desc: string }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Mask and ClipPath logic for the lens effect
+  const clipPath = useMotionTemplate`circle(40px at ${mouseX}px ${mouseY}px)`;
+  
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
+  };
+
+  return (
+    <motion.div
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      className="group relative h-32 rounded-3xl border border-zinc-100 bg-zinc-50/50 overflow-hidden cursor-none transition-all hover:shadow-xl hover:shadow-gold/5 hover:-translate-y-1"
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        show: { opacity: 1, y: 0 }
+      }}
+    >
+      {/* Base Layer: Scrolling faint text */}
+      <div className="absolute inset-0 flex items-center px-6 pointer-events-none">
+        <motion.div
+           className="flex gap-4 whitespace-nowrap opacity-10"
+           animate={{ x: ["0%", "-50%"] }}
+           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        >
+          {Array(4).fill(desc).map((t, i) => (
+            <span key={i} className="text-sm font-bold uppercase tracking-widest text-zinc-400">{t}</span>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Reveal Layer: High contrast sharp text */}
+      <motion.div
+        className="absolute inset-0 flex items-center px-6 bg-white z-10 pointer-events-none"
+        style={{ clipPath }}
+      >
+         <motion.div
+           className="flex gap-4 whitespace-nowrap"
+           animate={{ x: ["0%", "-50%"] }}
+           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        >
+          {Array(4).fill(desc).map((t, i) => (
+            <span key={i} className="text-sm font-bold uppercase tracking-widest text-gold scale-110">{t}</span>
+          ))}
+        </motion.div>
+      </motion.div>
+
+      {/* Static Info Overlay */}
+      <div className="absolute inset-0 flex flex-col justify-center px-8 z-20 pointer-events-none">
+        <div className="flex items-center gap-4">
+          <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-zinc-400 group-hover:text-gold transition-colors duration-500">
+            <Icon size={20} />
+          </div>
+          <h3 className="text-xs font-black text-zinc-900 uppercase tracking-[0.2em]">{title}</h3>
+        </div>
+      </div>
+
+      {/* Custom Lens Indicator */}
+      <motion.div
+        className="absolute w-20 h-20 border-2 border-gold/20 rounded-full pointer-events-none z-30 flex items-center justify-center"
+        style={{ 
+          x: mouseX, 
+          y: mouseY,
+          left: -40,
+          top: -40,
+          opacity: 0,
+        }}
+        whileHover={{ opacity: 1 }}
+      >
+        <div className="w-1 h-1 bg-gold rounded-full" />
+      </motion.div>
+    </motion.div>
+  );
+};
 
 export const ServicesDetailed = () => {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-24 bg-white overflow-hidden" id="servicos">
       <div className="container max-w-6xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-20">
           <div className="w-full lg:w-1/3">
@@ -31,13 +113,13 @@ export const ServicesDetailed = () => {
               </h2>
               <div className="h-0.5 w-20 bg-zinc-900 mb-8" />
               <p className="text-zinc-500 text-sm leading-relaxed mb-8">
-                Abordagem integral focada em hormônios, metabolismo, longevidade e medicina de precisão.
+                Abordagem integral focada em hormônios, metabolismo, longevidade e medicina de precisão através de protocolos científicos.
               </p>
             </motion.div>
           </div>
 
           <motion.div 
-            className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16"
+            className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
@@ -52,24 +134,7 @@ export const ServicesDetailed = () => {
             }}
           >
             {services.map((service, i) => (
-              <motion.div
-                key={i}
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  show: { opacity: 1, y: 0 }
-                }}
-                className="group"
-              >
-                <div className="flex items-start gap-6">
-                  <div className="w-10 h-10 rounded-xl bg-zinc-50 flex items-center justify-center text-zinc-300 group-hover:text-gold group-hover:scale-110 transition-all shrink-0">
-                    <service.icon size={20} />
-                  </div>
-                  <div className="group-hover:translate-x-1 transition-transform">
-                    <h3 className="text-sm font-bold text-zinc-900 mb-2 uppercase tracking-widest">{service.title}</h3>
-                    <p className="text-xs text-zinc-400 leading-relaxed uppercase font-medium">{service.desc}</p>
-                  </div>
-                </div>
-              </motion.div>
+              <ServiceLensCard key={i} {...service} />
             ))}
           </motion.div>
         </div>
