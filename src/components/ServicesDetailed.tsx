@@ -101,24 +101,25 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
             </motion.div>
           </div>
 
-          <motion.div 
-            className="w-full lg:w-2/3 flex overflow-x-auto pb-10 gap-6 md:grid md:grid-cols-2 lg:gap-8 no-scrollbar -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory scroll-smooth"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={{
-              hidden: { opacity: 0 },
-              show: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.1,
-                  duration: 0.8
+          <div className="w-full lg:w-2/3 flex flex-col">
+            <motion.div 
+              className="w-full flex overflow-x-auto pb-8 gap-5 md:grid md:grid-cols-2 lg:gap-8 no-scrollbar -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory touch-pan-x"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0 },
+                show: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.1,
+                    duration: 0.8
+                  }
                 }
-              }
-            }}
-          >
-            {services.map((service, i) => (
-              <div key={i} className="min-w-[280px] md:min-w-0 shrink-0 snap-center shadow-lg rounded-3xl overflow-hidden hover:shadow-xl hover:shadow-gold/10 transition-shadow">
+              }}
+            >
+              {services.map((service, i) => (
+                <div key={i} className="min-w-[85vw] md:min-w-0 shrink-0 snap-center shadow-lg rounded-3xl overflow-hidden hover:shadow-xl hover:shadow-gold/10 transition-shadow">
                 <FlipCard
                   title={service.title}
                   subtitle={service.subtitle}
@@ -128,9 +129,15 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
                   stepNumber={(i + 1).toString().padStart(2, '0')}
                   onClickAction={onOpenFilter}
                 />
-              </div>
-            ))}
-          </motion.div>
+                </div>
+              ))}
+            </motion.div>
+            
+            {/* Visual hint for mobile swiping */}
+            <div className="mt-4 text-center text-[10px] font-bold text-zinc-500 md:hidden animate-pulse tracking-widest uppercase w-full">
+              ← Arraste para o lado →
+            </div>
+          </div>
         </div>
       </div>
     </section>

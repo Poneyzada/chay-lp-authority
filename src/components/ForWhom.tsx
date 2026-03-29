@@ -64,16 +64,17 @@ export const ForWhom = () => {
             </p>
           </div>
 
-          <div className="w-full lg:w-7/12 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            {targets.map((target, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white/95 backdrop-blur-md p-6 md:p-8 rounded-[2rem] border border-white/60 shadow-lg hover:shadow-xl hover:border-gold/30 transition-all group"
-              >
+          <div className="w-full lg:w-7/12 flex flex-col">
+            <div className="w-full flex overflow-x-auto pb-6 gap-4 md:grid md:grid-cols-2 md:gap-6 snap-x snap-mandatory no-scrollbar -mx-6 px-6 md:mx-0 md:px-0 touch-pan-x">
+              {targets.map((target, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="min-w-[85vw] md:min-w-0 shrink-0 snap-center bg-white/95 backdrop-blur-md p-6 md:p-8 rounded-[2rem] border border-white/60 shadow-lg hover:shadow-xl hover:border-gold/30 transition-all group"
+                >
                 <div className="w-12 h-12 rounded-2xl bg-zinc-50 border border-zinc-100 flex items-center justify-center text-gold mb-5 group-hover:scale-110 group-hover:bg-gold group-hover:text-white transition-all shadow-sm">
                   <target.icon size={22} />
                 </div>
@@ -81,6 +82,11 @@ export const ForWhom = () => {
                 <p className="text-black text-xs font-bold uppercase tracking-widest opacity-80 leading-relaxed italic">{target.desc}</p>
               </motion.div>
             ))}
+            </div>
+            {/* Visual hint for mobile swiping */}
+            <div className="mt-4 text-center text-[10px] font-bold text-zinc-500 md:hidden animate-pulse tracking-widest uppercase w-full">
+              ← Arraste para o lado →
+            </div>
           </div>
         </div>
       </div>
