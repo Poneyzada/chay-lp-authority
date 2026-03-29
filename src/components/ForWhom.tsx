@@ -55,9 +55,9 @@ export const ForWhom = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 md:gap-20">
           <div className="w-full lg:w-5/12 text-center md:text-left">
             <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Público do Atendimento</span>
-            <h2 className="text-[2.6rem] md:text-6xl font-bold tracking-tighter text-black leading-[0.95] mb-8 uppercase">
-              PARA QUEM É O <br className="hidden md:block" />
-              <span className="text-gold italic font-serif leading-none">Atendimento.</span>
+            <h2 className="text-[2.2rem] md:text-5xl font-bold text-black mb-8 leading-[0.95] tracking-tighter uppercase font-serif">
+              Para quem é o <br />
+              <span className="text-gold italic">atendimento.</span>
             </h2>
             <p className="text-black text-sm md:text-md font-bold max-w-2xl tracking-widest leading-loose bg-white/50 backdrop-blur-sm p-4 rounded-xl border border-white/60 inline-block">
               Este atendimento é para você que não aceita mais viver no automático e quer voltar a se sentir bem no próprio corpo.
