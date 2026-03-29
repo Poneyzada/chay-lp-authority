@@ -53,18 +53,18 @@ export const ForWhom = () => {
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 md:gap-20">
-          <div className="w-full lg:w-5/12 text-center md:text-left">
+          <div className="w-full lg:w-4/12 text-center md:text-left">
             <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Público do Atendimento</span>
-            <h2 className="text-[2.2rem] md:text-5xl font-bold text-black mb-8 leading-[0.95] tracking-tighter uppercase font-serif">
+            <h2 className="text-[1.8rem] md:text-4xl font-bold text-black mb-6 leading-[0.95] tracking-tighter uppercase font-serif">
               Para quem é o <br />
               <span className="text-gold italic">atendimento.</span>
             </h2>
-            <p className="text-black text-sm md:text-md font-bold max-w-2xl tracking-widest leading-loose bg-white/50 backdrop-blur-sm p-4 rounded-xl border border-white/60 inline-block">
+            <p className="text-black text-xs md:text-sm font-bold max-w-2xl tracking-widest leading-relaxed bg-white/50 backdrop-blur-sm p-3 rounded-xl border border-white/60 inline-block">
               Este atendimento é para você que não aceita mais viver no automático e quer voltar a se sentir bem no próprio corpo.
             </p>
           </div>
 
-          <div className="w-full lg:w-7/12 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div className="w-full lg:w-8/12 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
             {targets.map((target, i) => (
               <motion.div
                 key={i}
@@ -72,13 +72,13 @@ export const ForWhom = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white/95 backdrop-blur-md p-6 md:p-8 rounded-[2rem] border border-white/60 shadow-lg hover:shadow-xl hover:border-gold/30 transition-all group"
+                className="bg-white/70 backdrop-blur-md p-4 md:p-5 rounded-[1.5rem] border border-white/60 shadow-lg hover:shadow-xl hover:border-gold/30 transition-all group"
               >
-                <div className="w-12 h-12 rounded-2xl bg-zinc-50 border border-zinc-100 flex items-center justify-center text-gold mb-5 group-hover:scale-110 group-hover:bg-gold group-hover:text-white transition-all shadow-sm">
-                  <target.icon size={22} />
+                <div className="w-10 h-10 rounded-[12px] bg-zinc-50 border border-zinc-100 flex items-center justify-center text-gold mb-3 group-hover:scale-110 group-hover:bg-gold group-hover:text-white transition-all shadow-sm">
+                  <target.icon size={18} />
                 </div>
-                <h3 className="text-lg font-bold text-black mb-2 uppercase tracking-tight">{target.title}</h3>
-                <p className="text-black text-xs font-bold tracking-widest opacity-80 leading-relaxed italic">{target.desc}</p>
+                <h3 className="text-sm font-bold text-black mb-1 uppercase tracking-tight">{target.title}</h3>
+                <p className="text-black text-[10px] font-bold tracking-widest opacity-80 leading-relaxed italic">{target.desc}</p>
               </motion.div>
             ))}
           </div>
