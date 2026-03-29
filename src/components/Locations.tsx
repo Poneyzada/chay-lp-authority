@@ -5,6 +5,11 @@ import { LocationMap } from './ui/expand-map';
 
 const cities = [
   { 
+    name: 'Florianópolis', 
+    address: 'Referência na Ilha', 
+    coords: '27.5945° S, 48.5477° W' 
+  },
+  { 
     name: 'São Paulo', 
     address: 'Itaim Bibi', 
     coords: '23.5835° S, 46.6833° W' 
@@ -20,25 +25,25 @@ const cities = [
     coords: '26.9935° S, 48.6333° W' 
   },
   { 
-    name: 'Florianópolis', 
-    address: 'Referência na Ilha', 
-    coords: '27.5945° S, 48.5477° W' 
+    name: 'Itapema', 
+    address: 'Litoral Catarinense', 
+    coords: '27.0888° S, 48.6111° W' 
   }
 ];
 
 export const Locations = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
   return (
-    <section className="py-24 bg-white relative">
+    <section className="relative min-h-[90vh] flex flex-col pt-20 pb-10 bg-white overflow-hidden" id="home">
       <div className="container max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">Onde estamos</span>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 leading-none">
-            Atendimento presencial em <br />
-            <span className="text-gold italic font-serif">quatro cidades.</span>
+        <div className="text-center mb-10 md:mb-12">
+          <span className="text-gold text-[10px] font-black tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Onde estamos</span>
+          <h2 className="text-[2.6rem] md:text-5xl font-black tracking-tighter text-black leading-none">
+            Atendimento presencial em <br className="hidden md:block" />
+            <span className="text-gold italic font-serif leading-none">cinco cidades.</span>
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-12 mb-32">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-12 mb-12 md:mb-20">
           {cities.map((city, i) => (
             <motion.div
               key={i}
@@ -52,21 +57,24 @@ export const Locations = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
                 location={city.name} 
                 coordinates={city.coords}
               />
-              <p className="mt-4 text-[10px] text-zinc-400 font-bold uppercase tracking-[0.2em]">
+              <p className="mt-4 text-[10px] text-black font-black uppercase tracking-[0.2em] px-2 text-center">
                 {city.address}
               </p>
             </motion.div>
           ))}
         </div>
 
-        <div className="bg-brand-black p-12 lg:p-20 rounded-[4rem] text-center relative overflow-hidden">
-           <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] rounded-full" />
-           <p className="text-3xl md:text-5xl font-bold text-white mb-10 leading-tight font-serif italic max-w-4xl mx-auto">
+        <div className="bg-white p-8 md:p-12 lg:p-20 rounded-[2.5rem] md:rounded-[4rem] text-center relative overflow-hidden border border-gold/20 shadow-xl">
+           {/* Subtle Gold Glow "sujetinha amarela" */}
+           <div className="absolute -top-20 -right-20 w-80 h-80 bg-gold/15 blur-[120px] rounded-full" />
+           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-gold/5 blur-[120px] rounded-full" />
+           
+           <p className="text-2xl md:text-5xl font-black text-black mb-8 md:mb-10 leading-tight font-serif italic max-w-4xl mx-auto relative z-10">
              Agende sua consulta e descubra o que está por trás dos seus sintomas.
            </p>
            <button
              onClick={onOpenFilter}
-             className="px-16 py-8 bg-white text-brand-black font-black uppercase tracking-widest text-sm rounded-full hover:bg-gold hover:text-white transition-all shadow-[0_0_50px_rgba(255,255,255,0.1)] inline-flex items-center gap-4"
+             className="w-full md:w-auto px-10 md:px-16 py-5 md:py-8 bg-gold text-black font-black uppercase tracking-widest text-xs md:text-sm rounded-full hover:bg-gold-dark transition-all shadow-lg shadow-gold/20 inline-flex items-center justify-center gap-4 relative z-10"
            >
              QUERO AGENDAR MINHA CONSULTA
              <Navigation size={18} fill="currentColor" />

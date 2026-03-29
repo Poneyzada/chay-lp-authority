@@ -49,7 +49,7 @@ export default function DotCard({ target = 5500, duration = 1500, label = "Pacie
       <div className="card relative w-[200px] h-[140px] bg-white border border-gold/10 rounded-[2.5rem] flex flex-col items-center justify-center soft-shadow overflow-hidden group hover:border-gold/30 transition-colors">
         <div className="ray absolute inset-0 bg-gradient-to-br from-transparent via-gold/5 to-transparent z-1 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div className="text text-4xl font-black text-zinc-900 z-10 font-serif leading-none">{display}+</div>
-        <div className="label text-[10px] font-black uppercase text-zinc-400 tracking-[0.2em] mt-2 z-10 text-center px-4">{label}</div>
+        <div className="label text-[10px] font-black uppercase text-zinc-900 tracking-[0.2em] mt-2 z-10 text-center px-4">{label}</div>
         
         {/* Decorative Internal Lines */}
         <div className="absolute top-3 left-3 right-3 h-px bg-gold/10"></div>

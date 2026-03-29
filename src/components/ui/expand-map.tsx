@@ -267,18 +267,20 @@ export function LocationMap({
               </motion.div>
             </div>
 
-            {/* Status indicator */}
-            <motion.div
-              className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-zinc-900/5 backdrop-blur-sm"
-              animate={{
-                scale: isHovered ? 1.05 : 1,
-                backgroundColor: isHovered ? "rgba(0,0,0,0.08)" : "rgba(0,0,0,0.05)",
-              }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="w-1.5 h-1.5 rounded-full bg-gold" />
-              <span className="text-[10px] font-bold text-zinc-500 tracking-wide uppercase">Clinic</span>
-            </motion.div>
+            {/* Click hint - Now EXTREMELY prominent */}
+            <div className="flex flex-col items-center gap-1">
+              <span className="text-[10px] font-black text-black bg-gold px-2 py-0.5 rounded-sm tracking-[0.2em] uppercase mb-1 shadow-sm">EXPANDIR</span>
+              <motion.div
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black text-white"
+                animate={{
+                  scale: isHovered ? 1.1 : 1,
+                }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="w-1 h-1 rounded-full bg-gold animate-pulse" />
+                <span className="text-[8px] font-black uppercase tracking-widest whitespace-nowrap">Ver Mapa</span>
+              </motion.div>
+            </div>
           </div>
 
           {/* Bottom section */}
@@ -296,7 +298,7 @@ export function LocationMap({
             <AnimatePresence>
               {isExpanded && (
                 <motion.p
-                  className="text-zinc-400 text-[10px] font-bold tracking-widest uppercase"
+                  className="text-zinc-900 text-[10px] font-black tracking-widest uppercase italic"
                   initial={{ opacity: 0, y: -10, height: 0 }}
                   animate={{ opacity: 1, y: 0, height: "auto" }}
                   exit={{ opacity: 0, y: -10, height: 0 }}
@@ -320,19 +322,7 @@ export function LocationMap({
         </div>
       </motion.div>
 
-      {/* Click hint */}
-      <motion.p
-        className="absolute -bottom-6 left-1/2 text-[10px] text-zinc-400 font-bold uppercase tracking-widest whitespace-nowrap"
-        style={{ x: "-50%" }}
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: isHovered && !isExpanded ? 1 : 0,
-          y: isHovered ? 0 : 4,
-        }}
-        transition={{ duration: 0.2 }}
-      >
-        Expandir Mapa
-      </motion.p>
+      {/* Removed absolute bottom hint as it is now at the top */}
     </motion.div>
   )
 }

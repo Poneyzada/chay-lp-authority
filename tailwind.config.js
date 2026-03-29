@@ -8,13 +8,14 @@ export default {
     extend: {
       colors: {
         gold: {
-          light: '#d4af37',
-          DEFAULT: '#c19717',
-          dark: '#a68012',
+          light: '#dfba4a',
+          DEFAULT: '#c09e3f',
+          dark: '#9a7812',
         },
         brand: {
-          black: '#09090b',
-          zinc: '#18181b',
+          black: '#0a0a0a',
+          zinc: '#121212',
+          gold: '#c09e3f',
         }
       },
       fontFamily: {

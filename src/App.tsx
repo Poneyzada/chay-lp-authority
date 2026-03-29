@@ -15,7 +15,7 @@ function App() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900 selection:bg-gold/30">
+    <div className="min-h-screen bg-white text-black selection:bg-gold/30">
       <Hero onOpenFilter={() => setIsFilterOpen(true)} />
       
       <main>
@@ -23,7 +23,7 @@ function App() {
         <PainPoints onOpenFilter={() => setIsFilterOpen(true)} />
         <ForWhom />
         <Methodology onOpenFilter={() => setIsFilterOpen(true)} />
-        <ServicesDetailed />
+        <ServicesDetailed onOpenFilter={() => setIsFilterOpen(true)} />
         <WhyTrust />
         <Bio />
         <FAQ />

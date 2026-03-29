@@ -1,131 +1,95 @@
-import React, { useRef } from 'react';
-import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
-import { Search, FlaskConical, Activity, Zap, ShieldCheck, Soup, GraduationCap, LucideIcon } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Search, FlaskConical, Activity, Zap, ShieldCheck, Soup, GraduationCap, ChevronRight } from 'lucide-react';
+import FlipCard from './ui/flip-card';
 
 const services = [
-  { icon: Search, title: 'Avaliação Médica Completa', desc: 'Investigação profunda da causa real dos sintomas.' },
-  { icon: FlaskConical, title: 'Interpretação de Exames', desc: 'Análise estratégica correlacionando clínica e laboratório.' },
-  { icon: Activity, title: 'Gestão Hormonal & Metabólica', desc: 'Tratamento de fadiga, ganho de peso e libido.' },
-  { icon: Zap, title: 'Emagrecimento Médico', desc: 'Protocolos focados em gordura e massa muscular.' },
-  { icon: ShieldCheck, title: 'Terapias & Implantes', desc: 'Acompanhamento especializado e indicação criteriosa.' },
-  { icon: Soup, title: 'Soroterapia & Nutrologia', desc: 'Suporte energético e nutricional de alta precisão.' },
-  { icon: GraduationCap, title: 'Abordagem Integral', desc: 'Integração para potencializar resultados duradouros.' }
+  { 
+    icon: Search, 
+    title: 'Avaliação médica completa', 
+    subtitle: 'Exclusividade',
+    desc: 'Investigação detalhada para entender a causa dos sintomas, e não apenas tratá-los de forma superficial.',
+    features: ['Investigação Profunda', 'Foco na Causa Real']
+  },
+  { 
+    icon: FlaskConical, 
+    title: 'Análise de exames laboratoriais', 
+    subtitle: 'Estratégia Clínica',
+    desc: 'Interpretação estratégica dos seus exames, correlacionando resultados com sintomas e seu histórico.',
+    features: ['Visão Bioquímica', 'Correlação Clínica']
+  },
+  { 
+    icon: Activity, 
+    title: 'Avaliação hormonal e metabólica', 
+    subtitle: 'Equilíbrio Real',
+    desc: 'Foco em fadiga, ganho de peso, queda de libido, alterações de humor e perda de performance.',
+    features: ['Fadiga & Libido', 'Metabolismo Ativo']
+  },
+  { 
+    icon: Zap, 
+    title: 'Protocolos de emagrecimento', 
+    subtitle: 'Saúde & Peso',
+    desc: 'Tratamentos seguros e individualizados, com foco em redução de gordura e preservação muscular.',
+    features: ['Redução de Gordura', 'Massa Muscular']
+  },
+  { 
+    icon: ShieldCheck, 
+    title: 'Terapias hormonais e implantes', 
+    subtitle: 'Otimização',
+    desc: 'Indicação criteriosa e acompanhamento médico quando há necessidade de reposição hormonal.',
+    features: ['Implantes Seguros', 'Acompanhamento']
+  },
+  { 
+    icon: Soup, 
+    title: 'Soroterapia e suporte metabólico', 
+    subtitle: 'Vitalidade',
+    desc: 'Protocolos injetáveis para suporte energético, imunológico e nutricional especializado.',
+    features: ['Suporte Energético', 'Imunológico']
+  },
+  { 
+    icon: GraduationCap, 
+    title: 'Atendimento multidisciplinar', 
+    subtitle: 'Performance 360',
+    desc: 'Integração com nutricionista e educador físico para potencializar resultados a longo prazo.',
+    features: ['Saúde 360', 'Resultados Reais']
+  }
 ];
 
-const ServiceLensCard = ({ icon: Icon, title, desc }: { icon: LucideIcon; title: string; desc: string }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  // Mask and ClipPath logic for the lens effect
-  const clipPath = useMotionTemplate`circle(40px at ${mouseX}px ${mouseY}px)`;
-  
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    mouseX.set(e.clientX - rect.left);
-    mouseY.set(e.clientY - rect.top);
-  };
-
+export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
   return (
-    <div className="flex flex-col gap-4">
-      <motion.div
-        ref={containerRef}
-        onMouseMove={handleMouseMove}
-        className="group relative h-24 rounded-2xl border border-zinc-100 bg-zinc-50/50 overflow-hidden cursor-none transition-all hover:shadow-lg hover:shadow-gold/5"
-        variants={{
-          hidden: { opacity: 0, y: 20 },
-          show: { opacity: 1, y: 0 }
-        }}
-      >
-        {/* Base Layer: Scrolling faint data chips */}
-        <div className="absolute inset-0 flex items-center px-6 pointer-events-none">
-          <motion.div
-            className="flex gap-4 whitespace-nowrap opacity-15"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          >
-            {Array(6).fill(desc).map((t, i) => (
-              <div key={i} className="px-3 py-1 border border-zinc-300 rounded-lg text-[10px] font-bold uppercase tracking-tighter text-zinc-600">
-                {t}
-              </div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Reveal Layer: High contrast sharp data chips */}
-        <motion.div
-          className="absolute inset-0 flex items-center px-6 bg-white z-10 pointer-events-none"
-          style={{ clipPath }}
-        >
-          <motion.div
-            className="flex gap-4 whitespace-nowrap"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          >
-            {Array(6).fill(desc).map((t, i) => (
-              <div key={i} className="px-3 py-1 border border-gold/30 bg-gold/5 rounded-lg text-[10px] font-bold uppercase tracking-tighter text-gold scale-110">
-                {t}
-              </div>
-            ))}
-          </motion.div>
-        </motion.div>
-
-        {/* Static Icon Overlay */}
-        <div className="absolute inset-y-0 left-8 flex items-center z-20 pointer-events-none">
-          <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-zinc-400 group-hover:text-gold transition-colors duration-500">
-            <Icon size={18} />
-          </div>
-        </div>
-
-        {/* Custom Lens Indicator */}
-        <motion.div
-          className="absolute w-20 h-20 border border-gold/30 rounded-full pointer-events-none z-30 flex items-center justify-center"
-          style={{ 
-            x: mouseX, 
-            y: mouseY,
-            left: -40,
-            top: -40,
-            opacity: 0,
-          }}
-          whileHover={{ opacity: 1 }}
-        >
-          <div className="w-1.5 h-1.5 bg-gold rounded-full shadow-[0_0_10px_rgba(193,151,23,0.5)]" />
-        </motion.div>
-      </motion.div>
-
-      {/* External Title */}
-      <h3 className="text-[10px] font-black text-zinc-900 uppercase tracking-[0.2em] px-2">{title}</h3>
-    </div>
-  );
-};
-
-export const ServicesDetailed = () => {
-  return (
-    <section className="py-24 bg-white overflow-hidden" id="servicos">
-      <div className="container max-w-6xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-20">
+    <section className="py-12 md:py-20 bg-white relative overflow-hidden" id="servicos">
+      <div className="container max-w-7xl mx-auto px-6">
+        <div className="flex flex-col lg:flex-row gap-16 md:gap-24">
           <div className="w-full lg:w-1/3">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="sticky top-10"
+              className="lg:sticky lg:top-24"
             >
-              <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">Portfólio Médico</span>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 leading-none mb-10">
-                Serviços <br />
-                <span className="text-gold italic font-serif">Oferecidos.</span>
+              <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Portfólio Médico</span>
+              <h2 className="text-[2.6rem] md:text-7xl font-black tracking-tighter text-zinc-900 leading-[0.95] mb-10">
+                Serviços <br className="hidden md:block" />
+                <span className="text-gold italic font-serif leading-none">Oferecidos.</span>
               </h2>
-              <div className="h-0.5 w-20 bg-zinc-900 mb-8" />
-              <p className="text-zinc-600 text-sm leading-relaxed mb-8">
-                Abordagem integral focada em hormônios, metabolismo, longevidade e medicina de precisão através de protocolos científicos.
+              
+              <div className="h-0.5 w-16 bg-gold/30 mb-10" />
+              
+              <p className="text-zinc-900 text-base md:text-lg leading-relaxed mb-10 font-bold">
+                Abordagem integral focada em hormônios, metabolismo e medicina de precisão através de protocolos científicos avançados.
               </p>
+              
+              <button
+                onClick={onOpenFilter}
+                className="group flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-900 hover:text-gold transition-colors py-4 border-b-2 border-zinc-900 hover:border-gold"
+              >
+                AGENDAR CONSULTA AGORA <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </button>
             </motion.div>
           </div>
 
           <motion.div 
-            className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="w-full lg:w-2/3 flex overflow-x-auto pb-10 gap-8 md:grid md:grid-cols-2 lg:gap-8 no-scrollbar -mx-6 px-6 md:mx-0 md:px-0"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
@@ -134,13 +98,24 @@ export const ServicesDetailed = () => {
               show: {
                 opacity: 1,
                 transition: {
-                  staggerChildren: 0.1
+                  staggerChildren: 0.1,
+                  duration: 0.8
                 }
               }
             }}
           >
             {services.map((service, i) => (
-              <ServiceLensCard key={i} {...service} />
+              <div key={i} className="min-w-[280px] md:min-w-0 shrink-0">
+                <FlipCard
+                  title={service.title}
+                  subtitle={service.subtitle}
+                  description={service.desc}
+                  features={service.features}
+                  icon={service.icon}
+                  stepNumber={(i + 1).toString().padStart(2, '0')}
+                  onClickAction={onOpenFilter}
+                />
+              </div>
             ))}
           </motion.div>
         </div>

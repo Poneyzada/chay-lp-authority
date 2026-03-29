@@ -87,7 +87,7 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-brand-black/40 backdrop-blur-sm"
+            className="absolute inset-0 bg-white/60 backdrop-blur-md"
           />
           
           <motion.div
@@ -101,7 +101,7 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
                 {step === 1 && (
                   <button 
                     onClick={() => setStep(0)}
-                    className="p-2 -ml-2 text-zinc-400 hover:text-gold transition-colors"
+                    className="p-2 -ml-2 text-zinc-900 hover:text-gold transition-colors"
                   >
                     <ChevronLeft size={24} />
                   </button>
@@ -112,17 +112,17 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
                   </span>
                   <h2 className="text-3xl font-bold text-zinc-900 tracking-tight leading-tight font-serif italic">
                     {step === 0 ? (
-                      <>Como podemos <span className="text-gold">ajudar você</span> hoje?</>
+                      <>Como podemos <span className="text-gold underline decoration-gold/20 underline-offset-4">ajudar você</span> hoje?</>
                     ) : (
-                      <>Quase lá! <span className="text-gold">Como te chamamos?</span></>
+                      <>Quase lá! <span className="text-gold underline decoration-gold/20 underline-offset-4">Como te chamamos?</span></>
                     )}
                   </h2>
                 </div>
               </div>
               <button 
                 onClick={onClose}
-                className="p-2 text-zinc-300 hover:text-zinc-600 transition-colors"
-                aria-label="Frequentar"
+                className="p-2 text-zinc-900 hover:text-gold transition-colors"
+                aria-label="Sair"
               >
                 <X size={24} />
               </button>
@@ -131,11 +131,11 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
             <AnimatePresence mode="wait">
               {step === 0 ? (
                 <motion.div 
-                  key="step0"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
-                  className="grid grid-cols-1 gap-4"
+                   key="step0"
+                   initial={{ opacity: 0, x: -20 }}
+                   animate={{ opacity: 1, x: 0 }}
+                   exit={{ opacity: 0, x: 20 }}
+                   className="grid grid-cols-1 gap-4"
                 >
                   {options.map((option) => (
                     <button
@@ -143,12 +143,12 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
                       onClick={() => handleSelect(option)}
                       className="group relative flex items-center gap-6 p-6 rounded-2xl border border-zinc-100 bg-zinc-50 hover:bg-white hover:border-gold/30 hover:soft-shadow transition-all text-left"
                     >
-                      <div className="w-12 h-12 rounded-xl bg-white border border-zinc-100 flex items-center justify-center text-zinc-300 group-hover:text-gold transition-colors shrink-0">
+                      <div className="w-12 h-12 rounded-xl bg-white border border-zinc-100 flex items-center justify-center text-zinc-900 group-hover:text-gold transition-colors shrink-0">
                         <option.icon size={22} />
                       </div>
                       <div>
-                        <h3 className="text-md font-bold text-zinc-900 mb-1 uppercase tracking-tight">{option.title}</h3>
-                        <p className="text-zinc-400 text-xs italic font-medium leading-relaxed">{option.desc}</p>
+                        <h3 className="text-md font-bold text-zinc-900 mb-1 uppercase tracking-tight font-serif italic">{option.title}</h3>
+                        <p className="text-zinc-900 text-xs italic font-bold leading-relaxed">{option.desc}</p>
                       </div>
                       <Send className="absolute right-6 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-gold" size={16} />
                     </button>
@@ -165,45 +165,45 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
                 >
                   <div className="space-y-4">
                     <div className="relative">
-                      <User className="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-300" size={20} />
+                      <User className="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-900" size={20} />
                       <input 
                         type="text" 
                         required
                         placeholder="Seu nome completo"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="w-full pl-14 pr-6 py-5 bg-zinc-50 border border-zinc-100 rounded-2xl focus:outline-none focus:border-gold/50 focus:bg-white transition-all font-medium text-zinc-900 placeholder:text-zinc-300"
+                        className="w-full pl-14 pr-6 py-5 bg-zinc-50 border border-zinc-100 rounded-2xl focus:outline-none focus:border-gold/50 focus:bg-white transition-all font-bold text-zinc-900 placeholder:text-zinc-400"
                       />
                     </div>
                     <div className="relative">
-                      <Mail className="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-300" size={20} />
+                      <Mail className="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-900" size={20} />
                       <input 
                         type="email" 
                         placeholder="E-mail (Opcional)"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full pl-14 pr-6 py-5 bg-zinc-50 border border-zinc-100 rounded-2xl focus:outline-none focus:border-gold/50 focus:bg-white transition-all font-medium text-zinc-900 placeholder:text-zinc-300"
+                        className="w-full pl-14 pr-6 py-5 bg-zinc-50 border border-zinc-100 rounded-2xl focus:outline-none focus:border-gold/50 focus:bg-white transition-all font-bold text-zinc-900 placeholder:text-zinc-400"
                       />
                     </div>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-6 bg-brand-black text-white rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-gold transition-all shadow-xl flex items-center justify-center gap-3 group"
+                    className="w-full py-6 bg-gold text-zinc-900 rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-gold-dark transition-all shadow-xl flex items-center justify-center gap-3 group"
                   >
                     AGENDAR PELO WHATSAPP
                     <Send size={18} className="group-hover:translate-x-2 transition-transform" />
                   </button>
 
-                  <p className="text-center text-[10px] text-zinc-400 uppercase tracking-widest font-bold">
+                  <p className="text-center text-[10px] text-zinc-900 uppercase tracking-widest font-black">
                     🛡️ Seus dados estão seguros conosco.
                   </p>
                 </motion.form>
               )}
             </AnimatePresence>
 
-            <p className="mt-8 text-center text-[10px] text-zinc-300 uppercase font-black tracking-widest">
-              Atendimento exclusivo Dra. Chayanne Calegari
+            <p className="mt-8 text-center text-[10px] text-zinc-900 uppercase font-black tracking-widest leading-none">
+              Atendimento exclusivo Dra. Chayanne Bordin Calegari
             </p>
           </motion.div>
         </div>

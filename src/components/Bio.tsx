@@ -13,63 +13,59 @@ const credentials = [
 
 export const Bio = () => {
   return (
-    <section className="py-24 bg-white overflow-hidden" id="sobre">
-      <div className="container max-w-6xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-20">
-          <div className="w-full lg:w-1/2 relative order-2 lg:order-1">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative aspect-[4/5] rounded-[3rem] overflow-hidden soft-shadow border-8 border-soft-zinc/30"
-            >
-              <img 
-                src={bioImg} 
-                alt="Dra. Chayanne Médica" 
-                className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 via-transparent to-transparent" />
-            </motion.div>
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white" id="sobre">
+      {/* Background Image - Full Bleed */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={bioImg} 
+          alt="Dra. Chayanne Médica" 
+          className="w-full h-full object-cover object-[center_35%]"
+        />
+        {/* Soft elegant overlay to ensure text contrast without "weighing down" with black */}
+        <div className="absolute inset-0 bg-white/40 md:bg-gradient-to-r md:from-white/95 md:via-white/70 md:to-transparent" />
+      </div>
+
+      <div className="container max-w-7xl mx-auto px-6 relative z-10 py-16 md:py-24">
+        <div className="max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Corpo Clínico</span>
+            <h2 className="text-[2.6rem] md:text-6xl font-black tracking-tighter text-black mb-8 leading-[0.95]">
+              Uma abordagem científica <br />
+              <span className="text-gold italic font-serif leading-none">e individualizada.</span>
+            </h2>
             
-            {/* Signature detail */}
-            <div className="absolute -bottom-6 -right-6 p-8 bg-brand-black text-white rounded-3xl shadow-2xl z-20 hover:scale-105 transition-transform">
-              <span className="text-gold text-[10px] uppercase font-black tracking-widest block mb-1">Registro Médico</span>
-              <p className="font-bold text-lg">CRM-SC 23.321</p>
-            </div>
-          </div>
+            <p className="text-black text-sm md:text-base mb-10 leading-relaxed font-black max-w-xl">
+              A Dra. Chayanne Bordin formou-se em Medicina pela Universidade do Sul de Santa Catarina e direcionou sua carreira para o tratamento de distúrbios hormonais, saúde metabólica e qualidade de vida.
+              <br /><br />
+              Atualmente, cursa pós-graduação em Sexualidade Humana pelo CSI of Miami, ampliando sua abordagem para tratar não apenas sintomas físicos, mas também aspectos hormonais e sexuais que impactam diretamente a vida.
+            </p>
 
-          <div className="w-full lg:w-1/2 order-1 lg:order-2">
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Corpo Clínico</span>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tight text-zinc-900 mb-8 leading-[0.95]">
-                Uma abordagem científica <br />
-                <span className="text-gold italic font-serif">e individualizada.</span>
-              </h2>
-              
-              <p className="text-zinc-500 text-lg mb-12 leading-relaxed">
-                A saúde real não é a ausência de doença, mas o equilíbrio pleno entre hormônios, metabolismo e estilo de vida. Minha missão é traduzir a ciência de precisão em resultados práticos para que você recupere o controle sobre seu corpo e sua vitalidade.
-              </p>
-
-              <div className="space-y-6">
-                {credentials.map((item, i) => (
-                  <div key={i} className="flex gap-6 items-start group">
-                    <div className="w-12 h-12 rounded-2xl bg-zinc-50 flex items-center justify-center text-zinc-400 group-hover:text-gold group-hover:bg-soft-zinc transition-colors shrink-0">
-                      <item.icon size={22} />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-black uppercase text-zinc-900 tracking-tight">{item.title}</h4>
-                      <p className="text-xs text-zinc-400 font-bold uppercase tracking-widest mt-1">{item.institution}</p>
-                    </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+              {credentials.map((item, i) => (
+                <div key={i} className="flex gap-4 items-start group">
+                  <div className="w-10 h-10 rounded-xl bg-white border border-gold/20 flex items-center justify-center text-gold shrink-0 shadow-sm">
+                    <item.icon size={20} />
                   </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
+                  <div>
+                    <h4 className="text-[10px] md:text-xs font-black uppercase text-black tracking-tight leading-none">{item.title}</h4>
+                    <p className="text-[9px] text-black font-black uppercase tracking-widest mt-1.5 opacity-60">{item.institution}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
+      </div>
+      
+      {/* CRM Badge - Pure high contrast white box */}
+      <div className="absolute bottom-6 right-6 md:bottom-12 md:right-12 p-6 md:p-8 bg-white text-black rounded-3xl shadow-2xl z-20 border border-zinc-100 flex flex-col items-center text-center">
+        <span className="text-gold text-[10px] font-black tracking-[0.2em] uppercase block mb-2 leading-none">Registro Médico</span>
+        <p className="font-black text-xs md:text-base uppercase tracking-tighter">CRM-SC 23.321</p>
+        <p className="font-black text-[10px] uppercase tracking-tighter mt-1 opacity-70">CRM-PR 36.452</p>
       </div>
     </section>
   );
