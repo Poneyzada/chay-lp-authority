@@ -75,7 +75,7 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
         <img 
           src={servicesImg} 
           alt="Consultório Dra. Chayanne" 
-          className="w-full h-full object-cover object-center md:object-center opacity-90 transition-all duration-1000"
+          className="w-full h-full object-cover object-[center_top] md:object-[center_15%] opacity-90 transition-all duration-1000"
         />
         {/* Soft elegant gradient overlay (right-to-left) to contrast with Previous section */}
         <div className="absolute inset-0 bg-white/50" />

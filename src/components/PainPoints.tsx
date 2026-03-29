@@ -13,19 +13,19 @@ const painPoints = [
 
 export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
   return (
-    <section className="relative min-h-[100vh] flex items-center overflow-hidden bg-white py-0 md:py-20" id="agendamento">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white py-0 md:py-16" id="agendamento">
       {/* Background Image - Full Bleed Cinematic */}
       <div className="absolute inset-0 z-0">
         <img 
           src={bgImg} 
           alt="Dra. Chayanne Bordin" 
-          className="w-full h-full object-cover object-[center_10%] md:object-[center_25%] grayscale-[0%] opacity-90 transition-all duration-1000"
+          className="w-full h-full object-cover object-[center_top] md:object-[center_15%] grayscale-[0%] opacity-90 transition-all duration-1000"
         />
         {/* Soft elegant gradient overlay (left-to-right) for text legibility */}
-        <div className="absolute inset-0 bg-white/40 md:bg-gradient-to-r md:from-white/100 md:via-white/70 md:to-transparent" />
+        <div className="absolute inset-0 bg-white/85 md:bg-gradient-to-r md:from-white/100 md:via-white/70 md:to-transparent" />
       </div>
 
-      <div className="container max-w-7xl mx-auto px-6 relative z-10 pt-28 pb-8 md:pt-0 md:pb-0">
+      <div className="container max-w-7xl mx-auto px-6 relative z-10 pt-[110px] pb-6 md:pt-0 md:pb-0">
         <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-20">
           <div className="w-full lg:w-1/2">
             <motion.div

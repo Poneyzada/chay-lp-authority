@@ -10,7 +10,7 @@ export const Bio = () => {
         <img 
           src={bioImg} 
           alt="Dra. Chayanne Bordin" 
-          className="w-full h-full object-cover object-center md:object-center grayscale-[20%] opacity-90 transition-all duration-1000"
+          className="w-full h-full object-cover object-[center_top] md:object-[center_15%] grayscale-[20%] opacity-90 transition-all duration-1000"
         />
         {/* Elite light gradient overlay - editorial feel */}
         <div className="absolute inset-0 bg-white/10 md:bg-gradient-to-r md:from-white/100 md:via-white/60 md:to-transparent" />
