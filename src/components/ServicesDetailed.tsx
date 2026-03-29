@@ -10,14 +10,14 @@ const services = [
     title: 'Avaliação médica completa', 
     subtitle: 'Passo 01',
     desc: 'Investigação detalhada para entender a causa dos sintomas, e não apenas tratá-los de forma superficial.',
-    features: []
+    features: ['Investigação detalhada', 'Causa dos sintomas']
   },
   { 
     icon: FlaskConical, 
     title: 'Avaliação de exames laboratoriais e hormonais', 
     subtitle: 'Passo 02',
     desc: 'Interpretação estratégica dos seus exames, correlacionando resultados com sintomas e histórico clínico.',
-    features: []
+    features: ['Interpretação estratégica', 'Histórico clínico']
   },
   { 
     icon: Activity, 
@@ -48,21 +48,21 @@ const services = [
     title: 'Terapias hormonais e implantes', 
     subtitle: 'Acompanhamento Especializado',
     desc: 'Indicação criteriosa e acompanhamento médico quando há necessidade de reposição hormonal.',
-    features: []
+    features: ['Indicação criteriosa', 'Acompanhamento médico']
   },
   { 
     icon: Soup, 
     title: 'Soroterapia e suporte metabólico', 
     subtitle: 'Vitalidade',
     desc: 'Protocolos para suporte energético, imunológico e nutricional, conforme avaliação médica.',
-    features: []
+    features: ['Suporte energético', 'Suporte nutricional']
   },
   { 
     icon: GraduationCap, 
     title: 'Atendimento multidisciplinar', 
     subtitle: 'Integração 360º',
     desc: 'Integração com nutricionista e educador físico para potencializar resultados e manter saúde a longo prazo.',
-    features: []
+    features: ['Nutricionista', 'Educador físico', 'Resultados longo prazo']
   }
 ];
 
