@@ -9,8 +9,8 @@ const steps = [
     icon: Calendar,
     title: '1. Agendamento',
     step: '01',
-    subtitle: 'Após o agendamento, você recebe todas as orientações iniciais e o acesso ao formulário pré-consulta.',
-    details: []
+    subtitle: 'Após agendar, você recebe:',
+    details: ['orientações iniciais detalhadas', 'acesso ao formulário pré-consulta']
   },
   {
     icon: ClipboardList,
@@ -22,11 +22,10 @@ const steps = [
   },
   {
     icon: Stethoscope,
-    title: '3. Consulta médica aprofundada',
+    title: '3. Consulta aprofundada',
     step: '03',
-    subtitle: 'A consulta tem duração média de 1 hora, com avaliação detalhada de:',
-    details: ['rotina', 'histórico alimentar', 'exames', 'sintomas físicos e emocionais', 'objetivos com o tratamento'],
-    footer: 'Nos atendimentos presenciais, realizo bioimpedância corporal, permitindo avaliação precisa de gordura, massa muscular e metabolismo.'
+    subtitle: 'A consulta tem duração média de 1 hora, detalhando:',
+    details: ['rotina e histórico alimentar', 'exames, sintomas físicos e emocionais', 'objetivos diretos com o tratamento', 'avaliação de bioimpedância (presencial)', 'análise de gordura e massa muscular'],
   },
   {
     icon: ClipboardCheck,
@@ -70,7 +69,7 @@ export const Methodology = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
 
         {/* Premium Carousel with Snap Scroll Behavior and Mouse Drag */}
         <div 
-          className={`flex overflow-x-auto pb-10 gap-6 md:gap-10 no-scrollbar snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth ${dragEvents.dragClassName}`}
+          className={`flex overflow-x-auto pb-10 gap-6 md:gap-10 no-scrollbar -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth ${dragEvents.dragClassName}`}
           ref={dragEvents.ref}
           onMouseDown={dragEvents.onMouseDown}
           onMouseLeave={dragEvents.onMouseLeave}
@@ -84,7 +83,7 @@ export const Methodology = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true }}
-              className="min-w-[280px] md:min-w-[340px] flex shrink-0 h-full snap-center"
+              className="min-w-[280px] md:min-w-[340px] flex shrink-0 h-full"
             >
               <HighlightCard
                 title={step.title}

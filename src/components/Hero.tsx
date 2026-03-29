@@ -92,8 +92,8 @@ export const Hero = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
             >
               <img 
                 src={heroImg} 
-                alt="Dra. Chayanne Bordin" 
-                className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-1000"
+                alt="Dra. Chayanne Bordin Calegari" 
+                className="w-full h-full object-cover object-[center_20%] md:object-[center_20%] opacity-90 transition-transform duration-[2s] group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-zinc/60 via-transparent to-transparent" />
               

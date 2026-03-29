@@ -32,7 +32,7 @@ export default function FlipCard({
       style={{
         ['--primary' as any]: color,
       }}
-      className="group relative h-[420px] w-full min-w-[300px] md:min-w-[320px] [perspective:2000px] cursor-pointer"
+      className="group relative h-[340px] md:h-[360px] w-full min-w-[300px] md:min-w-[320px] [perspective:2000px] cursor-pointer"
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
       onClick={() => setIsFlipped(!isFlipped)}
@@ -73,10 +73,10 @@ export default function FlipCard({
           {/* Central Icon */}
           <div className="absolute inset-0 flex items-center justify-center -translate-y-8">
             <div className="relative">
-              <div className="w-24 h-24 rounded-3xl bg-zinc-50 border border-zinc-100 flex items-center justify-center text-gold shadow-sm transition-transform duration-700 group-hover:scale-110 group-hover:rotate-6">
-                <Icon size={44} strokeWidth={1.5} />
+              <div className="w-16 h-16 rounded-[1.5rem] bg-zinc-50 border border-zinc-100 flex items-center justify-center text-gold shadow-sm transition-transform duration-700 group-hover:scale-110 group-hover:rotate-6">
+                <Icon size={32} strokeWidth={1.5} />
               </div>
-              <div className="absolute inset-0 bg-gold/10 rounded-3xl blur-xl animate-pulse -z-10" />
+              <div className="absolute inset-0 bg-gold/10 rounded-[1.5rem] blur-xl animate-pulse -z-10" />
             </div>
           </div>
 
@@ -97,7 +97,7 @@ export default function FlipCard({
           className={cn(
             'absolute inset-0 h-full w-full',
             '[transform:rotateY(180deg)] [backface-visibility:hidden]',
-            'rounded-[2.5rem] p-10',
+            'rounded-[2.5rem] p-6 md:p-8',
             'bg-white border-2 border-gold/30',
             'shadow-2xl shadow-gold/5',
             'flex flex-col',

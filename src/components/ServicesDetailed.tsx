@@ -70,18 +70,16 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
   
   return (
     <section className="relative min-h-[100vh] py-12 md:py-20 bg-white overflow-hidden" id="servicos">
-      {/* Background Image - Viewport Locked to prevent portrait stretching */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="sticky top-0 w-full h-[100vh]">
-          <img 
-            src={servicesImg} 
-            alt="Consultório Dra. Chayanne" 
-            className="w-full h-full object-cover object-center opacity-90 transition-all duration-1000"
-          />
-          {/* Soft elegant gradient overlay (right-to-left) to contrast with Previous section */}
-          <div className="absolute inset-0 bg-white/50" />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-white md:bg-gradient-to-l md:from-white/10 md:via-white/70 md:to-white" />
-        </div>
+      {/* Background Image - Restored to smooth fluid scrolling with offset framing */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={servicesImg} 
+          alt="Consultório Dra. Chayanne" 
+          className="w-full h-full object-cover object-[center_15%] md:object-[center_20%] opacity-90 transition-all duration-1000"
+        />
+        {/* Soft elegant gradient overlay (right-to-left) to contrast with Previous section */}
+        <div className="absolute inset-0 bg-white/50" />
+        <div className="hidden md:block absolute inset-0 bg-gradient-to-l md:from-white/100 md:via-white/80 md:to-transparent" />
       </div>
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
