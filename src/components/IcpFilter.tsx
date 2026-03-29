@@ -110,7 +110,7 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
                   <span className="text-gold text-[10px] font-bold uppercase tracking-[0.4em] block mb-2">
                     {step === 0 ? 'Filtro de Agendamento' : 'Personalização'}
                   </span>
-                  <h2 className="text-3xl font-bold text-zinc-900 tracking-tight leading-tight font-serif italic">
+                  <h2 className="text-3xl font-bold text-black tracking-tight leading-tight font-serif italic">
                     {step === 0 ? (
                       <>Como podemos <span className="text-gold underline decoration-gold/20 underline-offset-4">ajudar você</span> hoje?</>
                     ) : (
@@ -121,7 +121,7 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
               </div>
               <button 
                 onClick={onClose}
-                className="p-2 text-zinc-900 hover:text-gold transition-colors"
+                className="p-2 text-black hover:text-gold transition-colors"
                 aria-label="Sair"
               >
                 <X size={24} />
@@ -143,12 +143,12 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
                       onClick={() => handleSelect(option)}
                       className="group relative flex items-center gap-6 p-6 rounded-2xl border border-zinc-100 bg-zinc-50 hover:bg-white hover:border-gold/30 hover:soft-shadow transition-all text-left"
                     >
-                      <div className="w-12 h-12 rounded-xl bg-white border border-zinc-100 flex items-center justify-center text-zinc-900 group-hover:text-gold transition-colors shrink-0">
+                      <div className="w-12 h-12 rounded-xl bg-white border border-zinc-100 flex items-center justify-center text-black group-hover:text-gold transition-colors shrink-0">
                         <option.icon size={22} />
                       </div>
                       <div>
-                        <h3 className="text-md font-bold text-zinc-900 mb-1 uppercase tracking-tight font-serif italic">{option.title}</h3>
-                        <p className="text-zinc-900 text-xs italic font-bold leading-relaxed">{option.desc}</p>
+                        <h3 className="text-md font-bold text-black mb-1 uppercase tracking-tight font-serif italic">{option.title}</h3>
+                        <p className="text-black text-xs italic font-bold leading-relaxed">{option.desc}</p>
                       </div>
                       <Send className="absolute right-6 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-gold" size={16} />
                     </button>

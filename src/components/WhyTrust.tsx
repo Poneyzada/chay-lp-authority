@@ -13,8 +13,8 @@ export const WhyTrust = () => {
   return (
     <section className="py-10 md:py-20 bg-zinc-50 border-y border-zinc-100 overflow-hidden">
       <div className="container max-w-6xl mx-auto px-6 text-center">
-        <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Diferenciais</span>
-        <h2 className="text-[2.6rem] md:text-6xl font-black tracking-tighter text-zinc-900 leading-[0.95] mb-12 md:mb-20">
+        <span className="text-gold text-[10px] font-black tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Diferenciais</span>
+        <h2 className="text-[2.6rem] md:text-6xl font-black tracking-tighter text-black leading-[0.95] mb-12 md:mb-20">
           Por que pacientes de diferentes estados <br className="hidden md:block" />
           <span className="text-gold italic font-serif leading-none">confiam na Dra Chay.</span>
         </h2>
@@ -42,8 +42,8 @@ export const WhyTrust = () => {
               <div className="w-16 h-16 rounded-[2rem] bg-white shadow-soft flex items-center justify-center text-gold mb-6 md:mb-8">
                 <stat.icon size={28} />
               </div>
-              <h4 className="text-3xl font-black text-zinc-900 mb-2 font-serif uppercase tracking-tight italic leading-none">{stat.value}</h4>
-              <p className="text-[10px] font-black uppercase text-zinc-900 tracking-[0.2em] leading-tight px-4">{stat.label}</p>
+              <h4 className="text-3xl font-black text-black mb-2 font-serif uppercase tracking-tight italic leading-none">{stat.value}</h4>
+              <p className="text-[10px] font-black uppercase text-black tracking-[0.2em] leading-tight px-4">{stat.label}</p>
             </motion.div>
           ))}
         </div>
@@ -55,7 +55,7 @@ export const WhyTrust = () => {
              'Consulta com tempo adequado, sem atendimento apressado',
              'Tratamentos baseados em ciência, não em modismos'
            ].map((text, i) => (
-             <div key={i} className="px-6 py-5 bg-white border border-zinc-100 rounded-3xl text-[9px] md:text-px font-black uppercase tracking-widest text-zinc-900 italic shadow-soft flex items-center justify-center">
+             <div key={i} className="px-6 py-5 bg-white border border-zinc-100 rounded-3xl text-[9px] md:text-px font-black uppercase tracking-widest text-black italic shadow-soft flex items-center justify-center">
                "{text}"
              </div>
            ))}

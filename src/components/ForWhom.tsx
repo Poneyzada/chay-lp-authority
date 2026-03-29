@@ -41,7 +41,7 @@ export const ForWhom = () => {
       <div className="container max-w-6xl mx-auto px-6">
         <div className="text-center mb-12 md:mb-20">
           <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8">Para quem é o atendimento</span>
-          <h2 className="text-[2.6rem] md:text-6xl font-black tracking-tighter text-zinc-900 leading-[0.95]">
+          <h2 className="text-[2.6rem] md:text-6xl font-black tracking-tighter text-black leading-[0.95]">
             Não aceite viver no <motion.span 
                 className="text-gold italic font-serif inline-block"
                 initial={{ x: 0 }}
@@ -59,7 +59,7 @@ export const ForWhom = () => {
                 automático.
             </motion.span>
           </h2>
-          <p className="text-zinc-900 mt-6 max-w-2xl mx-auto uppercase tracking-widest text-[11px] md:text-sm font-black leading-relaxed">
+          <p className="text-black mt-6 max-w-2xl mx-auto uppercase tracking-widest text-[11px] md:text-sm font-black leading-relaxed">
             Este atendimento é para você que quer voltar a se sentir bem no próprio corpo.
           </p>
         </div>
@@ -91,10 +91,10 @@ export const ForWhom = () => {
               <div className="w-12 h-12 rounded-2xl bg-white border border-zinc-100 flex items-center justify-center text-gold mb-6 group-hover:bg-gold group-hover:text-white group-hover:rotate-12 transition-all duration-500">
                 <target.icon size={22} />
               </div>
-              <h3 className="text-lg font-bold text-zinc-900 mb-4 uppercase tracking-tight group-hover:text-gold transition-colors">{target.title}</h3>
+              <h3 className="text-lg font-black text-black mb-4 uppercase tracking-tight group-hover:text-gold transition-colors">{target.title}</h3>
               <ul className="space-y-3">
                 {target.bullets.map((bullet, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-zinc-900 text-xs md:text-sm leading-tight font-black">
+                  <li key={idx} className="flex items-start gap-2 text-black text-xs md:text-sm leading-tight font-black">
                     <span className="w-1.5 h-1.5 rounded-full bg-gold/40 mt-1.5 group-hover:bg-gold transition-colors" />
                     {bullet}
                   </li>

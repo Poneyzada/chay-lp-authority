@@ -27,9 +27,9 @@ export const FAQ = () => {
   return (
     <section className="py-10 md:py-16 bg-white border-y border-zinc-50">
       <div className="container max-w-3xl mx-auto px-6">
-        <div className="text-center mb-10 md:mb-12 text-zinc-900">
+        <div className="text-center mb-10 md:mb-12 text-black">
           <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8">Dúvidas Frequentes</span>
-          <h2 className="text-[2.6rem] md:text-5xl font-black tracking-tighter text-zinc-900 leading-none">Perguntas <span className="text-gold italic font-serif leading-none">Comuns.</span></h2>
+          <h2 className="text-[2.6rem] md:text-5xl font-black tracking-tighter text-black leading-none">Perguntas <span className="text-gold italic font-serif leading-none">Comuns.</span></h2>
         </div>
 
         <div className="space-y-3">
@@ -42,8 +42,8 @@ export const FAQ = () => {
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full flex items-center justify-between p-6 md:p-8 text-left hover:bg-zinc-50 transition-colors"
               >
-                <span className="text-sm md:text-base font-black text-zinc-900 tracking-tight leading-none uppercase italic">{faq.q}</span>
-                {openIndex === i ? <Minus size={18} className="text-gold" /> : <Plus size={18} className="text-zinc-900" />}
+                <span className="text-sm md:text-base font-black text-black tracking-tight leading-none uppercase italic">{faq.q}</span>
+                {openIndex === i ? <Minus size={18} className="text-gold" /> : <Plus size={18} className="text-black" />}
               </button>
               
               <AnimatePresence>
@@ -53,7 +53,7 @@ export const FAQ = () => {
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                   >
-                    <div className="p-6 md:p-8 pt-0 text-zinc-900 text-xs md:text-sm leading-relaxed mx-0 font-bold italic">
+                    <div className="p-6 md:p-8 pt-0 text-black text-xs md:text-sm leading-relaxed mx-0 font-bold italic">
                       {faq.a}
                     </div>
                   </motion.div>

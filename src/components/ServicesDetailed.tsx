@@ -68,20 +68,20 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
               className="lg:sticky lg:top-24"
             >
               <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Portfólio Médico</span>
-              <h2 className="text-[2.6rem] md:text-7xl font-black tracking-tighter text-zinc-900 leading-[0.95] mb-10">
+              <h2 className="text-[2.6rem] md:text-7xl font-black tracking-tighter text-black leading-[0.95] mb-10">
                 Serviços <br className="hidden md:block" />
                 <span className="text-gold italic font-serif leading-none">Oferecidos.</span>
               </h2>
               
               <div className="h-0.5 w-16 bg-gold/30 mb-10" />
               
-              <p className="text-zinc-900 text-base md:text-lg leading-relaxed mb-10 font-bold">
+              <p className="text-black text-base md:text-lg leading-relaxed mb-10 font-black">
                 Abordagem integral focada em hormônios, metabolismo e medicina de precisão através de protocolos científicos avançados.
               </p>
               
               <button
                 onClick={onOpenFilter}
-                className="group flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-900 hover:text-gold transition-colors py-4 border-b-2 border-zinc-900 hover:border-gold"
+                className="group flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-black hover:text-gold transition-colors py-4 border-b-2 border-black hover:border-gold"
               >
                 AGENDAR CONSULTA AGORA <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </button>
