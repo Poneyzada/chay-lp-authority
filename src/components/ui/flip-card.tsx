@@ -82,7 +82,7 @@ export default function FlipCard({
 
           {/* Bottom content */}
           <div className="absolute bottom-10 left-0 right-0 px-8 text-center">
-            <h3 className="text-2xl leading-none font-bold uppercase tracking-tight text-black font-serif italic mb-3">
+            <h3 className="text-2xl leading-none font-bold tracking-tight text-black font-serif italic mb-3">
               {title}
             </h3>
             <div className="flex items-center justify-center gap-2 text-gold group-hover:text-black transition-colors">
@@ -129,7 +129,7 @@ export default function FlipCard({
                   }}
                 >
                   <div className="w-1.5 h-1.5 rounded-full bg-gold" />
-                  <span className="text-[11px] font-bold uppercase tracking-wider">{feature}</span>
+                  <span className="text-[11px] font-bold tracking-wider">{feature}</span>
                 </div>
               ))}
             </div>

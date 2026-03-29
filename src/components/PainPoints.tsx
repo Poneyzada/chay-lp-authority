@@ -37,19 +37,19 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
                 Cansaço constante, dificuldade para emagrecer, queda de libido ou alterações hormonais <br className="hidden md:block" />
                 <span className="text-gold italic font-serif leading-none">não são normais e têm tratamento.</span>
               </h2>
-              <p className="text-black text-base md:text-lg mb-10 leading-relaxed font-bold uppercase italic">
+              <p className="text-black text-base md:text-lg mb-10 leading-relaxed font-bold italic">
                 Se você sente que seu corpo mudou, que sua energia já não é a mesma ou que está lutando contra sintomas que ninguém consegue explicar, é provável que exista um desequilíbrio hormonal ou metabólico por trás disso.
               </p>
               
               <div className="p-8 md:p-10 bg-white/95 backdrop-blur-md rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-white/50">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-900 mb-8">Ignorar esses sinais faz com que o problema avance, afetando:</p>
+                <p className="text-[10px] font-bold tracking-widest text-zinc-900 mb-8">Ignorar esses sinais faz com que o problema avance, afetando:</p>
                 <div className="space-y-4">
                   {painPoints.map((point, i) => (
                     <div key={i} className="flex items-center gap-4 group">
                       <div className="w-8 h-8 rounded-full bg-zinc-50 border border-zinc-100 flex items-center justify-center text-gold group-hover:scale-110 transition-transform">
                         <point.icon size={14} />
                       </div>
-                      <span className="text-xs md:text-sm font-bold text-black uppercase tracking-tight">{point.text}</span>
+                      <span className="text-xs md:text-sm font-bold text-black tracking-tight">{point.text}</span>
                     </div>
                   ))}
                 </div>

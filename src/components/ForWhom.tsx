@@ -59,7 +59,7 @@ export const ForWhom = () => {
               PARA QUEM É O <br className="hidden md:block" />
               <span className="text-gold italic font-serif leading-none">Atendimento.</span>
             </h2>
-            <p className="text-black text-sm md:text-md font-bold max-w-2xl uppercase tracking-widest leading-loose bg-white/50 backdrop-blur-sm p-4 rounded-xl border border-white/60 inline-block">
+            <p className="text-black text-sm md:text-md font-bold max-w-2xl tracking-widest leading-loose bg-white/50 backdrop-blur-sm p-4 rounded-xl border border-white/60 inline-block">
               Este atendimento é para você que não aceita mais viver no automático e quer voltar a se sentir bem no próprio corpo.
             </p>
           </div>
@@ -78,7 +78,7 @@ export const ForWhom = () => {
                   <target.icon size={22} />
                 </div>
                 <h3 className="text-lg font-bold text-black mb-2 uppercase tracking-tight">{target.title}</h3>
-                <p className="text-black text-xs font-bold uppercase tracking-widest opacity-80 leading-relaxed italic">{target.desc}</p>
+                <p className="text-black text-xs font-bold tracking-widest opacity-80 leading-relaxed italic">{target.desc}</p>
               </motion.div>
             ))}
           </div>
