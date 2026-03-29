@@ -64,12 +64,41 @@ export const Locations = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
            <div className="absolute -top-20 -right-20 w-80 h-80 bg-gold/15 blur-[120px] rounded-full" />
            <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-gold/5 blur-[120px] rounded-full" />
            
-           <p className="text-2xl md:text-5xl font-bold text-black mb-8 md:mb-10 leading-tight font-serif italic max-w-4xl mx-auto relative z-10">
-             Agende sua consulta e descubra o que está por trás dos seus sintomas. <br />
-             <span className="text-gold not-italic font-bold text-sm md:text-xl uppercase tracking-widest mt-4 block">
-               Você receberá avaliação médica completa, análise detalhada de exames, plano personalizado e acompanhamento profissional.
-             </span>
-           </p>
+           <div className="mb-10 md:mb-14 relative z-10 max-w-3xl mx-auto">
+             <h3 className="text-2xl md:text-5xl font-bold text-black mb-8 leading-tight font-serif italic">
+               Agende sua consulta e descubra o que está por trás dos seus sintomas.
+             </h3>
+             <p className="text-black font-bold text-xs md:text-sm uppercase tracking-[0.3em] mb-8 relative inline-block">
+               VOCÊ RECEBERÁ:
+               <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-px bg-gold/50"></span>
+             </p>
+             <ul className="grid grid-cols-1 md:grid-cols-2 gap-5 text-left text-xs md:text-sm font-bold text-zinc-700 uppercase tracking-widest mt-4">
+               <li className="flex items-center gap-4 bg-zinc-50/50 p-4 rounded-2xl border border-zinc-100 hover:border-gold/30 transition-colors">
+                 <div className="w-6 h-6 rounded-full bg-white shadow-sm flex items-center justify-center border border-zinc-100 shrink-0">
+                   <span className="w-1.5 h-1.5 bg-gold rounded-full"></span>
+                 </div>
+                 avaliação médica completa
+               </li>
+               <li className="flex items-center gap-4 bg-zinc-50/50 p-4 rounded-2xl border border-zinc-100 hover:border-gold/30 transition-colors">
+                 <div className="w-6 h-6 rounded-full bg-white shadow-sm flex items-center justify-center border border-zinc-100 shrink-0">
+                   <span className="w-1.5 h-1.5 bg-gold rounded-full"></span>
+                 </div>
+                 análise detalhada de exames
+               </li>
+               <li className="flex items-center gap-4 bg-zinc-50/50 p-4 rounded-2xl border border-zinc-100 hover:border-gold/30 transition-colors">
+                 <div className="w-6 h-6 rounded-full bg-white shadow-sm flex items-center justify-center border border-zinc-100 shrink-0">
+                   <span className="w-1.5 h-1.5 bg-gold rounded-full"></span>
+                 </div>
+                 plano personalizado
+               </li>
+               <li className="flex items-center gap-4 bg-zinc-50/50 p-4 rounded-2xl border border-zinc-100 hover:border-gold/30 transition-colors">
+                 <div className="w-6 h-6 rounded-full bg-white shadow-sm flex items-center justify-center border border-zinc-100 shrink-0">
+                   <span className="w-1.5 h-1.5 bg-gold rounded-full"></span>
+                 </div>
+                 acompanhamento profissional
+               </li>
+             </ul>
+           </div>
            <button
              onClick={onOpenFilter}
              className="w-full md:w-auto px-10 md:px-16 py-5 md:py-8 bg-gold text-black font-bold uppercase tracking-widest text-xs md:text-sm rounded-full hover:bg-gold-dark transition-all shadow-lg shadow-gold/20 inline-flex items-center justify-center gap-4 relative z-10"
