@@ -9,7 +9,7 @@ const steps = [
     icon: Calendar,
     title: '1. Agendamento',
     step: '01',
-    subtitle: 'Após o agendamento, você recebe todas as orientações iniciais e o acesso ao formulário pré-consulta.',
+    subtitle: 'Após o agendamento, você recebe\ntodas as orientações iniciais\ne o acesso ao formulário pré-consulta.',
     details: []
   },
   {
@@ -24,9 +24,9 @@ const steps = [
     icon: Stethoscope,
     title: '3. Consulta médica aprofundada',
     step: '03',
-    subtitle: 'A consulta tem duração média de 1 hora, com avaliação detalhada de:',
+    subtitle: 'A consulta tem duração média de 1 hora,\ncom avaliação detalhada de:',
     details: ['rotina', 'histórico alimentar', 'exames', 'sintomas físicos e emocionais', 'objetivos com o tratamento'],
-    footer: 'Nos atendimentos presenciais, realizo bioimpedância corporal, permitindo avaliação precisa de gordura, massa muscular e metabolismo.'
+    footer: 'Nos atendimentos presenciais,\nrealizo bioimpedância corporal,\npermitindo avaliação precisa de gordura,\nmassa muscular e metabolismo.'
   },
   {
     icon: ClipboardCheck,
