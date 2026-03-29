@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TrendingDown, ShieldCheck, HeartPulse, Activity, Zap, Flame } from 'lucide-react';
-import publicoImg from '../assets/chay-publico.png';
+import publicoImg from '../assets/fefe.webp';
 
 const targets = [
   {

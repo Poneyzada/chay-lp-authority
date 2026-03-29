@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, FlaskConical, Activity, Zap, ShieldCheck, Soup, GraduationCap, ChevronRight } from 'lucide-react';
 import FlipCard from './ui/flip-card';
-import servicesImg from '../assets/fefe.webp';
+import servicesImg from '../assets/chay-publico.png';
 
 const services = [
   { 
