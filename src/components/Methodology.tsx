@@ -69,7 +69,7 @@ export const Methodology = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
 
         {/* Premium Carousel with Snap Scroll Behavior and Mouse Drag */}
         <div 
-          className={`flex overflow-x-auto pb-10 gap-6 md:gap-10 no-scrollbar -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth ${dragEvents.dragClassName}`}
+          className={`flex overflow-x-auto pb-10 gap-6 md:gap-10 no-scrollbar snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth ${dragEvents.dragClassName}`}
           ref={dragEvents.ref}
           onMouseDown={dragEvents.onMouseDown}
           onMouseLeave={dragEvents.onMouseLeave}
@@ -83,7 +83,7 @@ export const Methodology = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true }}
-              className="min-w-[280px] md:min-w-[340px] flex shrink-0 h-full"
+              className="min-w-[280px] md:min-w-[340px] flex shrink-0 h-full snap-center"
             >
               <HighlightCard
                 title={step.title}

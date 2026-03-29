@@ -32,10 +32,10 @@ export default function FlipCard({
       style={{
         ['--primary' as any]: color,
       }}
-      className="group relative h-[340px] md:h-[360px] w-full min-w-[300px] md:min-w-[320px] [perspective:2000px] cursor-pointer"
-      onMouseEnter={() => setIsFlipped(true)}
-      onMouseLeave={() => setIsFlipped(false)}
-      onClick={() => setIsFlipped(!isFlipped)}
+      className="group relative h-[360px] md:h-[380px] w-full min-w-[300px] md:min-w-[320px] [perspective:2000px] cursor-pointer"
+      onMouseEnter={() => { if (window.matchMedia('(hover: hover)').matches) setIsFlipped(true) }}
+      onMouseLeave={() => { if (window.matchMedia('(hover: hover)').matches) setIsFlipped(false) }}
+      onClick={() => { if (!window.matchMedia('(hover: hover)').matches) setIsFlipped(!isFlipped) }}
     >
       <div
         className={cn(
@@ -113,7 +113,7 @@ export default function FlipCard({
                </h3>
              </div>
 
-             <p className="text-black text-[13px] leading-relaxed mb-8 italic font-medium">
+             <p className="text-black text-[11px] leading-relaxed mb-4 italic font-medium">
                "{description}"
              </p>
 
