@@ -13,7 +13,7 @@ interface ComponentProps {
 
 const HighlightCard: FC<ComponentProps> = ({ title, subtitle, description, footer, icon }) => {
   return (
-    <div className="group cursor-default w-full h-auto min-h-[320px] lg:min-h-[460px]">
+    <div className="group cursor-default w-full h-auto min-h-[320px] lg:min-h-[360px]">
       <Card className="text-black rounded-[2.5rem] border-2 border-zinc-100 bg-white shadow-soft relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:border-gold/30 w-full h-full">
         
         {/* Simple Background Decor */}

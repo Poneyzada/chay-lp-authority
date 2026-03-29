@@ -26,7 +26,7 @@ const steps = [
     step: '03',
     subtitle: 'A consulta tem duração média de 1 hora,\ncom avaliação detalhada de:',
     details: ['rotina', 'histórico alimentar', 'exames', 'sintomas físicos e emocionais', 'objetivos com o tratamento'],
-    footer: 'Nos atendimentos presenciais,\nrealizo bioimpedância corporal,\npermitindo avaliação precisa de gordura,\nmassa muscular e metabolismo.'
+    footer: 'Nos atendimentos presenciais, realizo bioimpedância corporal, permitindo avaliação precisa de gordura, massa muscular e metabolismo.'
   },
   {
     icon: ClipboardCheck,
