@@ -72,7 +72,7 @@ export const Locations = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
                VOCÊ RECEBERÁ:
                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-px bg-gold/50"></span>
              </p>
-             <ul className="grid grid-cols-1 md:grid-cols-2 gap-5 text-left text-xs md:text-sm font-bold text-zinc-700 uppercase tracking-widest mt-4">
+             <ul className="grid grid-cols-1 md:grid-cols-2 gap-5 text-left text-xs md:text-sm font-bold text-zinc-700 tracking-widest mt-4">
                <li className="flex items-center gap-4 bg-zinc-50/50 p-4 rounded-2xl border border-zinc-100 hover:border-gold/30 transition-colors">
                  <div className="w-6 h-6 rounded-full bg-white shadow-sm flex items-center justify-center border border-zinc-100 shrink-0">
                    <span className="w-1.5 h-1.5 bg-gold rounded-full"></span>

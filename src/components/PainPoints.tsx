@@ -73,7 +73,7 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
                 onClick={onOpenFilter}
                 className="w-full py-6 bg-gold text-black font-bold uppercase tracking-widest text-xs rounded-full hover:bg-gold-dark transition-all flex items-center justify-center gap-3 shadow-lg shadow-gold/20"
               >
-                AGENDAR CONSULTA
+                QUERO AGENDAR MINHA CONSULTA
                 <ChevronRight size={18} />
               </button>
             </motion.div>

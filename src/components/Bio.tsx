@@ -35,19 +35,19 @@ export const Bio = () => {
             <div className="h-px w-32 bg-gold/30 mb-16" />
 
             <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-2xl bg-white/60 backdrop-blur-md p-8 md:p-12 rounded-[2rem] border border-white/60 shadow-xl">
-              <p className="text-black text-xl md:text-3xl leading-[1.2] font-bold uppercase italic tracking-tighter">
+              <p className="text-black text-xl md:text-3xl leading-[1.2] font-bold italic tracking-tighter">
                 Atendimento médico focado em <span className="text-gold drop-shadow-sm border-b border-gold/30">hormônios</span>, metabolismo e longevidade.
               </p>
               
-              <p className="text-black text-sm md:text-lg leading-relaxed font-bold uppercase tracking-widest opacity-90">
+              <p className="text-black text-sm md:text-lg leading-relaxed font-bold tracking-widest opacity-90">
                 A Dra. Chayanne Bordin formou-se em Medicina pela Universidade do Sul de Santa Catarina e direcionou sua carreira para o tratamento de distúrbios hormonais, saúde metabólica e qualidade de vida.
               </p>
 
               <div className="space-y-6 border-l-2 border-gold/40 pl-6 md:pl-8 mt-4">
-                <p className="text-black text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed">
+                <p className="text-black text-[10px] md:text-xs font-bold tracking-[0.2em] leading-relaxed">
                   Realizou especialização em <span className="text-gold drop-shadow-sm">Endocrinologia</span> pelo IPEMED em São Paulo e em Nutrologia pela <span className="text-gold drop-shadow-sm">USP</span>, aprofundando-se em obesidade, metabolismo e terapias hormonais.
                 </p>
-                <p className="text-black text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed">
+                <p className="text-black text-[10px] md:text-xs font-bold tracking-[0.2em] leading-relaxed">
                   Atualmente, cursa pós-graduação em Sexualidade Humana pelo <span className="text-gold drop-shadow-sm">CSI of Miami</span>, ampliando sua abordagem para tratar não apenas sintomas físicos, mas também aspectos hormonais e sexuais que impactam diretamente a qualidade de vida.
                 </p>
               </div>

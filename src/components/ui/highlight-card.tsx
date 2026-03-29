@@ -5,13 +5,15 @@ import { Card } from "@/components/ui/card";
 
 interface ComponentProps {
   title: string;
+  subtitle?: string;
   description: string[];
+  footer?: string;
   icon?: ReactNode;
 }
 
-const HighlightCard: FC<ComponentProps> = ({ title, description, icon }) => {
+const HighlightCard: FC<ComponentProps> = ({ title, subtitle, description, footer, icon }) => {
   return (
-    <div className="group cursor-default w-full h-auto min-h-[320px] lg:min-h-[380px]">
+    <div className="group cursor-default w-full h-auto min-h-[320px] lg:min-h-[460px]">
       <Card className="text-black rounded-[2.5rem] border-2 border-zinc-100 bg-white shadow-soft relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:border-gold/30 w-full h-full">
         
         {/* Simple Background Decor */}
@@ -35,16 +37,28 @@ const HighlightCard: FC<ComponentProps> = ({ title, description, icon }) => {
             {title}
           </h3>
 
-          <div className="space-y-3 max-w-sm mb-6 flex-grow">
+          {subtitle && (
+            <p className="text-black text-xs md:text-sm font-bold italic opacity-80 mb-4 whitespace-pre-line leading-relaxed">
+              {subtitle}
+            </p>
+          )}
+
+          <div className="space-y-3 max-w-sm mb-6 flex-grow flex flex-col justify-center">
             {description.map((line, idx) => (
-              <div key={idx} className="flex items-center gap-2.5 justify-center">
+              <div key={idx} className="flex items-center gap-2.5 justify-center md:justify-start">
                 <div className="w-1.5 h-1.5 rounded-full bg-black shrink-0" />
-                <p className="text-black text-[13px] md:text-sm leading-[1.2] font-bold uppercase tracking-tight italic">
+                <p className="text-black text-[13px] md:text-sm leading-[1.2] font-bold tracking-tight italic text-left">
                   {line}
                 </p>
               </div>
             ))}
           </div>
+
+          {footer && (
+            <p className="text-black text-[11px] md:text-xs font-bold italic opacity-70 mt-2 mb-4 leading-relaxed">
+              {footer}
+            </p>
+          )}
 
           {/* Bottom highlight */}
           <div className="mt-auto w-20 h-1.5 bg-gold rounded-full transition-all duration-700 group-hover:w-full"></div>

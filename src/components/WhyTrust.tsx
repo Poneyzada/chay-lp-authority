@@ -16,7 +16,7 @@ export const WhyTrust = () => {
         <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Diferenciais</span>
         <h2 className="text-[2.6rem] md:text-6xl font-bold tracking-tighter text-black leading-[0.95] mb-12 md:mb-20">
           Por que pacientes de diferentes estados <br className="hidden md:block" />
-          <span className="text-gold italic font-serif leading-none">confiam na Dra Chay.</span>
+          <span className="text-gold italic font-serif leading-none">buscam confiam na Dra Chay.</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 items-center">
@@ -55,7 +55,7 @@ export const WhyTrust = () => {
              'Consulta com tempo adequado, sem atendimento apressado',
              'Tratamentos baseados em ciência, não em modismos'
            ].map((text, i) => (
-             <div key={i} className="px-6 py-5 bg-white border border-zinc-100 rounded-3xl text-[9px] md:text-px font-bold uppercase tracking-widest text-black italic shadow-soft flex items-center justify-center">
+             <div key={i} className="px-6 py-5 bg-white border border-zinc-100 rounded-3xl text-[9px] md:text-px font-bold tracking-widest text-black italic shadow-soft flex items-center justify-center">
                "{text}"
              </div>
            ))}
