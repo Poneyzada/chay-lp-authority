@@ -9,31 +9,38 @@ const steps = [
     icon: Calendar,
     title: '1. Agendamento',
     step: '01',
-    details: ['Orientações Iniciais', 'Acesso ao Formulário', 'Preparação para Consulta']
+    subtitle: 'Após o agendamento, você recebe todas as orientações iniciais e o acesso ao formulário pré-consulta.',
+    details: []
   },
   {
     icon: ClipboardList,
     title: '2. Formulário pré-consulta',
     step: '02',
-    details: ['Histórico de Saúde', 'Mapeamento de Sintomas', 'Hábitos e Objetivos']
+    subtitle: 'Você preencherá um questionário detalhado sobre:',
+    details: ['histórico de saúde', 'sintomas', 'hábitos', 'objetivos'],
+    footer: 'Isso permite que a consulta seja muito mais produtiva e direcionada.'
   },
   {
     icon: Stethoscope,
     title: '3. Consulta médica aprofundada',
     step: '03',
-    details: ['Avaliação de 1 Hora', 'Bioimpedância Corporal', 'Mapeamento Clínico e Exames']
+    subtitle: 'A consulta tem duração média de 1 hora, com avaliação detalhada de:',
+    details: ['rotina', 'histórico alimentar', 'exames', 'sintomas físicos e emocionais', 'objetivos com o tratamento'],
+    footer: 'Nos atendimentos presenciais, realizo bioimpedância corporal, permitindo avaliação precisa de gordura, massa muscular e metabolismo.'
   },
   {
     icon: ClipboardCheck,
-    title: '4. Plano personalizado',
+    title: '4. Plano terapêutico personalizado',
     step: '04',
-    details: ['Ajuste Hormonal', 'Estratégias de Emagrecimento', 'Suplementação Personalizada']
+    subtitle: 'Cada paciente recebe um plano individualizado, que pode incluir:',
+    details: ['ajuste hormonal', 'estratégias médicas de emagrecimento', 'suplementação', 'mudanças de estilo de vida']
   },
   {
     icon: Users,
     title: '5. Acompanhamento contínuo',
     step: '05',
-    details: ['Aplicativo Próprio', 'Suporte para Dúvidas', 'Monitoramento da Evolução']
+    subtitle: 'Você não fica sozinho após a consulta.\nDisponibilizo:',
+    details: ['aplicativo de acompanhamento', 'suporte para dúvidas', 'monitoramento da evolução clínica']
   }
 ];
 
@@ -81,7 +88,9 @@ export const Methodology = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
             >
               <HighlightCard
                 title={step.title}
+                subtitle={step.subtitle}
                 description={step.details}
+                footer={step.footer}
                 icon={<step.icon size={28} className="text-gold" />}
               />
             </motion.div>

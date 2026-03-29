@@ -22,10 +22,10 @@ const HighlightCard: FC<ComponentProps> = ({ title, subtitle, description, foote
         </div>
 
         {/* Content */}
-        <div className="p-8 md:p-12 relative z-10 flex flex-col items-center text-center h-full">
+        <div className="p-6 md:p-8 relative z-10 flex flex-col items-center text-center h-full">
           {/* Static Icon - Restored Gold Branding */}
-          <div className="relative mb-8 md:mb-10">
-            <div className="p-5 md:p-6 rounded-full border-2 border-gold/10 bg-zinc-50 flex items-center justify-center text-gold shadow-sm transition-transform duration-500 group-hover:scale-110">
+          <div className="relative mb-4 md:mb-6">
+            <div className="p-4 rounded-full border-2 border-gold/10 bg-zinc-50 flex items-center justify-center text-gold shadow-sm transition-transform duration-500 group-hover:scale-110">
               <div className="transform transition-transform duration-700">
                 {icon}
               </div>
@@ -33,21 +33,21 @@ const HighlightCard: FC<ComponentProps> = ({ title, subtitle, description, foote
           </div>
 
           {/* Title - Optimized for long phrases */}
-          <h3 className="mb-4 text-xl md:text-2xl font-bold tracking-tighter text-black uppercase font-serif italic break-words w-full leading-[1.1]">
+          <h3 className="mb-3 text-lg md:text-xl font-bold tracking-tighter text-black uppercase font-serif italic break-words w-full leading-[1.1]">
             {title}
           </h3>
 
           {subtitle && (
-            <p className="text-black text-xs md:text-sm font-bold italic opacity-80 mb-4 whitespace-pre-line leading-relaxed">
+            <p className="text-black text-[10px] md:text-[11px] font-bold italic opacity-80 mb-3 whitespace-pre-line leading-tight">
               {subtitle}
             </p>
           )}
 
-          <div className="space-y-3 max-w-sm mb-6 flex-grow flex flex-col justify-center">
+          <div className="space-y-2 mb-4 flex-grow flex flex-col justify-center">
             {description.map((line, idx) => (
-              <div key={idx} className="flex items-center gap-2.5 justify-center md:justify-start">
-                <div className="w-1.5 h-1.5 rounded-full bg-black shrink-0" />
-                <p className="text-black text-[13px] md:text-sm leading-[1.2] font-bold tracking-tight italic text-left">
+              <div key={idx} className="flex items-center gap-2 justify-center md:justify-start">
+                <div className="w-1 h-1 rounded-full bg-black shrink-0" />
+                <p className="text-black text-[10px] md:text-[11px] leading-[1.2] font-bold tracking-tight italic text-left">
                   {line}
                 </p>
               </div>
@@ -55,19 +55,19 @@ const HighlightCard: FC<ComponentProps> = ({ title, subtitle, description, foote
           </div>
 
           {footer && (
-            <p className="text-black text-[11px] md:text-xs font-bold italic opacity-70 mt-2 mb-4 leading-relaxed">
+            <p className="text-black text-[9px] md:text-[10px] font-bold italic opacity-70 mt-1 mb-3 leading-tight">
               {footer}
             </p>
           )}
 
           {/* Bottom highlight */}
-          <div className="mt-auto w-20 h-1.5 bg-gold rounded-full transition-all duration-700 group-hover:w-full"></div>
+          <div className="mt-auto w-16 h-1 bg-gold rounded-full transition-all duration-700 group-hover:w-full"></div>
 
           {/* Simple Static Dots - Contrast without weighing */}
-          <div className="flex space-x-2 mt-8">
-            <div className="w-1.5 h-1.5 bg-gold rounded-full opacity-60 group-hover:bg-black group-hover:opacity-100 transition-all" />
-            <div className="w-1.5 h-1.5 bg-black rounded-full opacity-20" />
-            <div className="w-1.5 h-1.5 bg-black rounded-full opacity-5" />
+          <div className="flex space-x-1 mt-6">
+            <div className="w-1 h-1 bg-gold rounded-full opacity-60 group-hover:bg-black group-hover:opacity-100 transition-all" />
+            <div className="w-1 h-1 bg-black rounded-full opacity-20" />
+            <div className="w-1 h-1 bg-black rounded-full opacity-5" />
           </div>
         </div>
       </Card>
