@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Search, FlaskConical, Activity, Zap, ShieldCheck, Soup, GraduationCap, ChevronRight } from 'lucide-react';
 import FlipCard from './ui/flip-card';
 import servicesImg from '../assets/fefe.webp';
-import { useDraggable } from '../hooks/useDraggable';
 
 const services = [
   { 
@@ -58,7 +57,6 @@ const services = [
 ];
 
 export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
-  const dragEvents = useDraggable();
   
   return (
     <section className="relative min-h-[100vh] py-12 md:py-20 bg-white overflow-hidden" id="servicos">
@@ -104,30 +102,24 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
             </motion.div>
           </div>
 
-          <div className="w-full lg:w-2/3 flex flex-col">
-            <motion.div 
-              className={`w-full flex overflow-x-auto pb-8 gap-5 lg:gap-8 no-scrollbar -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory touch-pan-x ${dragEvents.dragClassName}`}
-              ref={dragEvents.ref}
-              onMouseDown={dragEvents.onMouseDown}
-              onMouseLeave={dragEvents.onMouseLeave}
-              onMouseUp={dragEvents.onMouseUp}
-              onMouseMove={dragEvents.onMouseMove}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              variants={{
-                hidden: { opacity: 0 },
-                show: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.1,
-                    duration: 0.8
-                  }
+          <motion.div 
+            className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0 },
+              show: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1,
+                  duration: 0.8
                 }
-              }}
-            >
-              {services.map((service, i) => (
-                <div key={i} className="min-w-[85vw] md:min-w-[360px] flex shrink-0 snap-center rounded-3xl overflow-hidden hover:shadow-xl hover:shadow-gold/10 transition-shadow">
+              }
+            }}
+          >
+            {services.map((service, i) => (
+              <div key={i} className="shadow-lg rounded-3xl overflow-hidden hover:shadow-xl hover:shadow-gold/10 transition-shadow">
                 <FlipCard
                   title={service.title}
                   subtitle={service.subtitle}
@@ -137,15 +129,9 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
                   stepNumber={(i + 1).toString().padStart(2, '0')}
                   onClickAction={onOpenFilter}
                 />
-                </div>
-              ))}
-            </motion.div>
-            
-            {/* Visual hint for mobile swiping */}
-            <div className="mt-4 text-center text-[10px] font-bold text-zinc-500 md:hidden animate-pulse tracking-widest uppercase w-full">
-              ← Arraste para o lado →
-            </div>
-          </div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
