@@ -82,10 +82,10 @@ export default function FlipCard({
 
           {/* Bottom content */}
           <div className="absolute bottom-10 left-0 right-0 px-8 text-center">
-            <h3 className="text-2xl leading-none font-black uppercase tracking-tight text-zinc-900 font-serif italic mb-3">
+            <h3 className="text-2xl leading-none font-black uppercase tracking-tight text-black font-serif italic mb-3">
               {title}
             </h3>
-            <div className="flex items-center justify-center gap-2 text-zinc-900 group-hover:text-gold transition-colors">
+            <div className="flex items-center justify-center gap-2 text-gold group-hover:text-black transition-colors">
               <span className="text-[10px] font-black uppercase tracking-[0.3em]">Toque para detalhes</span>
               <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform" />
             </div>

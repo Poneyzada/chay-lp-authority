@@ -21,7 +21,7 @@ const HighlightCard: FC<ComponentProps> = ({ title, description, icon }) => {
 
         {/* Content */}
         <div className="p-8 md:p-12 relative z-10 flex flex-col items-center text-center h-full">
-          {/* Static Icon */}
+          {/* Static Icon - Restored Gold Branding */}
           <div className="relative mb-8 md:mb-10">
             <div className="p-5 md:p-6 rounded-full border-2 border-gold/10 bg-zinc-50 flex items-center justify-center text-gold shadow-sm transition-transform duration-500 group-hover:scale-110">
               <div className="transform transition-transform duration-700">
@@ -38,8 +38,8 @@ const HighlightCard: FC<ComponentProps> = ({ title, description, icon }) => {
           <div className="space-y-4 max-w-sm mb-10 flex-grow">
             {description.map((line, idx) => (
               <div key={idx} className="flex items-center gap-3 justify-center">
-                <div className="w-1.5 h-1.5 rounded-full bg-black shrink-0" />
-                <p className="text-black text-[14px] md:text-base leading-relaxed font-black uppercase italic">
+                <div className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
+                <p className="text-zinc-600 text-[14px] md:text-base leading-relaxed font-medium">
                   {line}
                 </p>
               </div>
@@ -49,11 +49,11 @@ const HighlightCard: FC<ComponentProps> = ({ title, description, icon }) => {
           {/* Bottom highlight */}
           <div className="mt-auto w-20 h-1.5 bg-gold rounded-full transition-all duration-700 group-hover:w-full"></div>
 
-          {/* Simple Static Dots - Forced Black Contrast */}
+          {/* Simple Static Dots - Contrast without weighing */}
           <div className="flex space-x-2 mt-8">
-            <div className="w-1.5 h-1.5 bg-black rounded-full" />
-            <div className="w-1.5 h-1.5 bg-black rounded-full opacity-40" />
-            <div className="w-1.5 h-1.5 bg-black rounded-full opacity-10" />
+            <div className="w-1.5 h-1.5 bg-gold rounded-full opacity-60 group-hover:bg-black group-hover:opacity-100 transition-all" />
+            <div className="w-1.5 h-1.5 bg-black rounded-full opacity-20" />
+            <div className="w-1.5 h-1.5 bg-black rounded-full opacity-5" />
           </div>
         </div>
       </Card>

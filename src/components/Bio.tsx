@@ -21,8 +21,8 @@ export const Bio = () => {
           alt="Dra. Chayanne Médica" 
           className="w-full h-full object-cover object-[center_35%]"
         />
-        {/* Soft elegant overlay to ensure text contrast without "weighing down" with black */}
-        <div className="absolute inset-0 bg-white/40 md:bg-gradient-to-r md:from-white/95 md:via-white/70 md:to-transparent" />
+        {/* Elegant light gradient overlay - lighter to avoid "weighing" */}
+        <div className="absolute inset-0 bg-white/20 md:bg-gradient-to-r md:from-white/95 md:via-white/70 md:to-transparent" />
       </div>
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10 py-16 md:py-24">
@@ -62,10 +62,11 @@ export const Bio = () => {
       </div>
       
       {/* CRM Badge - Pure high contrast white box */}
-      <div className="absolute bottom-6 right-6 md:bottom-12 md:right-12 p-6 md:p-8 bg-white text-black rounded-3xl shadow-2xl z-20 border border-zinc-100 flex flex-col items-center text-center">
-        <span className="text-gold text-[10px] font-black tracking-[0.2em] uppercase block mb-2 leading-none">Registro Médico</span>
-        <p className="font-black text-xs md:text-base uppercase tracking-tighter">CRM-SC 23.321</p>
-        <p className="font-black text-[10px] uppercase tracking-tighter mt-1 opacity-70">CRM-PR 36.452</p>
+      <div className="absolute bottom-4 right-4 md:bottom-10 md:right-10 p-5 md:p-6 bg-white text-black rounded-2xl shadow-xl z-20 border border-zinc-100 flex flex-col items-center text-center">
+        <span className="text-gold text-[9px] font-black tracking-[0.2em] uppercase block mb-1.5 leading-none">Inscrição Profissional</span>
+        <p className="font-black text-[10px] md:text-sm uppercase tracking-widest text-black">CRM-SC 23.321</p>
+        <div className="h-px w-8 bg-gold/30 my-2" />
+        <p className="font-black text-[10px] uppercase tracking-widest opacity-80">CRM-PR 36.452</p>
       </div>
     </section>
   );

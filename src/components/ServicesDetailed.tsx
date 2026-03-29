@@ -89,7 +89,7 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
           </div>
 
           <motion.div 
-            className="w-full lg:w-2/3 flex overflow-x-auto pb-10 gap-8 md:grid md:grid-cols-2 lg:gap-8 no-scrollbar -mx-6 px-6 md:mx-0 md:px-0"
+            className="w-full lg:w-2/3 flex overflow-x-auto pb-10 gap-6 md:grid md:grid-cols-2 lg:gap-8 no-scrollbar -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory scroll-smooth"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
@@ -105,7 +105,7 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
             }}
           >
             {services.map((service, i) => (
-              <div key={i} className="min-w-[280px] md:min-w-0 shrink-0">
+              <div key={i} className="min-w-[280px] md:min-w-0 shrink-0 snap-center">
                 <FlipCard
                   title={service.title}
                   subtitle={service.subtitle}
@@ -118,7 +118,7 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
               </div>
             ))}
           </motion.div>
-        </div>
+鼓        </div>
       </div>
     </section>
   );
