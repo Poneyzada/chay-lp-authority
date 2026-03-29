@@ -8,51 +8,61 @@ const services = [
   { 
     icon: Search, 
     title: 'Avaliação médica completa', 
-    subtitle: 'Investigação Clínica',
+    subtitle: 'Passo 01',
     desc: 'Investigação detalhada para entender a causa dos sintomas, e não apenas tratá-los de forma superficial.',
-    features: ['Causa Real', 'Visão Integral']
+    features: []
   },
   { 
     icon: FlaskConical, 
-    title: 'Exames laboratoriais e hormonais', 
-    subtitle: 'Interpretação Estratégica',
+    title: 'Avaliação de exames laboratoriais e hormonais', 
+    subtitle: 'Passo 02',
     desc: 'Interpretação estratégica dos seus exames, correlacionando resultados com sintomas e histórico clínico.',
-    features: ['Análise Bioquímica', 'Precisão Médica']
+    features: []
   },
   { 
     icon: Activity, 
     title: 'Avaliação hormonal e metabólica', 
-    subtitle: 'Equilíbrio Funcional',
-    desc: 'Foco em fadiga, ganho de peso, queda de libido, alterações de humor e performance física/mental.',
-    features: ['Saúde Hormonal', 'Otimização']
+    subtitle: 'Indicações',
+    desc: 'Indicado para pacientes com:',
+    features: [
+      'Fadiga',
+      'Ganho de peso',
+      'Queda de libido',
+      'Alterações de humor',
+      'Dificuldade de concentração e performance'
+    ]
   },
   { 
     icon: Zap, 
-    title: 'Protocolos de emagrecimento', 
-    subtitle: 'Segurança & Resultado',
-    desc: 'Tratamentos seguros e individualizados, com foco em redução de gordura e preservação de massa muscular.',
-    features: ['Gestão de Peso', 'Massa Magra']
+    title: 'Protocolos médicos de emagrecimento', 
+    subtitle: 'Foco do Tratamento',
+    desc: 'Tratamentos seguros e individualizados, com foco em:',
+    features: [
+      'Redução de gordura',
+      'Preservação de massa muscular',
+      'Melhora metabólica'
+    ]
   },
   { 
     icon: ShieldCheck, 
     title: 'Terapias hormonais e implantes', 
-    subtitle: 'Reposicionamento Especializado',
-    desc: 'Indicação criteriosa e acompanhamento médico quando há necessidade de reposição hormonal segura.',
-    features: ['Indicação Ética', 'Acompanhamento']
+    subtitle: 'Acompanhamento Especializado',
+    desc: 'Indicação criteriosa e acompanhamento médico quando há necessidade de reposição hormonal.',
+    features: []
   },
   { 
     icon: Soup, 
     title: 'Soroterapia e suporte metabólico', 
-    subtitle: 'Vitalidade Injetável',
-    desc: 'Protocolos para suporte energético, imunológico e nutricional, conforme criteriosa avaliação médica.',
-    features: ['Suporte Nutricional', 'Energy Boost']
+    subtitle: 'Vitalidade',
+    desc: 'Protocolos para suporte energético, imunológico e nutricional, conforme avaliação médica.',
+    features: []
   },
   { 
     icon: GraduationCap, 
     title: 'Atendimento multidisciplinar', 
-    subtitle: 'Integração 360',
-    desc: 'Integração com nutricionista e educador físico para potencializar resultados e manter a saúde a longo prazo.',
-    features: ['Time de Especialistas', 'Performance']
+    subtitle: 'Integração 360º',
+    desc: 'Integração com nutricionista e educador físico para potencializar resultados e manter saúde a longo prazo.',
+    features: []
   }
 ];
 
@@ -65,7 +75,7 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
         <img 
           src={servicesImg} 
           alt="Consultório Dra. Chayanne" 
-          className="w-full h-full object-cover object-[center_35%] md:object-[center_25%] opacity-90 transition-all duration-1000"
+          className="w-full h-full object-cover object-center md:object-[center_top] opacity-90 transition-all duration-1000"
         />
         {/* Soft elegant gradient overlay (right-to-left) to contrast with Previous section */}
         <div className="absolute inset-0 bg-white/50" />
