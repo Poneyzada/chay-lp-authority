@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, ClipboardList, Stethoscope, ClipboardCheck, Users, ChevronRight } from 'lucide-react';
 import HighlightCard from './ui/highlight-card';
+import { useDraggable } from '../hooks/useDraggable';
 
 const steps = [
   {
@@ -37,6 +38,7 @@ const steps = [
 ];
 
 export const Methodology = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
+  const dragEvents = useDraggable();
   return (
     <section className="py-10 md:py-16 bg-white border-y border-zinc-50 overflow-hidden relative" id="metodologia">
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
@@ -59,8 +61,15 @@ export const Methodology = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
           </button>
         </div>
 
-        {/* Premium Carousel with Snap Scroll Behavior */}
-        <div className="flex overflow-x-auto pb-10 gap-6 md:gap-10 no-scrollbar snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth">
+        {/* Premium Carousel with Snap Scroll Behavior and Mouse Drag */}
+        <div 
+          className={`flex overflow-x-auto pb-10 gap-6 md:gap-10 no-scrollbar snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth ${dragEvents.dragClassName}`}
+          ref={dragEvents.ref}
+          onMouseDown={dragEvents.onMouseDown}
+          onMouseLeave={dragEvents.onMouseLeave}
+          onMouseUp={dragEvents.onMouseUp}
+          onMouseMove={dragEvents.onMouseMove}
+        >
           {steps.map((step, i) => (
             <motion.div
               key={i}

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Search, FlaskConical, Activity, Zap, ShieldCheck, Soup, GraduationCap, ChevronRight } from 'lucide-react';
 import FlipCard from './ui/flip-card';
 import servicesImg from '../assets/fefe.webp';
+import { useDraggable } from '../hooks/useDraggable';
 
 const services = [
   { 
@@ -57,6 +58,8 @@ const services = [
 ];
 
 export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
+  const dragEvents = useDraggable();
+  
   return (
     <section className="relative min-h-[100vh] py-12 md:py-20 bg-white overflow-hidden" id="servicos">
       {/* Background Image - Full Bleed Cinematic */}
@@ -103,7 +106,12 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
 
           <div className="w-full lg:w-2/3 flex flex-col">
             <motion.div 
-              className="w-full flex overflow-x-auto pb-8 gap-5 md:grid md:grid-cols-2 lg:gap-8 no-scrollbar -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory touch-pan-x"
+              className={`w-full flex overflow-x-auto pb-8 gap-5 lg:gap-8 no-scrollbar -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory touch-pan-x ${dragEvents.dragClassName}`}
+              ref={dragEvents.ref}
+              onMouseDown={dragEvents.onMouseDown}
+              onMouseLeave={dragEvents.onMouseLeave}
+              onMouseUp={dragEvents.onMouseUp}
+              onMouseMove={dragEvents.onMouseMove}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
@@ -119,7 +127,7 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
               }}
             >
               {services.map((service, i) => (
-                <div key={i} className="min-w-[85vw] md:min-w-0 shrink-0 snap-center shadow-lg rounded-3xl overflow-hidden hover:shadow-xl hover:shadow-gold/10 transition-shadow">
+                <div key={i} className="min-w-[85vw] md:min-w-[360px] flex shrink-0 snap-center rounded-3xl overflow-hidden hover:shadow-xl hover:shadow-gold/10 transition-shadow">
                 <FlipCard
                   title={service.title}
                   subtitle={service.subtitle}
