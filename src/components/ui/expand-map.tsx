@@ -267,18 +267,18 @@ export function LocationMap({
               </motion.div>
             </div>
 
-            {/* Click hint - Now EXTREMELY prominent at the TOP as requested */}
-            <div className="flex flex-col items-center gap-1.5">
-              <span className="text-[10px] font-bold text-black bg-gold px-2 py-0.5 rounded-sm tracking-[0.2em] uppercase mb-1 shadow-md">EXPANDIR</span>
+            {/* Click hint - Elegantly sized and shifted top-right */}
+            <div className="flex flex-col items-end gap-1 -mt-2 -mr-2">
+              <span className="text-[8px] font-bold text-black bg-gold border border-gold/50 px-1.5 py-0.5 rounded-[2px] tracking-[0.2em] uppercase shadow-sm opacity-90">EXPANDIR</span>
               <motion.div
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black text-white"
+                className="flex items-center gap-1 px-2 py-1.5 rounded-full bg-zinc-900 text-white shadow-md border border-zinc-800"
                 animate={{
-                  scale: isHovered ? 1.1 : 1,
+                  scale: isHovered ? 1.05 : 1,
                 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="w-1 h-1 rounded-full bg-gold animate-pulse shadow-[0_0_8px_rgba(193,151,23,0.8)]" />
-                <span className="text-[8px] font-bold uppercase tracking-widest whitespace-nowrap">Ver Unidade</span>
+                <div className="w-1 h-1 rounded-full bg-gold animate-pulse shadow-[0_0_8px_rgba(193,151,23,0.8)] shrink-0" />
+                <span className="text-[7px] font-bold uppercase tracking-[0.2em] whitespace-nowrap opacity-90 leading-none">Ver Unidade</span>
               </motion.div>
             </div>
           </div>
