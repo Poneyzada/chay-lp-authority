@@ -31,7 +31,7 @@ const HighlightCard: FC<ComponentProps> = ({ title, description, icon }) => {
           </div>
 
           {/* Title - Optimized for long phrases */}
-          <h3 className="mb-4 text-xl md:text-2xl font-black tracking-tighter text-black uppercase font-serif italic break-words w-full leading-[1.1]">
+          <h3 className="mb-4 text-xl md:text-2xl font-bold tracking-tighter text-black uppercase font-serif italic break-words w-full leading-[1.1]">
             {title}
           </h3>
 
@@ -39,7 +39,7 @@ const HighlightCard: FC<ComponentProps> = ({ title, description, icon }) => {
             {description.map((line, idx) => (
               <div key={idx} className="flex items-center gap-2.5 justify-center">
                 <div className="w-1.5 h-1.5 rounded-full bg-black shrink-0" />
-                <p className="text-black text-[13px] md:text-sm leading-[1.2] font-black uppercase tracking-tight italic">
+                <p className="text-black text-[13px] md:text-sm leading-[1.2] font-bold uppercase tracking-tight italic">
                   {line}
                 </p>
               </div>

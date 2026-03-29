@@ -31,8 +31,8 @@ export const Locations = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
     <section className="relative min-h-[90vh] flex flex-col pt-20 pb-10 bg-white overflow-hidden" id="onde-estamos">
       <div className="container max-w-7xl mx-auto px-6">
         <div className="text-center mb-10 md:mb-12">
-          <span className="text-gold text-[10px] font-black tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Onde estamos</span>
-          <h2 className="text-[2.6rem] md:text-5xl font-black tracking-tighter text-black leading-none uppercase">
+          <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Onde estamos</span>
+          <h2 className="text-[2.6rem] md:text-5xl font-bold tracking-tighter text-black leading-none uppercase">
             Atendimento presencial em <br className="hidden md:block" />
             <span className="text-gold italic font-serif leading-none">quatro cidades.</span>
           </h2>
@@ -52,7 +52,7 @@ export const Locations = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
                 location={city.name} 
                 coordinates={city.coords}
               />
-              <p className="mt-4 text-[10px] text-black font-black uppercase tracking-[0.2em] px-2 text-center">
+              <p className="mt-4 text-[10px] text-black font-bold uppercase tracking-[0.2em] px-2 text-center">
                 {city.address}
               </p>
             </motion.div>
@@ -64,15 +64,15 @@ export const Locations = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
            <div className="absolute -top-20 -right-20 w-80 h-80 bg-gold/15 blur-[120px] rounded-full" />
            <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-gold/5 blur-[120px] rounded-full" />
            
-           <p className="text-2xl md:text-5xl font-black text-black mb-8 md:mb-10 leading-tight font-serif italic max-w-4xl mx-auto relative z-10">
+           <p className="text-2xl md:text-5xl font-bold text-black mb-8 md:mb-10 leading-tight font-serif italic max-w-4xl mx-auto relative z-10">
              Agende sua consulta e descubra o que está por trás dos seus sintomas. <br />
-             <span className="text-gold not-italic font-black text-sm md:text-xl uppercase tracking-widest mt-4 block">
+             <span className="text-gold not-italic font-bold text-sm md:text-xl uppercase tracking-widest mt-4 block">
                Você receberá avaliação médica completa, análise detalhada de exames, plano personalizado e acompanhamento profissional.
              </span>
            </p>
            <button
              onClick={onOpenFilter}
-             className="w-full md:w-auto px-10 md:px-16 py-5 md:py-8 bg-gold text-black font-black uppercase tracking-widest text-xs md:text-sm rounded-full hover:bg-gold-dark transition-all shadow-lg shadow-gold/20 inline-flex items-center justify-center gap-4 relative z-10"
+             className="w-full md:w-auto px-10 md:px-16 py-5 md:py-8 bg-gold text-black font-bold uppercase tracking-widest text-xs md:text-sm rounded-full hover:bg-gold-dark transition-all shadow-lg shadow-gold/20 inline-flex items-center justify-center gap-4 relative z-10"
            >
              QUERO AGENDAR MINHA CONSULTA
              <Navigation size={18} fill="currentColor" />

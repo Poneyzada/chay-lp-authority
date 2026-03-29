@@ -24,9 +24,9 @@ export const Bio = () => {
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
           >
-            <span className="text-gold text-[10px] font-black tracking-[0.6em] uppercase mb-12 block underline decoration-gold/30 underline-offset-8 italic">Manifesto Médico</span>
+            <span className="text-gold text-[10px] font-bold tracking-[0.6em] uppercase mb-12 block underline decoration-gold/30 underline-offset-8 italic">Manifesto Médico</span>
             
-            <h2 className="text-[3.2rem] md:text-9xl font-black tracking-tighter text-black mb-16 leading-[0.85] uppercase italic">
+            <h2 className="text-[3.2rem] md:text-9xl font-bold tracking-tighter text-black mb-16 leading-[0.85] uppercase italic">
               Sobre a <br />
               <span className="text-gold font-serif not-italic">Dra.</span> Chayanne <br />
               <span className="text-gold italic font-serif">Bordin.</span>
@@ -35,19 +35,19 @@ export const Bio = () => {
             <div className="h-px w-32 bg-gold/30 mb-16" />
 
             <div className="grid grid-cols-1 md:grid-cols-1 gap-12 max-w-2xl">
-              <p className="text-black text-xl md:text-3xl leading-[1.2] font-black uppercase italic tracking-tighter">
+              <p className="text-black text-xl md:text-3xl leading-[1.2] font-bold uppercase italic tracking-tighter">
                 Atendimento médico focado em <span className="text-gold">hormônios</span>, metabolismo e longevidade.
               </p>
               
-              <p className="text-black text-sm md:text-lg leading-relaxed font-black uppercase tracking-widest opacity-90">
+              <p className="text-black text-sm md:text-lg leading-relaxed font-bold uppercase tracking-widest opacity-90">
                 A Dra. Chayanne Bordin formou-se em Medicina pela Universidade do Sul de Santa Catarina e direcionou sua carreira para o tratamento de distúrbios hormonais, saúde metabólica e qualidade de vida.
               </p>
 
               <div className="space-y-6 border-l-2 border-gold/20 pl-8">
-                <p className="text-black text-[10px] md:text-xs font-black uppercase tracking-[0.2em] leading-relaxed">
+                <p className="text-black text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed">
                   Realizou especialização em <span className="text-gold">Endocrinologia</span> pelo IPEMED em São Paulo e em Nutrologia pela <span className="text-gold">USP</span>, aprofundando-se em obesidade, metabolismo e terapias hormonais.
                 </p>
-                <p className="text-black text-[10px] md:text-xs font-black uppercase tracking-[0.2em] leading-relaxed">
+                <p className="text-black text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed">
                   Atualmente, cursa pós-graduação em Sexualidade Humana pelo <span className="text-gold">CSI of Miami</span>, ampliando sua abordagem para tratar não apenas sintomas físicos, mas também aspectos hormonais e sexuais que impactam diretamente a qualidade de vida.
                 </p>
               </div>
@@ -63,10 +63,10 @@ export const Bio = () => {
         transition={{ delay: 0.5 }}
         className="absolute bottom-10 right-10 p-10 bg-white/90 backdrop-blur-md text-black rounded-3xl shadow-[0_40px_100px_rgba(0,0,0,0.1)] z-20 border border-zinc-100 hidden lg:flex flex-col items-center text-center"
       >
-        <span className="text-gold text-[10px] font-black tracking-[0.4em] uppercase block mb-4 leading-none italic">Inscrição Profissional</span>
-        <p className="font-black text-xl uppercase tracking-tighter text-black tabular-nums">CRM-SC 23.321</p>
+        <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase block mb-4 leading-none italic">Inscrição Profissional</span>
+        <p className="font-bold text-xl uppercase tracking-tighter text-black tabular-nums">CRM-SC 23.321</p>
         <div className="h-px w-12 bg-gold/30 my-6" />
-        <p className="font-black text-xs uppercase tracking-[0.3em] opacity-40">CRM-PR 36.452</p>
+        <p className="font-bold text-xs uppercase tracking-[0.3em] opacity-40">CRM-PR 36.452</p>
       </motion.div>
     </section>
   );

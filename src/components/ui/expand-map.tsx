@@ -269,7 +269,7 @@ export function LocationMap({
 
             {/* Click hint - Now EXTREMELY prominent at the TOP as requested */}
             <div className="flex flex-col items-center gap-1.5">
-              <span className="text-[10px] font-black text-black bg-gold px-2 py-0.5 rounded-sm tracking-[0.2em] uppercase mb-1 shadow-md">EXPANDIR</span>
+              <span className="text-[10px] font-bold text-black bg-gold px-2 py-0.5 rounded-sm tracking-[0.2em] uppercase mb-1 shadow-md">EXPANDIR</span>
               <motion.div
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black text-white"
                 animate={{
@@ -278,7 +278,7 @@ export function LocationMap({
                 transition={{ duration: 0.2 }}
               >
                 <div className="w-1 h-1 rounded-full bg-gold animate-pulse shadow-[0_0_8px_rgba(193,151,23,0.8)]" />
-                <span className="text-[8px] font-black uppercase tracking-widest whitespace-nowrap">Ver Unidade</span>
+                <span className="text-[8px] font-bold uppercase tracking-widest whitespace-nowrap">Ver Unidade</span>
               </motion.div>
             </div>
           </div>
@@ -286,7 +286,7 @@ export function LocationMap({
           {/* Bottom section */}
           <div className="space-y-1">
             <motion.h3
-              className="text-black font-black text-xs uppercase tracking-[0.2em] italic"
+              className="text-black font-bold text-xs uppercase tracking-[0.2em] italic"
               animate={{
                 x: isHovered ? 4 : 0,
               }}
@@ -298,7 +298,7 @@ export function LocationMap({
             <AnimatePresence>
               {isExpanded && (
                 <motion.p
-                  className="text-black text-[10px] font-black tracking-widest uppercase italic opacity-70"
+                  className="text-black text-[10px] font-bold tracking-widest uppercase italic opacity-70"
                   initial={{ opacity: 0, y: -10, height: 0 }}
                   animate={{ opacity: 1, y: 0, height: "auto" }}
                   exit={{ opacity: 0, y: -10, height: 0 }}

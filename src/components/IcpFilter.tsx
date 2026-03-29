@@ -64,8 +64,8 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
       });
     }
 
-    const personalInfo = name ? `Olá Dra. Chay, me chamo ${name}. ` : 'Olá Dra. Chay! ';
-    const fullMessage = `${personalInfo}${selectedOption.message}`;
+    const personalInfo = name ? `Olá Dra. Chay, me chamo *${name}*. ` : 'Olá Dra. Chay! ';
+    const fullMessage = `${personalInfo}Gostaria de agendar uma consulta com foco em *${selectedOption.title}*.`;
     
     const whatsappUrl = `https://wa.me/5541991475510?text=${encodeURIComponent(fullMessage)}`;
     window.open(whatsappUrl, '_blank');
@@ -189,20 +189,20 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
 
                   <button
                     type="submit"
-                    className="w-full py-6 bg-gold text-zinc-900 rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-gold-dark transition-all shadow-xl flex items-center justify-center gap-3 group"
+                    className="w-full py-6 bg-gold text-zinc-900 rounded-2xl font-bold uppercase tracking-[0.2em] text-xs hover:bg-gold-dark transition-all shadow-xl flex items-center justify-center gap-3 group"
                   >
                     AGENDAR PELO WHATSAPP
                     <Send size={18} className="group-hover:translate-x-2 transition-transform" />
                   </button>
 
-                  <p className="text-center text-[10px] text-zinc-900 uppercase tracking-widest font-black">
+                  <p className="text-center text-[10px] text-zinc-900 uppercase tracking-widest font-bold">
                     🛡️ Seus dados estão seguros conosco.
                   </p>
                 </motion.form>
               )}
             </AnimatePresence>
 
-            <p className="mt-8 text-center text-[10px] text-zinc-900 uppercase font-black tracking-widest leading-none">
+            <p className="mt-8 text-center text-[10px] text-zinc-900 uppercase font-bold tracking-widest leading-none">
               Atendimento exclusivo Dra. Chayanne Bordin Calegari
             </p>
           </motion.div>

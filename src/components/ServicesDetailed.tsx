@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, FlaskConical, Activity, Zap, ShieldCheck, Soup, GraduationCap, ChevronRight } from 'lucide-react';
 import FlipCard from './ui/flip-card';
+import servicesImg from '../assets/fefe.webp';
 
 const services = [
   { 
@@ -57,31 +58,43 @@ const services = [
 
 export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
   return (
-    <section className="py-12 md:py-20 bg-white relative overflow-hidden" id="servicos">
-      <div className="container max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-16 md:gap-24">
+    <section className="relative min-h-[100vh] py-12 md:py-20 bg-white overflow-hidden" id="servicos">
+      {/* Background Image - Full Bleed Cinematic */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={servicesImg} 
+          alt="Consultório Dra. Chayanne" 
+          className="w-full h-full object-cover object-[center_35%] md:object-[center_25%] opacity-90 transition-all duration-1000"
+        />
+        {/* Soft elegant gradient overlay (right-to-left) to contrast with Previous section */}
+        <div className="absolute inset-0 bg-white/50" />
+        <div className="hidden md:block absolute inset-0 bg-gradient-to-l md:from-white/100 md:via-white/80 md:to-transparent" />
+      </div>
+
+      <div className="container max-w-7xl mx-auto px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row-reverse gap-16 md:gap-24">
           <div className="w-full lg:w-1/3">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:sticky lg:top-24"
+              className="lg:sticky lg:top-24 bg-white/50 backdrop-blur-md p-8 md:p-10 rounded-[2rem] border border-white/60 shadow-xl"
             >
               <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Portfólio Médico</span>
-              <h2 className="text-[2.6rem] md:text-7xl font-black tracking-tighter text-black leading-[0.95] mb-10">
+              <h2 className="text-[2.6rem] md:text-7xl font-bold tracking-tighter text-black leading-[0.95] mb-10">
                 Serviços <br className="hidden md:block" />
                 <span className="text-gold italic font-serif leading-none">Oferecidos.</span>
               </h2>
               
-              <div className="h-0.5 w-16 bg-gold/30 mb-10" />
+              <div className="h-0.5 w-16 bg-gold/50 mb-10" />
               
-              <p className="text-black text-base md:text-lg leading-relaxed mb-10 font-black">
+              <p className="text-black text-base md:text-lg leading-relaxed mb-10 font-bold bg-white/70 backdrop-blur-sm p-4 rounded-xl border border-white/60">
                 Abordagem integral focada em hormônios, metabolismo e medicina de precisão através de protocolos científicos avançados.
               </p>
               
               <button
                 onClick={onOpenFilter}
-                className="group flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-black hover:text-gold transition-colors py-4 border-b-2 border-black hover:border-gold"
+                className="group flex items-center justify-between w-full gap-4 text-[10px] font-bold uppercase tracking-[0.3em] text-black hover:text-gold transition-colors py-4 border-b-2 border-black hover:border-gold"
               >
                 AGENDAR CONSULTA AGORA <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </button>
@@ -105,7 +118,7 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
             }}
           >
             {services.map((service, i) => (
-              <div key={i} className="min-w-[280px] md:min-w-0 shrink-0 snap-center">
+              <div key={i} className="min-w-[280px] md:min-w-0 shrink-0 snap-center shadow-lg rounded-3xl overflow-hidden hover:shadow-xl hover:shadow-gold/10 transition-shadow">
                 <FlipCard
                   title={service.title}
                   subtitle={service.subtitle}
@@ -118,7 +131,7 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
               </div>
             ))}
           </motion.div>
-鼓        </div>
+        </div>
       </div>
     </section>
   );

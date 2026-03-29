@@ -65,7 +65,7 @@ export default function FlipCard({
 
           {/* Step Number Badge */}
           <div className="absolute top-8 left-8">
-            <span className="text-zinc-200 text-6xl font-black italic tracking-tighter opacity-50 font-serif">
+            <span className="text-zinc-200 text-6xl font-bold italic tracking-tighter opacity-50 font-serif">
               {stepNumber}
             </span>
           </div>
@@ -82,11 +82,11 @@ export default function FlipCard({
 
           {/* Bottom content */}
           <div className="absolute bottom-10 left-0 right-0 px-8 text-center">
-            <h3 className="text-2xl leading-none font-black uppercase tracking-tight text-black font-serif italic mb-3">
+            <h3 className="text-2xl leading-none font-bold uppercase tracking-tight text-black font-serif italic mb-3">
               {title}
             </h3>
             <div className="flex items-center justify-center gap-2 text-gold group-hover:text-black transition-colors">
-              <span className="text-[10px] font-black uppercase tracking-[0.3em]">Toque para detalhes</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em]">Toque para detalhes</span>
               <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function FlipCard({
         >
           <div className="relative z-10 flex-1 flex flex-col">
              <div className="mb-6">
-               <span className="text-gold text-[10px] uppercase font-black tracking-widest block mb-2">{subtitle}</span>
+               <span className="text-gold text-[10px] uppercase font-bold tracking-widest block mb-2">{subtitle}</span>
                <h3 className="text-2xl font-bold text-zinc-900 font-serif italic leading-none truncate-titles">
                  {title}
                </h3>
@@ -129,7 +129,7 @@ export default function FlipCard({
                   }}
                 >
                   <div className="w-1.5 h-1.5 rounded-full bg-gold" />
-                  <span className="text-[11px] font-black uppercase tracking-wider">{feature}</span>
+                  <span className="text-[11px] font-bold uppercase tracking-wider">{feature}</span>
                 </div>
               ))}
             </div>
@@ -142,7 +142,7 @@ export default function FlipCard({
                   if (onClickAction) onClickAction();
                 }}
               >
-                <span className="text-[10px] font-black uppercase tracking-[0.4em]">Saiba Mais</span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.4em]">Saiba Mais</span>
                 <ArrowRight size={16} />
               </div>
             </div>
