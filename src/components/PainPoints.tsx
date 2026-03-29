@@ -19,13 +19,13 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
         <img 
           src={bgImg} 
           alt="Dra. Chayanne Bordin" 
-          className="w-full h-full object-cover object-[center_top] md:object-[center_15%] grayscale-[0%] opacity-90 transition-all duration-1000"
+          className="w-full h-full object-cover object-[center_top] md:object-top grayscale-[0%] opacity-90 transition-all duration-1000"
         />
         {/* Soft elegant gradient overlay (left-to-right) for text legibility */}
         <div className="absolute inset-0 bg-white/85 md:bg-gradient-to-r md:from-white/100 md:via-white/70 md:to-transparent" />
       </div>
 
-      <div className="container max-w-7xl mx-auto px-6 relative z-10 pt-[110px] pb-6 md:pt-0 md:pb-0">
+      <div className="container max-w-7xl mx-auto px-6 relative z-10 pt-[80px] pb-6 md:pt-0 md:pb-0">
         <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-20">
           <div className="w-full lg:w-1/2">
             <motion.div
@@ -33,7 +33,7 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-[2.6rem] md:text-6xl font-bold tracking-tighter text-black mb-8 leading-[0.95]">
+              <h2 className="text-[2.85rem] md:text-6xl font-bold tracking-tighter text-black mb-8 leading-[0.95]">
                 Cansaço constante, dificuldade para emagrecer, queda de libido ou alterações hormonais <br className="hidden md:block" />
                 <span className="text-gold italic font-serif leading-none">não são normais e têm tratamento.</span>
               </h2>
