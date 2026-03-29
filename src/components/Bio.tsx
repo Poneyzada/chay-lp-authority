@@ -1,73 +1,73 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, GraduationCap, Microscope, BookOpen } from 'lucide-react';
 import bioImg from '../assets/chay-bio.jpg';
-
-const credentials = [
-  { icon: GraduationCap, title: 'Formação em Medicina', institution: 'UNISUL' },
-  { icon: GraduationCap, title: 'Pós Graduação em Nutrologia', institution: 'IPEMED' },
-  { icon: Award, title: 'Pós em Longevidade Saudável', institution: 'São Paulo' },
-  { icon: Microscope, title: 'Andrologia & Medicina de Precisão', institution: 'USP' },
-  { icon: BookOpen, title: 'CSI MIAMI', institution: 'International Training' }
-];
 
 export const Bio = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white" id="sobre">
-      {/* Background Image - Full Bleed */}
+    <section className="relative min-h-[100vh] flex items-center overflow-hidden bg-white" id="sobre">
+      {/* Background Image - Full Bleed Cinematic */}
       <div className="absolute inset-0 z-0">
         <img 
           src={bioImg} 
-          alt="Dra. Chayanne Médica" 
-          className="w-full h-full object-cover object-[center_35%]"
+          alt="Dra. Chayanne Bordin" 
+          className="w-full h-full object-cover object-[center_25%] md:object-[center_35%] grayscale-[20%] opacity-90 transition-all duration-1000"
         />
-        {/* Elegant light gradient overlay - lighter to avoid "weighing" */}
-        <div className="absolute inset-0 bg-white/20 md:bg-gradient-to-r md:from-white/95 md:via-white/70 md:to-transparent" />
+        {/* Elite light gradient overlay - editorial feel */}
+        <div className="absolute inset-0 bg-white/10 md:bg-gradient-to-r md:from-white/100 md:via-white/60 md:to-transparent" />
       </div>
 
-      <div className="container max-w-7xl mx-auto px-6 relative z-10 py-16 md:py-24">
-        <div className="max-w-2xl">
+      <div className="container max-w-7xl mx-auto px-6 relative z-10 py-32 md:py-60">
+        <div className="max-w-4xl">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
           >
-            <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Corpo Clínico</span>
-            <h2 className="text-[2.6rem] md:text-6xl font-black tracking-tighter text-black mb-8 leading-[0.95]">
-              Uma abordagem científica <br />
-              <span className="text-gold italic font-serif leading-none">e individualizada.</span>
+            <span className="text-gold text-[10px] font-black tracking-[0.6em] uppercase mb-12 block underline decoration-gold/30 underline-offset-8 italic">Manifesto Médico</span>
+            
+            <h2 className="text-[3.2rem] md:text-9xl font-black tracking-tighter text-black mb-16 leading-[0.85] uppercase italic">
+              Sobre a <br />
+              <span className="text-gold font-serif not-italic">Dra.</span> Chayanne <br />
+              <span className="text-gold italic font-serif">Bordin.</span>
             </h2>
             
-            <p className="text-black text-sm md:text-base mb-10 leading-relaxed font-black max-w-xl">
-              A Dra. Chayanne Bordin formou-se em Medicina pela Universidade do Sul de Santa Catarina e direcionou sua carreira para o tratamento de distúrbios hormonais, saúde metabólica e qualidade de vida.
-              <br /><br />
-              Atualmente, cursa pós-graduação em Sexualidade Humana pelo CSI of Miami, ampliando sua abordagem para tratar não apenas sintomas físicos, mas também aspectos hormonais e sexuais que impactam diretamente a vida.
-            </p>
+            <div className="h-px w-32 bg-gold/30 mb-16" />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-              {credentials.map((item, i) => (
-                <div key={i} className="flex gap-4 items-start group">
-                  <div className="w-10 h-10 rounded-xl bg-white border border-gold/20 flex items-center justify-center text-gold shrink-0 shadow-sm">
-                    <item.icon size={20} />
-                  </div>
-                  <div>
-                    <h4 className="text-[10px] md:text-xs font-black uppercase text-black tracking-tight leading-none">{item.title}</h4>
-                    <p className="text-[9px] text-black font-black uppercase tracking-widest mt-1.5 opacity-60">{item.institution}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-12 max-w-2xl">
+              <p className="text-black text-xl md:text-3xl leading-[1.2] font-black uppercase italic tracking-tighter">
+                Atendimento médico focado em <span className="text-gold">hormônios</span>, metabolismo e longevidade.
+              </p>
+              
+              <p className="text-black text-sm md:text-lg leading-relaxed font-black uppercase tracking-widest opacity-90">
+                A Dra. Chayanne Bordin formou-se em Medicina pela Universidade do Sul de Santa Catarina e direcionou sua carreira para o tratamento de distúrbios hormonais, saúde metabólica e qualidade de vida.
+              </p>
+
+              <div className="space-y-6 border-l-2 border-gold/20 pl-8">
+                <p className="text-black text-[10px] md:text-xs font-black uppercase tracking-[0.2em] leading-relaxed">
+                  Realizou especialização em <span className="text-gold">Endocrinologia</span> pelo IPEMED em São Paulo e em Nutrologia pela <span className="text-gold">USP</span>, aprofundando-se em obesidade, metabolismo e terapias hormonais.
+                </p>
+                <p className="text-black text-[10px] md:text-xs font-black uppercase tracking-[0.2em] leading-relaxed">
+                  Atualmente, cursa pós-graduação em Sexualidade Humana pelo <span className="text-gold">CSI of Miami</span>, ampliando sua abordagem para tratar não apenas sintomas físicos, mas também aspectos hormonais e sexuais que impactam diretamente a qualidade de vida.
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
       </div>
       
-      {/* CRM Badge - Pure high contrast white box */}
-      <div className="absolute bottom-4 right-4 md:bottom-10 md:right-10 p-5 md:p-6 bg-white text-black rounded-2xl shadow-xl z-20 border border-zinc-100 flex flex-col items-center text-center">
-        <span className="text-gold text-[9px] font-black tracking-[0.2em] uppercase block mb-1.5 leading-none">Inscrição Profissional</span>
-        <p className="font-black text-[10px] md:text-sm uppercase tracking-widest text-black">CRM-SC 23.321</p>
-        <div className="h-px w-8 bg-gold/30 my-2" />
-        <p className="font-black text-[10px] uppercase tracking-widest opacity-80">CRM-PR 36.452</p>
-      </div>
+      {/* CRM Badge - Elite floating box */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.5 }}
+        className="absolute bottom-10 right-10 p-10 bg-white/90 backdrop-blur-md text-black rounded-3xl shadow-[0_40px_100px_rgba(0,0,0,0.1)] z-20 border border-zinc-100 hidden lg:flex flex-col items-center text-center"
+      >
+        <span className="text-gold text-[10px] font-black tracking-[0.4em] uppercase block mb-4 leading-none italic">Inscrição Profissional</span>
+        <p className="font-black text-xl uppercase tracking-tighter text-black tabular-nums">CRM-SC 23.321</p>
+        <div className="h-px w-12 bg-gold/30 my-6" />
+        <p className="font-black text-xs uppercase tracking-[0.3em] opacity-40">CRM-PR 36.452</p>
+      </motion.div>
     </section>
   );
 };

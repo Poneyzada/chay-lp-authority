@@ -6,33 +6,33 @@ import HighlightCard from './ui/highlight-card';
 const steps = [
   {
     icon: Calendar,
-    title: 'Agenda',
+    title: '1. Agendamento',
     step: '01',
-    details: ['Orientações', 'Formulários', 'Suporte']
+    details: ['Orientações Iniciais', 'Acesso ao Formulário', 'Preparação para Consulta']
   },
   {
     icon: ClipboardList,
-    title: 'Pré-Consulta',
+    title: '2. Formulário pré-consulta',
     step: '02',
-    details: ['Sintomas', 'Hábitos', 'Histórico']
+    details: ['Histórico de Saúde', 'Mapeamento de Sintomas', 'Hábitos e Objetivos']
   },
   {
     icon: Stethoscope,
-    title: 'Consulta',
+    title: '3. Consulta aprofundada',
     step: '03',
-    details: ['Foco total', 'Exames', 'Bioimpedância']
+    details: ['1h de Duração', 'Avaliação de Exames', 'Bioimpedância Corporal']
   },
   {
     icon: ClipboardCheck,
-    title: 'Tratamento',
+    title: '4. Plano personalizado',
     step: '04',
-    details: ['Hormônios', 'Metabolismo', 'Longevidade']
+    details: ['Ajuste Hormonal', 'Estratégias de Emagrecimento', 'Suplementação Personalizada']
   },
   {
     icon: Users,
-    title: 'Acompanhamento',
+    title: '5. Acompanhamento contínuo',
     step: '05',
-    details: ['App Dedicado', 'Dúvidas', 'Controle']
+    details: ['Aplicativo Próprio', 'Suporte para Dúvidas', 'Monitoramento de Evolução']
   }
 ];
 
@@ -78,7 +78,7 @@ export const Methodology = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
             </motion.div>
           ))}
         </div>
-鼓        
+        
         <div className="mt-8 text-center text-[10px] font-bold text-zinc-300 md:block animate-pulse tracking-widest uppercase">
           ← Arraste para o lado para ver todos os passos →
         </div>

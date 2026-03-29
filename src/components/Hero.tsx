@@ -46,12 +46,13 @@ export const Hero = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
               
               <motion.h1 variants={itemVars} className="text-[2.6rem] md:text-7xl lg:text-8xl font-black tracking-tighter text-black leading-[0.95] mb-8">
                 Volte a se sentir bem <br className="hidden md:block" />
-                <span className="md:inline">no seu próprio </span>
-                <span className="text-gold italic font-serif">corpo.</span>
+                <span className="md:inline text-gold italic font-serif leading-none">no seu próprio </span>
+                <span className="md:inline">corpo.</span>
               </motion.h1>
               
               <motion.p variants={itemVars} className="text-black text-base md:text-xl max-w-2xl mb-10 md:mb-12 leading-relaxed mx-auto lg:mx-0 font-black italic">
-                Com energia, libido alta, metabolismo equilibrado e saúde em dia. Se você está cansado, ganhando peso sem explicação, com queda de libido ou sentindo que seu corpo mudou, aqui você recebe um plano de tratamento individualizado e acompanhamento próximo.
+                Com energia, libido alta, metabolismo equilibrado e saúde em dia. <br /><br />
+                Se você está cansado, ganhando peso sem explicação, com queda de libido ou sentindo que seu corpo mudou, aqui você recebe um plano de tratamento individualizado e acompanhamento próximo para que voltar a ter disposição, controle do peso, equilíbrio hormonal e qualidade de vida no dia a dia.
               </motion.p>
               
               <motion.div variants={itemVars} className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start">

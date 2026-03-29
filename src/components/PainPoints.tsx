@@ -22,8 +22,8 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
               viewport={{ once: true }}
             >
               <h2 className="text-[2.6rem] md:text-6xl font-black tracking-tighter text-black mb-8 leading-[0.95]">
-                Cansaço constante, dificuldade para emagrecer e baixa libido <br className="hidden md:block" />
-                <span className="text-gold italic font-serif leading-none">não são normais.</span>
+                Cansaço constante, dificuldade para emagrecer, queda de libido ou alterações hormonais <br className="hidden md:block" />
+                <span className="text-gold italic font-serif leading-none">não são normais e têm tratamento.</span>
               </h2>
               <p className="text-black text-base md:text-lg mb-10 leading-relaxed font-black uppercase italic">
                 Se você sente que seu corpo mudou, que sua energia já não é a mesma ou que está lutando contra sintomas que ninguém consegue explicar, é provável que exista um desequilíbrio hormonal ou metabólico por trás disso.
@@ -53,8 +53,8 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
               className="bg-white p-8 md:p-12 rounded-[2.5rem] md:rounded-[3.5rem] shadow-xl border-4 border-gold/10 relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gold/40 via-gold to-gold/40" />
-              <h3 className="text-2xl md:text-4xl font-black text-zinc-900 mb-6 font-serif uppercase italic leading-tight">A investigação correta muda tudo.</h3>
-              <p className="text-zinc-900 text-base md:text-lg mb-10 leading-relaxed italic font-bold">
+              <h3 className="text-2xl md:text-4xl font-black text-black mb-6 font-serif uppercase italic leading-tight">A investigação correta muda tudo.</h3>
+              <p className="text-black text-base md:text-lg mb-10 leading-relaxed italic font-black">
                 "Meu papel como médica é investigar profundamente cada caso, identificar a causa real dos sintomas e conduzir um tratamento seguro, científico e totalmente personalizado."
               </p>
               <button

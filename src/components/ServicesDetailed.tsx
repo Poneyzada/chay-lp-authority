@@ -7,51 +7,51 @@ const services = [
   { 
     icon: Search, 
     title: 'Avaliação médica completa', 
-    subtitle: 'Exclusividade',
+    subtitle: 'Investigação Clínica',
     desc: 'Investigação detalhada para entender a causa dos sintomas, e não apenas tratá-los de forma superficial.',
-    features: ['Investigação Profunda', 'Foco na Causa Real']
+    features: ['Causa Real', 'Visão Integral']
   },
   { 
     icon: FlaskConical, 
-    title: 'Análise de exames laboratoriais', 
-    subtitle: 'Estratégia Clínica',
-    desc: 'Interpretação estratégica dos seus exames, correlacionando resultados com sintomas e seu histórico.',
-    features: ['Visão Bioquímica', 'Correlação Clínica']
+    title: 'Exames laboratoriais e hormonais', 
+    subtitle: 'Interpretação Estratégica',
+    desc: 'Interpretação estratégica dos seus exames, correlacionando resultados com sintomas e histórico clínico.',
+    features: ['Análise Bioquímica', 'Precisão Médica']
   },
   { 
     icon: Activity, 
     title: 'Avaliação hormonal e metabólica', 
-    subtitle: 'Equilíbrio Real',
-    desc: 'Foco em fadiga, ganho de peso, queda de libido, alterações de humor e perda de performance.',
-    features: ['Fadiga & Libido', 'Metabolismo Ativo']
+    subtitle: 'Equilíbrio Funcional',
+    desc: 'Foco em fadiga, ganho de peso, queda de libido, alterações de humor e performance física/mental.',
+    features: ['Saúde Hormonal', 'Otimização']
   },
   { 
     icon: Zap, 
     title: 'Protocolos de emagrecimento', 
-    subtitle: 'Saúde & Peso',
-    desc: 'Tratamentos seguros e individualizados, com foco em redução de gordura e preservação muscular.',
-    features: ['Redução de Gordura', 'Massa Muscular']
+    subtitle: 'Segurança & Resultado',
+    desc: 'Tratamentos seguros e individualizados, com foco em redução de gordura e preservação de massa muscular.',
+    features: ['Gestão de Peso', 'Massa Magra']
   },
   { 
     icon: ShieldCheck, 
     title: 'Terapias hormonais e implantes', 
-    subtitle: 'Otimização',
-    desc: 'Indicação criteriosa e acompanhamento médico quando há necessidade de reposição hormonal.',
-    features: ['Implantes Seguros', 'Acompanhamento']
+    subtitle: 'Reposicionamento Especializado',
+    desc: 'Indicação criteriosa e acompanhamento médico quando há necessidade de reposição hormonal segura.',
+    features: ['Indicação Ética', 'Acompanhamento']
   },
   { 
     icon: Soup, 
     title: 'Soroterapia e suporte metabólico', 
-    subtitle: 'Vitalidade',
-    desc: 'Protocolos injetáveis para suporte energético, imunológico e nutricional especializado.',
-    features: ['Suporte Energético', 'Imunológico']
+    subtitle: 'Vitalidade Injetável',
+    desc: 'Protocolos para suporte energético, imunológico e nutricional, conforme criteriosa avaliação médica.',
+    features: ['Suporte Nutricional', 'Energy Boost']
   },
   { 
     icon: GraduationCap, 
     title: 'Atendimento multidisciplinar', 
-    subtitle: 'Performance 360',
-    desc: 'Integração com nutricionista e educador físico para potencializar resultados a longo prazo.',
-    features: ['Saúde 360', 'Resultados Reais']
+    subtitle: 'Integração 360',
+    desc: 'Integração com nutricionista e educador físico para potencializar resultados e manter a saúde a longo prazo.',
+    features: ['Time de Especialistas', 'Performance']
   }
 ];
 

@@ -11,8 +11,8 @@ interface ComponentProps {
 
 const HighlightCard: FC<ComponentProps> = ({ title, description, icon }) => {
   return (
-    <div className="group cursor-default w-full h-full lg:min-h-[480px]">
-      <Card className="text-zinc-900 rounded-[3rem] border-2 border-zinc-100 bg-white shadow-soft relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:border-gold/30 w-full h-full">
+    <div className="group cursor-default w-full h-auto min-h-[320px] lg:min-h-[380px]">
+      <Card className="text-black rounded-[2.5rem] border-2 border-zinc-100 bg-white shadow-soft relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:border-gold/30 w-full h-full">
         
         {/* Simple Background Decor */}
         <div className="absolute inset-0 z-0 pointer-events-none">
@@ -30,16 +30,16 @@ const HighlightCard: FC<ComponentProps> = ({ title, description, icon }) => {
             </div>
           </div>
 
-          {/* Title - Fixed overflow with break-words and adjusted mobile font size */}
-          <h3 className="mb-6 text-xl md:text-3xl font-black tracking-tighter text-black uppercase font-serif italic break-words w-full">
+          {/* Title - Optimized for long phrases */}
+          <h3 className="mb-4 text-xl md:text-2xl font-black tracking-tighter text-black uppercase font-serif italic break-words w-full leading-[1.1]">
             {title}
           </h3>
 
-          <div className="space-y-4 max-w-sm mb-10 flex-grow">
+          <div className="space-y-3 max-w-sm mb-6 flex-grow">
             {description.map((line, idx) => (
-              <div key={idx} className="flex items-center gap-3 justify-center">
-                <div className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
-                <p className="text-zinc-600 text-[14px] md:text-base leading-relaxed font-medium">
+              <div key={idx} className="flex items-center gap-2.5 justify-center">
+                <div className="w-1.5 h-1.5 rounded-full bg-black shrink-0" />
+                <p className="text-black text-[13px] md:text-sm leading-[1.2] font-black uppercase tracking-tight italic">
                   {line}
                 </p>
               </div>
