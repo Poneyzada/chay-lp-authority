@@ -44,7 +44,7 @@ export const ForWhom = () => {
         <img 
           src={publicoImg} 
           alt="Consultório Dra. Chayanne" 
-          className="w-full h-full object-cover object-[center_top] md:object-[75%_15%] opacity-90 grayscale-[10%] transition-all duration-1000"
+          className="w-full h-full object-cover object-[center_top] md:object-[45%_5%] opacity-90 grayscale-[10%] transition-all duration-1000"
         />
         {/* Soft elegant gradient overlay (bottom-to-top on mobile, varied on desktop) */}
         <div className="absolute inset-0 bg-white/50 md:bg-white/30" />

@@ -19,7 +19,7 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
         <img 
           src={bgImg} 
           alt="Dra. Chayanne Bordin" 
-          className="w-full h-full object-cover object-[center_40%] md:object-[65%_20%] grayscale-[0%] opacity-90 transition-all duration-1000"
+          className="w-full h-full object-cover object-[center_40%] md:object-[52%_10%] grayscale-[0%] opacity-90 transition-all duration-1000"
         />
         {/* Soft elegant gradient overlay (left-to-right) for text legibility */}
         <div className="absolute inset-0 bg-white/85 md:bg-gradient-to-r md:from-white/100 md:via-white/70 md:to-transparent" />
