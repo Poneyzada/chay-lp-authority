@@ -22,7 +22,7 @@ const itemVars = {
 
 export const Hero = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
   return (
-    <section className="relative min-h-[85vh] flex flex-col pt-12 pb-6 bg-white overflow-hidden" id="home">
+    <section className="relative min-h-[85vh] flex flex-col pt-8 pb-4 bg-white overflow-hidden" id="home">
       {/* Three.js interactive Background - DNA Helix */}
       <div className="absolute inset-0 z-0">
         <WovenCanvas />
@@ -44,13 +44,13 @@ export const Hero = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
                 <span className="text-[10px] uppercase font-bold tracking-widest text-black">Plano de Tratamento Individualizado</span>
               </motion.div>
               
-              <motion.h1 variants={itemVars} className="text-[2.6rem] md:text-7xl lg:text-8xl font-bold tracking-tighter text-black leading-[0.95] mb-8">
+              <motion.h1 variants={itemVars} className="text-[2.6rem] md:text-5xl lg:text-6xl font-bold tracking-tighter text-black leading-[0.95] mb-6">
                 Volte a se sentir bem <br className="hidden md:block" />
                 <span className="md:inline text-gold italic font-serif leading-none">no seu próprio </span>
                 <span className="md:inline">corpo.</span>
               </motion.h1>
               
-              <motion.p variants={itemVars} className="text-black text-base md:text-xl max-w-2xl mb-10 md:mb-12 leading-relaxed mx-auto lg:mx-0 font-bold italic">
+              <motion.p variants={itemVars} className="text-black text-sm md:text-lg max-w-2xl mb-8 md:mb-10 leading-relaxed mx-auto lg:mx-0 font-bold italic">
                 Com energia, libido alta, metabolismo equilibrado e saúde em dia. <br /><br />
                 Se você está cansado, ganhando peso sem explicação, com queda de libido ou sentindo que seu corpo mudou, aqui você recebe um plano de tratamento individualizado e acompanhamento próximo para que voltar a ter disposição, controle do peso, equilíbrio hormonal e qualidade de vida no dia a dia.
               </motion.p>

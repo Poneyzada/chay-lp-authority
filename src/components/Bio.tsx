@@ -10,13 +10,13 @@ export const Bio = () => {
         <img 
           src={bioImg} 
           alt="Dra. Chayanne Bordin" 
-          className="w-full h-full object-cover object-[center_top] md:object-[center_15%] grayscale-[20%] opacity-90 transition-all duration-1000"
+          className="w-full h-full object-cover object-top md:object-top grayscale-[20%] opacity-90 transition-all duration-1000"
         />
         {/* Elite light gradient overlay - editorial feel */}
-        <div className="absolute inset-0 bg-white/10 md:bg-gradient-to-r md:from-white/100 md:via-white/60 md:to-transparent" />
+        <div className="absolute inset-0 bg-white/30 md:bg-gradient-to-r md:from-white/100 md:via-white/70 md:to-transparent" />
       </div>
 
-      <div className="container max-w-7xl mx-auto px-6 relative z-10 py-32 md:py-60">
+      <div className="container max-w-7xl mx-auto px-6 relative z-10 py-20 md:py-32">
         <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -24,22 +24,22 @@ export const Bio = () => {
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
           >
-            <span className="text-gold text-[10px] font-bold tracking-[0.6em] uppercase mb-12 block underline decoration-gold/30 underline-offset-8 italic">Manifesto Médico</span>
+            <span className="text-gold text-[10px] font-bold tracking-[0.6em] uppercase mb-6 md:mb-8 block underline decoration-gold/30 underline-offset-8 italic">Manifesto Médico</span>
             
-            <h2 className="text-[3.2rem] md:text-9xl font-bold tracking-tighter text-black mb-16 leading-[0.85] uppercase italic">
+            <h2 className="text-[2.2rem] md:text-7xl font-bold tracking-tighter text-black mb-6 md:mb-10 uppercase italic">
               Sobre a <br />
               <span className="text-gold font-serif not-italic">Dra.</span> Chayanne <br />
               <span className="text-gold italic font-serif">Bordin.</span>
             </h2>
             
-            <div className="h-px w-32 bg-gold/30 mb-16" />
+            <div className="h-px w-32 bg-gold/30 mb-8" />
 
-            <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-2xl bg-white/60 backdrop-blur-md p-8 md:p-12 rounded-[2rem] border border-white/60 shadow-xl">
-              <p className="text-black text-xl md:text-3xl leading-[1.2] font-bold italic tracking-tighter">
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-2xl bg-white/40 backdrop-blur-md p-6 md:p-10 rounded-[2rem] border border-white/60 shadow-xl">
+              <p className="text-lg md:text-2xl leading-[1.2] font-bold italic tracking-tighter">
                 Atendimento médico focado em <span className="text-gold drop-shadow-sm border-b border-gold/30">hormônios</span>, metabolismo e longevidade.
               </p>
               
-              <p className="text-black text-sm md:text-lg leading-relaxed font-bold tracking-widest opacity-90">
+              <p className="text-black text-xs md:text-md leading-relaxed font-bold tracking-widest opacity-90">
                 A Dra. Chayanne Bordin formou-se em Medicina pela Universidade do Sul de Santa Catarina e direcionou sua carreira para o tratamento de distúrbios hormonais, saúde metabólica e qualidade de vida.
               </p>
 

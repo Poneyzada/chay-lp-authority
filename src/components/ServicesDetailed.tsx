@@ -69,37 +69,37 @@ const services = [
 export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
   
   return (
-    <section className="relative min-h-[100vh] py-12 md:py-20 bg-white overflow-hidden" id="servicos">
+    <section className="relative min-h-[100vh] py-10 md:py-12 bg-white overflow-hidden" id="servicos">
       {/* Background Image - Restored to smooth fluid scrolling with offset framing */}
       <div className="absolute inset-0 z-0">
         <img 
           src={servicesImg} 
           alt="Consultório Dra. Chayanne" 
-          className="w-full h-full object-cover object-[center_top] md:object-[center_15%] opacity-90 transition-all duration-1000"
+          className="w-full h-full object-cover object-[center_top] md:object-[15%_15%] opacity-90 transition-all duration-1000"
         />
         {/* Soft elegant gradient overlay (right-to-left) to contrast with Previous section */}
-        <div className="absolute inset-0 bg-white/50" />
-        <div className="hidden md:block absolute inset-0 bg-gradient-to-l md:from-white/100 md:via-white/80 md:to-transparent" />
+        <div className="absolute inset-0 bg-white/40" />
+        <div className="hidden md:block absolute inset-0 bg-gradient-to-l md:from-white/100 md:via-white/60 md:to-transparent" />
       </div>
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row-reverse gap-16 md:gap-24">
+        <div className="flex flex-col lg:flex-row-reverse gap-8 md:gap-16">
           <div className="w-full lg:w-1/3">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:sticky lg:top-24 bg-white/50 backdrop-blur-md p-8 md:p-10 rounded-[2rem] border border-white/60 shadow-xl"
+              className="lg:sticky lg:top-24 bg-white/40 backdrop-blur-md p-6 md:p-8 rounded-[2rem] border border-white/60 shadow-xl"
             >
               <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Portfólio Médico</span>
-              <h2 className="text-[2.6rem] md:text-7xl font-bold tracking-tighter text-black leading-[0.95] mb-10">
+              <h2 className="text-[2.2rem] md:text-5xl font-bold tracking-tighter text-black leading-[0.95] mb-6">
                 Serviços <br className="hidden md:block" />
                 <span className="text-gold italic font-serif leading-none">Oferecidos.</span>
               </h2>
               
-              <div className="h-0.5 w-16 bg-gold/50 mb-10" />
+              <div className="h-0.5 w-16 bg-gold/50 mb-6" />
               
-              <p className="text-black text-base md:text-lg leading-relaxed mb-10 font-bold bg-white/70 backdrop-blur-sm p-4 rounded-xl border border-white/60">
+              <p className="text-black text-sm md:text-md leading-relaxed mb-6 font-bold bg-white/60 backdrop-blur-sm p-4 rounded-xl border border-white/60">
                 Abordagem integral focada em hormônios, metabolismo e medicina de precisão através de protocolos científicos avançados.
               </p>
               
@@ -113,7 +113,7 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
           </div>
 
           <motion.div 
-            className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+            className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}

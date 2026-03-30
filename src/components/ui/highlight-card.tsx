@@ -13,7 +13,7 @@ interface ComponentProps {
 
 const HighlightCard: FC<ComponentProps> = ({ title, subtitle, description, footer, icon }) => {
   return (
-    <div className="group cursor-default w-full h-auto min-h-[320px] lg:min-h-[360px]">
+    <div className="group cursor-default w-full h-auto min-h-[300px] lg:min-h-[320px]">
       <Card className="text-black rounded-[2.5rem] border-2 border-zinc-100 bg-white shadow-soft relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:border-gold/30 w-full h-full">
         
         {/* Simple Background Decor */}
@@ -22,7 +22,7 @@ const HighlightCard: FC<ComponentProps> = ({ title, subtitle, description, foote
         </div>
 
         {/* Content */}
-        <div className="p-6 md:p-8 relative z-10 flex flex-col items-center text-center h-full">
+        <div className="p-5 md:p-6 relative z-10 flex flex-col items-center text-center h-full">
           {/* Static Icon - Restored Gold Branding */}
           <div className="relative mb-4 md:mb-6">
             <div className="p-4 rounded-full border-2 border-gold/10 bg-zinc-50 flex items-center justify-center text-gold shadow-sm transition-transform duration-500 group-hover:scale-110">

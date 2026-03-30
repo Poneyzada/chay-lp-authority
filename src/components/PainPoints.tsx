@@ -19,7 +19,7 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
         <img 
           src={bgImg} 
           alt="Dra. Chayanne Bordin" 
-          className="w-full h-full object-cover object-[center_40%] md:object-[center_30%] grayscale-[0%] opacity-90 transition-all duration-1000"
+          className="w-full h-full object-cover object-[center_40%] md:object-[65%_20%] grayscale-[0%] opacity-90 transition-all duration-1000"
         />
         {/* Soft elegant gradient overlay (left-to-right) for text legibility */}
         <div className="absolute inset-0 bg-white/85 md:bg-gradient-to-r md:from-white/100 md:via-white/70 md:to-transparent" />
@@ -33,7 +33,7 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-[2.85rem] md:text-6xl font-bold tracking-tighter text-black mb-8 leading-[0.95]">
+              <h2 className="text-[2.4rem] md:text-4xl font-bold tracking-tighter text-black mb-6 leading-[0.95]">
                 Cansaço constante, dificuldade para emagrecer, queda de libido ou alterações hormonais <br className="hidden md:block" />
                 <span className="text-gold italic font-serif leading-none">não são normais e têm tratamento.</span>
               </h2>
@@ -41,7 +41,7 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
                 Se você sente que seu corpo mudou, que sua energia já não é a mesma ou que está lutando contra sintomas que ninguém consegue explicar, é provável que exista um desequilíbrio hormonal ou metabólico por trás disso.
               </p>
               
-              <div className="p-8 md:p-10 bg-white/95 backdrop-blur-md rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-white/50">
+              <div className="p-6 md:p-8 bg-white/95 backdrop-blur-md rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-white/50">
                 <p className="text-[10px] font-bold tracking-widest text-zinc-900 mb-8">Ignorar esses sinais faz com que o problema avance, afetando:</p>
                 <div className="space-y-4">
                   {painPoints.map((point, i) => (
