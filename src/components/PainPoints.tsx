@@ -14,13 +14,13 @@ const painPoints = [
 export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white py-0 md:py-16" id="agendamento">
-      {/* Background Image - Centered and scaled down */}
-      <div className="absolute inset-0 z-0 flex justify-center">
-        <div className="w-full md:w-[80%] lg:w-[60%] h-full relative">
+      {/* Background Image - Shifted left towards the text, away from the card */}
+      <div className="absolute inset-0 z-0 flex justify-center lg:justify-start lg:pl-[15%]">
+        <div className="w-full md:w-[80%] lg:w-[45%] h-full relative">
           <img 
             src={bgImg} 
             alt="Dra. Chayanne Bordin" 
-            className="w-full h-full object-cover object-top grayscale-0 opacity-100 transition-all duration-1000"
+            className="w-full h-full object-cover object-top md:object-[right_top] grayscale-0 opacity-100 transition-all duration-1000"
           />
           {/* Gradient overlay to fade edges into the white background */}
           <div className="absolute inset-0 bg-white/50 md:bg-transparent md:bg-gradient-to-r md:from-white md:via-white/0 md:to-white" />
