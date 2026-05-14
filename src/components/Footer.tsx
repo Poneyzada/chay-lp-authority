@@ -32,7 +32,7 @@ export const Footer = () => {
                </div>
                <div className="flex flex-col md:flex-row items-center gap-3 text-black text-xs font-bold">
                   <Phone size={14} className="text-gold shrink-0" />
-                  <span>(41) 99147-5510</span>
+                  <span>(49) 99070-0589</span>
                </div>
             </div>
           </div>

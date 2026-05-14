@@ -67,7 +67,7 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
     const personalInfo = name ? `Olá Dra. Chay, me chamo *${name}*. ` : 'Olá Dra. Chay! ';
     const fullMessage = `${personalInfo}Gostaria de agendar uma consulta com foco em *${selectedOption.title}*.`;
     
-    const whatsappUrl = `https://wa.me/5541991475510?text=${encodeURIComponent(fullMessage)}`;
+    const whatsappUrl = `https://wa.me/554999070589?text=${encodeURIComponent(fullMessage)}`;
     window.open(whatsappUrl, '_blank');
     
     // Reset and close
