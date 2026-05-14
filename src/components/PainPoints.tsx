@@ -14,15 +14,17 @@ const painPoints = [
 export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white py-0 md:py-16" id="agendamento">
-      {/* Background Image - Full Bleed Cinematic */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={bgImg} 
-          alt="Dra. Chayanne Bordin" 
-          className="w-full h-full object-cover object-[center_20%] md:object-[55%_10%] grayscale-[0%] opacity-100 transition-all duration-1000"
-        />
-        {/* Soft elegant gradient overlay (left-to-right) for text legibility */}
-        <div className="absolute inset-0 bg-white/70 md:bg-gradient-to-r md:from-white/100 md:via-white/30 md:to-transparent" />
+      {/* Background Image - Centered and scaled down */}
+      <div className="absolute inset-0 z-0 flex justify-center">
+        <div className="w-full md:w-[80%] lg:w-[60%] h-full relative">
+          <img 
+            src={bgImg} 
+            alt="Dra. Chayanne Bordin" 
+            className="w-full h-full object-cover object-top grayscale-0 opacity-100 transition-all duration-1000"
+          />
+          {/* Gradient overlay to fade edges into the white background */}
+          <div className="absolute inset-0 bg-white/50 md:bg-transparent md:bg-gradient-to-r md:from-white md:via-white/0 md:to-white" />
+        </div>
       </div>
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10 pt-[80px] pb-6 md:pt-0 md:pb-0">

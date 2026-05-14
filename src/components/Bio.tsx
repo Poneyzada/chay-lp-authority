@@ -5,15 +5,17 @@ import bioImg from '../assets/chay-bio.jpg';
 export const Bio = () => {
   return (
     <section className="relative min-h-[100vh] flex items-center overflow-hidden bg-white" id="sobre">
-      {/* Background Image - Full Bleed Cinematic */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={bioImg} 
-          alt="Dra. Chayanne Bordin" 
-          className="w-full h-full object-cover object-top md:object-[80%_0%] grayscale-0 opacity-100 transition-all duration-1000"
-        />
-        {/* Elite light gradient overlay - editorial feel */}
-        <div className="absolute inset-0 bg-white/30 md:bg-gradient-to-r md:from-white/100 md:via-white/50 md:to-transparent" />
+      {/* Background Image - Positioned right and scaled down */}
+      <div className="absolute inset-0 z-0 flex justify-end">
+        <div className="w-full md:w-[70%] lg:w-[55%] h-full relative">
+          <img 
+            src={bioImg} 
+            alt="Dra. Chayanne Bordin" 
+            className="w-full h-full object-cover object-top grayscale-0 opacity-100 transition-all duration-1000"
+          />
+          {/* Gradient to fade the left edge into the white background */}
+          <div className="absolute inset-0 bg-white/40 md:bg-transparent md:bg-gradient-to-r md:from-white md:via-white/20 md:to-transparent" />
+        </div>
       </div>
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10 py-20 md:py-32">
