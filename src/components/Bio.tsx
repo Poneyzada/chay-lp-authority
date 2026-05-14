@@ -54,15 +54,16 @@ export const Bio = () => {
                 </p>
               </div>
             </div>
-          </motion.div>
-        </div>
 
-        {/* CRM Badge Mobile Only (Inline) */}
-        <div className="mt-12 p-6 bg-white/80 backdrop-blur-md text-black rounded-[2rem] border border-white/60 shadow-xl flex lg:hidden flex-col items-center text-center max-w-xs mx-auto mr-auto ml-0">
-          <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase block mb-4 leading-none italic">Inscrição Profissional</span>
-          <p className="font-bold text-xl uppercase tracking-tighter text-black tabular-nums">CRM-SC 22074</p>
-          <div className="h-px w-12 bg-gold/30 my-4" />
-          <p className="font-bold text-xs uppercase tracking-[0.3em] opacity-60">CRM-SP 276904</p>
+            {/* Tiny Mobile CRM Badge (Like Hero section) */}
+            <div className="flex lg:hidden items-center flex-wrap gap-2 mt-6">
+              <span className="text-gold text-[8px] uppercase font-bold tracking-widest leading-none italic">Inscrição Profissional:</span>
+              <div className="px-3 py-1.5 bg-white/80 backdrop-blur-md border border-white/60 rounded-md text-[8px] font-bold text-black uppercase tracking-widest leading-none shadow-sm">
+                CRM-SC 22074 | CRM-SP 276904
+              </div>
+            </div>
+
+          </motion.div>
         </div>
       </div>
       
