@@ -67,9 +67,9 @@ export const Methodology = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
           </button>
         </div>
 
-        {/* Premium Carousel with Snap Scroll Behavior and Mouse Drag */}
+        {/* Carousel on Mobile, Grid on Desktop */}
         <div 
-          className={`flex overflow-x-auto pb-10 gap-6 md:gap-10 no-scrollbar snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth ${dragEvents.dragClassName}`}
+          className={`flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 pb-10 gap-6 md:gap-8 no-scrollbar snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth ${dragEvents.dragClassName}`}
           ref={dragEvents.ref}
           onMouseDown={dragEvents.onMouseDown}
           onMouseLeave={dragEvents.onMouseLeave}
@@ -83,7 +83,7 @@ export const Methodology = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true }}
-              className="min-w-[260px] md:min-w-[300px] flex shrink-0 h-full snap-center"
+              className="min-w-[260px] md:min-w-0 w-full flex shrink-0 h-full snap-center md:snap-align-none"
             >
               <HighlightCard
                 title={step.title}
@@ -96,7 +96,7 @@ export const Methodology = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
           ))}
         </div>
         
-        <div className="mt-4 text-center text-[10px] font-bold text-zinc-300 md:block animate-pulse tracking-widest uppercase">
+        <div className="mt-4 text-center text-[10px] font-bold text-zinc-300 md:hidden animate-pulse tracking-widest uppercase">
           ← Arraste para o lado para ver todos os passos →
         </div>
       </div>

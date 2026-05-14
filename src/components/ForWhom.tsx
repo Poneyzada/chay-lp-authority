@@ -39,16 +39,18 @@ const targets = [
 export const ForWhom = () => {
   return (
     <section className="relative min-h-[100vh] flex items-center py-12 md:py-16 bg-white overflow-hidden" id="para-quem">
-      {/* Background Image - Full Bleed Cinematic */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={publicoImg} 
-          alt="Consultório Dra. Chayanne" 
-          className="w-full h-full object-cover object-[center_top] md:object-[45%_5%] opacity-90 grayscale-[10%] transition-all duration-1000"
-        />
-        {/* Soft elegant gradient overlay (bottom-to-top on mobile, varied on desktop) */}
-        <div className="absolute inset-0 bg-white/50 md:bg-white/30" />
-        <div className="hidden md:block absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r md:from-white/100 md:via-white/70 md:to-transparent" />
+      {/* Background Image - Smaller scale */}
+      <div className="absolute inset-0 z-0 flex justify-end">
+        <div className="w-full md:w-[70%] lg:w-[60%] h-full relative">
+          <img 
+            src={publicoImg} 
+            alt="Consultório Dra. Chayanne" 
+            className="w-full h-full object-cover object-[center_top] md:object-[center_10%] opacity-90 grayscale-[10%] transition-all duration-1000"
+          />
+          {/* Soft elegant gradient overlay */}
+          <div className="absolute inset-0 bg-white/50 md:bg-white/10" />
+          <div className="hidden md:block absolute inset-0 bg-gradient-to-r md:from-white md:via-white/60 md:to-transparent" />
+        </div>
       </div>
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10">

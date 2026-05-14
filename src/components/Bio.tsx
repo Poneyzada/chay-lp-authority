@@ -7,11 +7,11 @@ export const Bio = () => {
     <section className="relative min-h-[100vh] flex items-center overflow-hidden bg-white" id="sobre">
       {/* Background Image - Positioned right and scaled down */}
       <div className="absolute inset-0 z-0 flex justify-end">
-        <div className="w-full md:w-[70%] lg:w-[55%] h-full relative">
+        <div className="w-full md:w-[60%] lg:w-[45%] h-full relative">
           <img 
             src={bioImg} 
             alt="Dra. Chayanne Bordin" 
-            className="w-full h-full object-cover object-top grayscale-0 opacity-100 transition-all duration-1000"
+            className="w-full h-full object-cover object-top md:object-[90%_0%] grayscale-0 opacity-100 transition-all duration-1000"
           />
           {/* Gradient to fade the left edge into the white background */}
           <div className="absolute inset-0 bg-white/40 md:bg-transparent md:bg-gradient-to-r md:from-white md:via-white/20 md:to-transparent" />
