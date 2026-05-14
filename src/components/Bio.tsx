@@ -56,9 +56,17 @@ export const Bio = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* CRM Badge Mobile Only (Inline) */}
+        <div className="mt-12 p-6 bg-white/80 backdrop-blur-md text-black rounded-[2rem] border border-white/60 shadow-xl flex lg:hidden flex-col items-center text-center max-w-xs mx-auto mr-auto ml-0">
+          <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase block mb-4 leading-none italic">Inscrição Profissional</span>
+          <p className="font-bold text-xl uppercase tracking-tighter text-black tabular-nums">CRM-SC 22074</p>
+          <div className="h-px w-12 bg-gold/30 my-4" />
+          <p className="font-bold text-xs uppercase tracking-[0.3em] opacity-60">CRM-SP 276904</p>
+        </div>
       </div>
       
-      {/* CRM Badge - Elite floating box */}
+      {/* CRM Badge Desktop Only - Elite floating box */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -66,9 +74,9 @@ export const Bio = () => {
         className="absolute bottom-10 right-10 p-10 bg-white/90 backdrop-blur-md text-black rounded-3xl shadow-[0_40px_100px_rgba(0,0,0,0.1)] z-20 border border-zinc-100 hidden lg:flex flex-col items-center text-center"
       >
         <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase block mb-4 leading-none italic">Inscrição Profissional</span>
-        <p className="font-bold text-xl uppercase tracking-tighter text-black tabular-nums">CRM-SC 23.321</p>
+        <p className="font-bold text-xl uppercase tracking-tighter text-black tabular-nums">CRM-SC 22074</p>
         <div className="h-px w-12 bg-gold/30 my-6" />
-        <p className="font-bold text-xs uppercase tracking-[0.3em] opacity-40">CRM-PR 36.452</p>
+        <p className="font-bold text-xs uppercase tracking-[0.3em] opacity-40">CRM-SP 276904</p>
       </motion.div>
     </section>
   );

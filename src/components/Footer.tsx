@@ -51,7 +51,7 @@ export const Footer = () => {
 
         <div className="pt-12 border-t border-zinc-100 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
           <p className="text-[9px] text-zinc-900 uppercase tracking-widest font-bold">
-            © 2026 Dra. Chayanne Bordin Calegari - CRM/SC 23.321 | CRM/PR 36.452
+            © 2026 Dra. Chayanne Bordin Calegari - CRM-SC 22074 | CRM-SP 276904
           </p>
           <p className="text-[9px] text-zinc-900 uppercase tracking-[0.2em] font-bold">
             Desenvolvido por <span className="text-gold">Xcompany</span>

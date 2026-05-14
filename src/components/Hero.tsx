@@ -107,7 +107,7 @@ export const Hero = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
                   <span className="text-gold text-[8px] uppercase font-bold tracking-widest leading-none">Saúde Hormonal e Longevidade</span>
                   <div className="px-3 py-1.5 bg-zinc-50 border border-zinc-100 rounded-md text-[8px] font-bold text-black uppercase tracking-widest leading-none shadow-sm">
-                    CRM-SC 23.321
+                    CRM-SC 22074 | CRM-SP 276904
                   </div>
                 </div>
               </motion.div>
