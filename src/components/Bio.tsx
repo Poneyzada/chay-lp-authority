@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import bioImg from '../assets/chay-bio.webp';
+import bioImgMobile from '../assets/chay-bio-mobile.webp';
 
 export const Bio = () => {
   return (
@@ -9,10 +10,10 @@ export const Bio = () => {
       <div className="absolute inset-0 z-0">
         {/* MOBILE: object-cover framed perfectly without cutting face */}
         <img
-          src={bioImg}
+          src={bioImgMobile}
           alt="Dra. Chayanne Bordin"
-          width={800}
-          height={1000}
+          width={400}
+          height={600}
           loading="lazy"
           decoding="async"
           className="md:hidden w-full h-full object-cover grayscale-[10%] opacity-90"
@@ -30,8 +31,8 @@ export const Bio = () => {
           <img
             src={bioImg}
             alt="Dra. Chayanne Bordin"
-            width={800}
-            height={1000}
+            width={1920}
+            height={1080}
             loading="lazy"
             decoding="async"
             className="w-full h-full object-cover grayscale-[5%] contrast-[1.05] brightness-[1.02] scale-[1.1]"

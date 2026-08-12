@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Search, FlaskConical, Activity, Zap, ShieldCheck, Soup, GraduationCap, ChevronRight } from 'lucide-react';
 import FlipCard from './ui/flip-card';
 import servicesImg from '../assets/chay-publico.webp';
+import servicesImgMobile from '../assets/chay-publico-mobile.webp';
 
 const services = [
   { 
@@ -74,13 +75,23 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
       <div className="absolute inset-0 z-0 bg-white overflow-hidden">
         {/* MOBILE & DESKTOP: Standard object-cover full bleed */}
         <img 
-          src={servicesImg} 
+          src={servicesImgMobile} 
           alt="Consultório Dra. Chayanne" 
-          width={800}
-          height={1000}
+          width={400}
+          height={600}
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover opacity-90 transition-all duration-1000"
+          className="md:hidden w-full h-full object-cover opacity-90 transition-all duration-1000"
+          style={{ objectPosition: 'center 15%' }}
+        />
+        <img 
+          src={servicesImg} 
+          alt="Consultório Dra. Chayanne" 
+          width={1920}
+          height={1080}
+          loading="lazy"
+          decoding="async"
+          className="hidden md:block w-full h-full object-cover opacity-90 transition-all duration-1000"
           style={{ objectPosition: 'center 15%' }}
         />
         

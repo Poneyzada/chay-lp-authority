@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Activity, TrendingDown, Thermometer, Heart, Brain, ChevronRight } from 'lucide-react';
 import bgImg from '../assets/chay-pain.webp';
+import bgImgMobile from '../assets/chay-pain-mobile.webp';
 
 const painPoints = [
   { icon: TrendingDown, text: 'seu peso' },
@@ -19,10 +20,10 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
         {/* MOBILE: object-cover total (sem as bordas que o scale 0.9 criou) */}
         <div className="md:hidden absolute inset-0">
           <img 
-            src={bgImg} 
+            src={bgImgMobile} 
             alt="Dra. Chayanne Bordin" 
-            width={800}
-            height={1000}
+            width={400}
+            height={600}
             loading="lazy"
             decoding="async"
             className="w-full h-full object-cover photo-painpoints opacity-90"
@@ -40,8 +41,8 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
           <img 
             src={bgImg} 
             alt="Dra. Chayanne Bordin" 
-            width={800}
-            height={1000}
+            width={1920}
+            height={1080}
             loading="lazy"
             decoding="async"
             className="w-full h-full object-cover contrast-[1.05] brightness-[1.02] scale-[1.15]"

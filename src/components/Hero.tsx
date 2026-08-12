@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Star } from 'lucide-react';
 import heroImg from '../assets/chay-hero.webp';
+import heroImgMobile from '../assets/chay-hero-mobile.webp';
 import { WovenCanvas } from './ui/woven-light-hero';
 
 const containerVars = {
@@ -91,15 +92,18 @@ export const Hero = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
               className="relative aspect-[4/5] md:aspect-[3/4] rounded-[2.5rem] md:rounded-[5rem] overflow-hidden soft-shadow border-4 border-white"
             >
-              <img
-                src={heroImg}
-                alt="Dra. Chayanne Bordin Calegari"
-                width={600}
-                height={800}
-                fetchPriority="high"
-                decoding="async"
-                className="w-full h-full object-cover object-[center_top] md:object-[center_15%] opacity-90 transition-transform duration-[2s] group-hover:scale-105"
-              />
+              <picture>
+                <source media="(max-width: 767px)" srcSet={heroImgMobile} />
+                <img
+                  src={heroImg}
+                  alt="Dra. Chayanne Bordin Calegari"
+                  width={1920}
+                  height={1080}
+                  fetchPriority="high"
+                  decoding="async"
+                  className="w-full h-full object-cover object-[center_top] md:object-[center_15%] opacity-90 transition-transform duration-[2s] group-hover:scale-105"
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-brand-zinc/60 via-transparent to-transparent" />
 
               {/* Floating Badge - Pure White High Contrast */}
