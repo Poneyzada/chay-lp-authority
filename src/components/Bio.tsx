@@ -7,7 +7,7 @@ export const Bio = () => {
     <section className="relative min-h-[100vh] flex items-center overflow-hidden bg-white" id="sobre">
       {/* Background Image - Full Bleed Cinematic */}
       <div className="absolute inset-0 z-0">
-        {/* MOBILE: object-cover (perfect as-is) */}
+        {/* MOBILE: object-cover framed perfectly without cutting face */}
         <img
           src={bioImg}
           alt="Dra. Chayanne Bordin"
@@ -15,7 +15,8 @@ export const Bio = () => {
           height={1000}
           loading="lazy"
           decoding="async"
-          className="md:hidden w-full h-full object-cover object-top grayscale-[20%] opacity-90"
+          className="md:hidden w-full h-full object-cover grayscale-[20%] opacity-90"
+          style={{ objectPosition: 'center 12%' }}
         />
 
         {/* DESKTOP: Zoomed & Blended - Cola na dobra e some no branco */}
