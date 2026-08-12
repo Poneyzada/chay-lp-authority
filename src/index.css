@@ -85,3 +85,10 @@ h1, h2, h3, h4, .font-serif {
   animation: moveDot 4s linear infinite;
 }
 
+/* ================================================
+   PHOTO POSITIONING — Mobile Defaults
+   ================================================ */
+
+.photo-bio, .photo-painpoints, .photo-forwho, .photo-services {
+  object-position: center top;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Activity, TrendingDown, Thermometer, Heart, Brain, ChevronRight } from 'lucide-react';
-import bgImg from '../assets/chay-pain.png';
+import bgImg from '../assets/chay-pain.webp';
 
 const painPoints = [
   { icon: TrendingDown, text: 'seu peso' },
@@ -16,13 +16,44 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white py-0 md:py-16" id="agendamento">
       {/* Background Image - Full Bleed Cinematic */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={bgImg} 
-          alt="Dra. Chayanne Bordin" 
-          className="w-full h-full object-cover object-[center_40%] md:object-[52%_10%] grayscale-[0%] opacity-90 transition-all duration-1000"
+        {/* MOBILE: object-cover total (sem as bordas que o scale 0.9 criou) */}
+        <div className="md:hidden absolute inset-0">
+          <img 
+            src={bgImg} 
+            alt="Dra. Chayanne Bordin" 
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover photo-painpoints opacity-90"
+            style={{ objectPosition: 'center 35%' }}
+          />
+        </div>
+        {/* DESKTOP: Zoomed & Blended - Centralizada e colando nas dobras */}
+        <div 
+          className="hidden md:flex absolute inset-y-0 left-1/2 -translate-x-[63%] w-[50%] items-end overflow-hidden pointer-events-none"
+          style={{
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%)',
+            maskImage: 'linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%)'
+          }}
+        >
+          <img 
+            src={bgImg} 
+            alt="Dra. Chayanne Bordin" 
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover contrast-[1.05] brightness-[1.02] scale-[1.15]"
+            style={{ 
+              objectPosition: '50% 15%',
+              filter: 'drop-shadow(0 0 50px white)' 
+            }}
+          />
+        </div>
+
+        {/* Multi-stop smooth white wash */}
+        <div className="absolute inset-0 bg-white/75 md:hidden" />
+        <div 
+          className="hidden md:block absolute inset-0 pointer-events-none"
+          style={{ background: 'linear-gradient(to right, #ffffff 0%, #ffffff 28%, rgba(255,255,255,0.9) 38%, rgba(255,255,255,0) 48%, rgba(255,255,255,0) 62%, rgba(255,255,255,0.9) 82%, #ffffff 95%, #ffffff 100%)' }}
         />
-        {/* Soft elegant gradient overlay (left-to-right) for text legibility */}
-        <div className="absolute inset-0 bg-white/85 md:bg-gradient-to-r md:from-white/100 md:via-white/70 md:to-transparent" />
       </div>
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10 pt-[80px] pb-6 md:pt-0 md:pb-0">
@@ -43,7 +74,7 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
               
               <div className="p-6 md:p-8 bg-white/95 backdrop-blur-md rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-white/50">
                 <p className="text-[10px] font-bold tracking-widest text-zinc-900 mb-8">Ignorar esses sinais faz com que o problema avance, afetando:</p>
-                <div className="space-y-4">
+                <div className="space-y-4 mb-8">
                   {painPoints.map((point, i) => (
                     <div key={i} className="flex items-center gap-4 group">
                       <div className="w-8 h-8 rounded-full bg-zinc-50 border border-zinc-100 flex items-center justify-center text-gold group-hover:scale-110 transition-transform">
@@ -53,6 +84,15 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
                     </div>
                   ))}
                 </div>
+
+                {/* BOTÃO MOBILE: Visível apenas no celular para converter na dobra */}
+                <button
+                  onClick={onOpenFilter}
+                  className="md:hidden w-full py-5 bg-gold text-black font-bold uppercase tracking-widest text-[10px] rounded-full hover:bg-gold-dark transition-all flex items-center justify-center gap-3 shadow-lg shadow-gold/20"
+                >
+                  QUERO AGENDAR MINHA CONSULTA
+                  <ChevronRight size={16} />
+                </button>
               </div>
             </motion.div>
           </div>

@@ -53,23 +53,55 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
     if (e) e.preventDefault();
     if (!selectedOption) return;
 
-    // Tracking for GTM
-    if (typeof window !== 'undefined' && (window as any).dataLayer) {
-      (window as any).dataLayer.push({
-        event: 'icp_conversion',
-        icp_type: selectedOption.id,
-        icp_name: selectedOption.title,
-        lead_name: name,
-        lead_email: email
+    // Tracking for Fatherflow (Industrial Mode)
+    if (typeof (window as any).trackLeadIndustrial === 'function') {
+      (window as any).trackLeadIndustrial({
+        nome: name,
+        email: email,
+        whats: '49999070589', // Número fixo da Dra para tracking ou do lead se tivessemos o campo
+        mensagem: `Interesse em: ${selectedOption.title}`,
+        objetivo: selectedOption.id,
+        nicho: 'Saúde Hormonal',
+        origem: 'lp-chayanne'
       });
+    }
+
+    // Tracking for GTM / Ads / Pixel
+    if (typeof window !== 'undefined') {
+      // Facebook Pixel (CompleteRegistration as requested)
+      if (typeof (window as any).fbq === 'function') {
+        (window as any).fbq('track', 'CompleteRegistration');
+        console.log('[TRACK] Facebook: CompleteRegistration');
+      }
+
+      // Google Ads Conversion (Using global ID)
+      if (typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'conversion', {
+          'send_to': 'AW-11337402877',
+          'value': 1.0,
+          'currency': 'BRL'
+        });
+        console.log('[TRACK] Google: Conversion');
+      }
+
+      // DataLayer push for GTM
+      if ((window as any).dataLayer) {
+        (window as any).dataLayer.push({
+          event: 'icp_conversion',
+          icp_type: selectedOption.id,
+          icp_name: selectedOption.title,
+          lead_name: name,
+          lead_email: email
+        });
+      }
     }
 
     const personalInfo = name ? `Olá Dra. Chay, me chamo *${name}*. ` : 'Olá Dra. Chay! ';
     const fullMessage = `${personalInfo}Gostaria de agendar uma consulta com foco em *${selectedOption.title}*.`;
-    
-    const whatsappUrl = `https://wa.me/5541991475510?text=${encodeURIComponent(fullMessage)}`;
+
+    const whatsappUrl = `https://wa.me/5549999070589?text=${encodeURIComponent(fullMessage)}`;
     window.open(whatsappUrl, '_blank');
-    
+
     // Reset and close
     setStep(0);
     setSelectedOption(null);
@@ -89,7 +121,7 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
             onClick={onClose}
             className="absolute inset-0 bg-white/60 backdrop-blur-md"
           />
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -99,7 +131,7 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
             <div className="flex justify-between items-start mb-10">
               <div className="flex items-center gap-4">
                 {step === 1 && (
-                  <button 
+                  <button
                     onClick={() => setStep(0)}
                     className="p-2 -ml-2 text-zinc-900 hover:text-gold transition-colors"
                   >
@@ -119,7 +151,7 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
                   </h2>
                 </div>
               </div>
-              <button 
+              <button
                 onClick={onClose}
                 className="p-2 text-black hover:text-gold transition-colors"
                 aria-label="Sair"
@@ -130,12 +162,12 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
 
             <AnimatePresence mode="wait">
               {step === 0 ? (
-                <motion.div 
-                   key="step0"
-                   initial={{ opacity: 0, x: -20 }}
-                   animate={{ opacity: 1, x: 0 }}
-                   exit={{ opacity: 0, x: 20 }}
-                   className="grid grid-cols-1 gap-4"
+                <motion.div
+                  key="step0"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  className="grid grid-cols-1 gap-4"
                 >
                   {options.map((option) => (
                     <button
@@ -155,7 +187,7 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
                   ))}
                 </motion.div>
               ) : (
-                <motion.form 
+                <motion.form
                   key="step1"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -166,8 +198,8 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
                   <div className="space-y-4">
                     <div className="relative">
                       <User className="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-900" size={20} />
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         required
                         placeholder="Seu nome completo"
                         value={name}
@@ -177,8 +209,8 @@ export const IcpFilter: React.FC<IcpFilterProps> = ({ isOpen, onClose }) => {
                     </div>
                     <div className="relative">
                       <Mail className="absolute left-5 top-1/2 -translate-y-1/2 text-zinc-900" size={20} />
-                      <input 
-                        type="email" 
+                      <input
+                        type="email"
                         placeholder="E-mail (Opcional)"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}

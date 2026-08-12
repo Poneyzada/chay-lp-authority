@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, FlaskConical, Activity, Zap, ShieldCheck, Soup, GraduationCap, ChevronRight } from 'lucide-react';
 import FlipCard from './ui/flip-card';
-import servicesImg from '../assets/chay-publico.png';
+import servicesImg from '../assets/chay-publico.webp';
 
 const services = [
   { 
@@ -70,16 +70,21 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
   
   return (
     <section className="relative min-h-[100vh] py-10 md:py-12 bg-white overflow-hidden" id="servicos">
-      {/* Background Image - Restored to smooth fluid scrolling with offset framing */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image - Standardized with other sections (Bio/PainPoints) */}
+      <div className="absolute inset-0 z-0 bg-white overflow-hidden">
+        {/* MOBILE & DESKTOP: Standard object-cover full bleed */}
         <img 
           src={servicesImg} 
           alt="Consultório Dra. Chayanne" 
-          className="w-full h-full object-cover object-[center_top] md:object-[8%_8%] opacity-90 transition-all duration-1000"
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover opacity-90 transition-all duration-1000"
+          style={{ objectPosition: 'center top' }}
         />
-        {/* Soft elegant gradient overlay (right-to-left) to contrast with Previous section */}
-        <div className="absolute inset-0 bg-white/40" />
-        <div className="hidden md:block absolute inset-0 bg-gradient-to-l md:from-white/100 md:via-white/60 md:to-transparent" />
+        
+        {/* Universal White Wash - Tested at 45% for maximum photo visibility */}
+        <div className="absolute inset-0 bg-white/45 md:hidden" />
+        <div className="hidden md:block absolute inset-0 bg-gradient-to-l md:from-white/100 md:via-white/50 md:to-transparent" />
       </div>
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10">

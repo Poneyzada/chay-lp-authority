@@ -15,8 +15,12 @@ export const Footer = () => {
               "Resgatando sua saúde e vitalidade através de uma abordagem integrativa e humanizada."
             </p>
             <div className="flex gap-4 justify-center md:justify-start">
-              {[Instagram, Facebook, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-white border border-zinc-100 flex items-center justify-center text-black hover:text-gold hover:border-gold/30 hover:soft-shadow transition-all">
+              {[
+                { Icon: Instagram, label: 'Instagram da Dra. Chayanne' },
+                { Icon: Facebook, label: 'Facebook da Dra. Chayanne' },
+                { Icon: Linkedin, label: 'Linkedin da Dra. Chayanne' }
+              ].map(({ Icon, label }, i) => (
+                <a key={i} href="#" aria-label={label} className="w-10 h-10 rounded-full bg-white border border-zinc-100 flex items-center justify-center text-black hover:text-gold hover:border-gold/30 hover:soft-shadow transition-all">
                   <Icon size={18} />
                 </a>
               ))}
@@ -26,14 +30,14 @@ export const Footer = () => {
           <div className="text-center md:text-left">
             <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-black mb-8 underline decoration-gold/30 underline-offset-8">Contato</h4>
             <div className="space-y-4">
-               <div className="flex flex-col md:flex-row items-center md:items-start gap-3 text-black text-xs font-bold">
-                  <MapPin size={14} className="text-gold mt-0.5 shrink-0" />
-                  <span className="text-center md:text-left">Florianópolis | São Paulo | Balneário Camboriú | Itapema</span>
-               </div>
-               <div className="flex flex-col md:flex-row items-center gap-3 text-black text-xs font-bold">
-                  <Phone size={14} className="text-gold shrink-0" />
-                  <span>(41) 99147-5510</span>
-               </div>
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-3 text-black text-xs font-bold">
+                <MapPin size={14} className="text-gold mt-0.5 shrink-0" />
+                <span className="text-center md:text-left">Florianópolis | São Paulo | Balneário Camboriú | Itapema</span>
+              </div>
+              <div className="flex flex-col md:flex-row items-center gap-3 text-black text-xs font-bold">
+                <Phone size={14} className="text-gold shrink-0" />
+                <span>(49) 9 9907-0589</span>
+              </div>
             </div>
           </div>
 
@@ -51,7 +55,7 @@ export const Footer = () => {
 
         <div className="pt-12 border-t border-zinc-100 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
           <p className="text-[9px] text-zinc-900 uppercase tracking-widest font-bold">
-            © 2026 Dra. Chayanne Bordin Calegari - CRM/SC 23.321 | CRM/PR 36.452
+            © 2026 Dra. Chayanne Bordin Calegari - CRM/SC 22.074 | CRM/SP 276.904
           </p>
           <p className="text-[9px] text-zinc-900 uppercase tracking-[0.2em] font-bold">
             Desenvolvido por <span className="text-gold">Xcompany</span>

@@ -40,6 +40,8 @@ export const FAQ = () => {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                aria-expanded={openIndex === i}
+                aria-controls={`faq-answer-${i}`}
                 className="w-full flex items-center justify-between p-6 md:p-8 text-left hover:bg-zinc-50 transition-colors"
               >
                 <span className="text-sm md:text-base font-bold text-black tracking-tight leading-none uppercase italic">{faq.q}</span>
@@ -53,7 +55,7 @@ export const FAQ = () => {
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                   >
-                    <div className="p-6 md:p-8 pt-0 text-black text-xs md:text-sm leading-relaxed mx-0 font-bold italic">
+                    <div id={`faq-answer-${i}`} className="p-6 md:p-8 pt-0 text-black text-xs md:text-sm leading-relaxed mx-0 font-bold italic">
                       {faq.a}
                     </div>
                   </motion.div>

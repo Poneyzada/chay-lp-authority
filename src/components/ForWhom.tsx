@@ -41,21 +41,49 @@ export const ForWhom = () => {
     <section className="relative min-h-[100vh] flex items-center py-12 md:py-16 bg-white overflow-hidden" id="para-quem">
       {/* Background Image - Full Bleed Cinematic */}
       <div className="absolute inset-0 z-0">
+        {/* MOBILE: object-cover */}
         <img 
           src={publicoImg} 
           alt="Consultório Dra. Chayanne" 
-          className="w-full h-full object-cover object-[center_top] md:object-[45%_5%] opacity-90 grayscale-[10%] transition-all duration-1000"
+          loading="lazy"
+          decoding="async"
+          className="md:hidden w-full h-full object-cover photo-forwho opacity-90 grayscale-[10%]"
         />
-        {/* Soft elegant gradient overlay (bottom-to-top on mobile, varied on desktop) */}
-        <div className="absolute inset-0 bg-white/50 md:bg-white/30" />
-        <div className="hidden md:block absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r md:from-white/100 md:via-white/70 md:to-transparent" />
+        
+        {/* DESKTOP: Zoomed & Blended - Colando na dobra esquerda */}
+        <div 
+          className="hidden md:flex absolute inset-y-0 left-0 w-[45%] items-end overflow-hidden pointer-events-none"
+          style={{
+            WebkitMaskImage: 'linear-gradient(to right, black 65%, transparent 100%)',
+            maskImage: 'linear-gradient(to right, black 65%, transparent 100%)'
+          }}
+        >
+          <img 
+            src={publicoImg} 
+            alt="Consultório Dra. Chayanne" 
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover grayscale-[10%] contrast-[1.02] brightness-[1.02] scale-[1.1]"
+            style={{ 
+              objectPosition: '20% 15%',
+              filter: 'drop-shadow(20px 0 50px white)' 
+            }}
+          />
+        </div>
+
+        {/* High-end multi-stop gradient for maximum text legibility */}
+        <div className="absolute inset-0 bg-white/50 md:hidden" />
+        <div 
+          className="hidden md:block absolute inset-0 pointer-events-none"
+          style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.8) 15%, rgba(255,255,255,0.4) 30%, rgba(255,255,255,0.6) 45%, #ffffff 58%, #ffffff 100%)' }}
+        />
       </div>
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-6 md:gap-12">
           <div className="w-full lg:w-4/12 text-center md:text-left">
             <span className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block underline decoration-gold/30 underline-offset-8 italic">Público do Atendimento</span>
-            <h2 className="text-[1.8rem] md:text-5xl font-bold text-black mb-6 leading-[0.95] tracking-tighter uppercase font-serif">
+            <h2 className="text-[1.8rem] md:text-5xl font-bold text-black mb-6 leading-[0.95] tracking-tighter uppercase font-serif drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)]">
               Para quem é o <br />
               <span className="text-gold italic">atendimento.</span>
             </h2>

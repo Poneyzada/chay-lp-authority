@@ -10,12 +10,6 @@ export const WovenLightHero = () => {
   const buttonControls = useAnimation();
 
   useEffect(() => {
-    // Add fonts
-    const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600&display=swap';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
-
     textControls.start(i => ({
       opacity: 1,
       y: 0,
@@ -29,10 +23,6 @@ export const WovenLightHero = () => {
         opacity: 1,
         transition: { delay: 2.5, duration: 1 }
     });
-
-    return () => {
-        document.head.removeChild(link);
-    }
   }, [textControls, buttonControls]);
 
   const headline = "Autoridade Médica em";
@@ -123,16 +113,17 @@ export const WovenCanvas = () => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 8;
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     mountRef.current.appendChild(renderer.domElement);
 
     const mouse = new THREE.Vector2(0, 0);
     const clock = new THREE.Clock();
 
     // --- DNA Double Helix ---
-    const particleCount = 20000;
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 6000 : 12000;
     const positions = new Float32Array(particleCount * 3);
     const originalPositions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
