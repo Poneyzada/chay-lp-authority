@@ -23,11 +23,10 @@ const itemVars = {
 export const Hero = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
   return (
     <section className="relative min-h-[85vh] flex flex-col pt-8 pb-4 bg-white overflow-hidden" id="home">
-      {/* Three.js interactive Background - DNA Helix (Desktop) / Lightweight pattern (Mobile) */}
-      <div className="absolute inset-0 z-0 hidden md:block">
+      {/* Three.js interactive Background - DNA Helix */}
+      <div className="absolute inset-0 z-0">
         <WovenCanvas />
       </div>
-      <div className="absolute inset-0 z-0 md:hidden bg-[radial-gradient(#b58900_0.75px,transparent_0.75px)] [background-size:20px_20px] opacity-15" />
 
       {/* Subtle overlay for text clarity */}
       <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px] pointer-events-none" />
