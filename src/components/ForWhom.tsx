@@ -45,6 +45,8 @@ export const ForWhom = () => {
         <img 
           src={publicoImg} 
           alt="Consultório Dra. Chayanne" 
+          width={800}
+          height={1000}
           loading="lazy"
           decoding="async"
           className="md:hidden w-full h-full object-cover photo-forwho opacity-90 grayscale-[10%]"
@@ -61,6 +63,8 @@ export const ForWhom = () => {
           <img 
             src={publicoImg} 
             alt="Consultório Dra. Chayanne" 
+            width={800}
+            height={1000}
             loading="lazy"
             decoding="async"
             className="w-full h-full object-cover grayscale-[10%] contrast-[1.02] brightness-[1.02] scale-[1.1]"

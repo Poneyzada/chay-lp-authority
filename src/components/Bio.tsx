@@ -11,6 +11,8 @@ export const Bio = () => {
         <img
           src={bioImg}
           alt="Dra. Chayanne Bordin"
+          width={800}
+          height={1000}
           loading="lazy"
           decoding="async"
           className="md:hidden w-full h-full object-cover object-top grayscale-[20%] opacity-90"
@@ -27,6 +29,8 @@ export const Bio = () => {
           <img
             src={bioImg}
             alt="Dra. Chayanne Bordin"
+            width={800}
+            height={1000}
             loading="lazy"
             decoding="async"
             className="w-full h-full object-cover grayscale-[5%] contrast-[1.05] brightness-[1.02] scale-[1.15]"

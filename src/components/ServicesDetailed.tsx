@@ -76,6 +76,8 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
         <img 
           src={servicesImg} 
           alt="Consultório Dra. Chayanne" 
+          width={800}
+          height={1000}
           loading="lazy"
           decoding="async"
           className="w-full h-full object-cover opacity-90 transition-all duration-1000"

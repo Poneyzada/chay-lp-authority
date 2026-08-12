@@ -21,6 +21,8 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
           <img 
             src={bgImg} 
             alt="Dra. Chayanne Bordin" 
+            width={800}
+            height={1000}
             loading="lazy"
             decoding="async"
             className="w-full h-full object-cover photo-painpoints opacity-90"
@@ -38,6 +40,8 @@ export const PainPoints = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
           <img 
             src={bgImg} 
             alt="Dra. Chayanne Bordin" 
+            width={800}
+            height={1000}
             loading="lazy"
             decoding="async"
             className="w-full h-full object-cover contrast-[1.05] brightness-[1.02] scale-[1.15]"

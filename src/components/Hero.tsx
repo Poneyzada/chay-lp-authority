@@ -66,9 +66,11 @@ export const Hero = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
 
                 <div className="flex items-center gap-4 text-left">
                   <div className="flex -space-x-3">
-                    {[26, 32, 45].map(id => (
-                      <div key={id} className="w-8 md:w-10 h-8 md:h-10 rounded-full border-2 border-white bg-zinc-100 overflow-hidden shadow-sm">
-                        <img src={`https://i.pravatar.cc/100?img=${id}`} alt="Paciente" />
+                    {['#d4af37', '#18181b', '#71717a'].map((bg, id) => (
+                      <div key={id} className="w-8 md:w-10 h-8 md:h-10 rounded-full border-2 border-white flex items-center justify-center text-[10px] font-bold text-white shadow-sm" style={{ backgroundColor: bg }}>
+                        <svg className="w-5 h-5 text-white/90" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                        </svg>
                       </div>
                     ))}
                   </div>
@@ -93,6 +95,8 @@ export const Hero = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
               <img
                 src={heroImg}
                 alt="Dra. Chayanne Bordin Calegari"
+                width={600}
+                height={800}
                 fetchPriority="high"
                 decoding="async"
                 className="w-full h-full object-cover object-[center_top] md:object-[center_15%] opacity-90 transition-transform duration-[2s] group-hover:scale-105"
