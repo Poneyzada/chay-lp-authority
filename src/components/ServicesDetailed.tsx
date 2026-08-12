@@ -81,7 +81,7 @@ export const ServicesDetailed = ({ onOpenFilter }: { onOpenFilter: () => void })
           loading="lazy"
           decoding="async"
           className="w-full h-full object-cover opacity-90 transition-all duration-1000"
-          style={{ objectPosition: 'center top' }}
+          style={{ objectPosition: 'center 15%' }}
         />
         
         {/* Universal White Wash - Tested at 45% for maximum photo visibility */}

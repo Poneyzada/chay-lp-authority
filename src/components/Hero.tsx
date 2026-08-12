@@ -23,10 +23,11 @@ const itemVars = {
 export const Hero = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
   return (
     <section className="relative min-h-[85vh] flex flex-col pt-8 pb-4 bg-white overflow-hidden" id="home">
-      {/* Three.js interactive Background - DNA Helix */}
-      <div className="absolute inset-0 z-0">
+      {/* Three.js interactive Background - DNA Helix (Desktop) / Lightweight pattern (Mobile) */}
+      <div className="absolute inset-0 z-0 hidden md:block">
         <WovenCanvas />
       </div>
+      <div className="absolute inset-0 z-0 md:hidden bg-[radial-gradient(#b58900_0.75px,transparent_0.75px)] [background-size:20px_20px] opacity-15" />
 
       {/* Subtle overlay for text clarity */}
       <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px] pointer-events-none" />
@@ -44,10 +45,9 @@ export const Hero = ({ onOpenFilter }: { onOpenFilter: () => void }) => {
                 <span className="text-[10px] uppercase font-bold tracking-widest text-black">Plano de Tratamento Individualizado</span>
               </motion.div>
 
-              <motion.h1 variants={itemVars} className="text-[2.6rem] md:text-5xl lg:text-6xl font-bold tracking-tighter text-black leading-[0.95] mb-6">
-                Volte a se sentir bem <br className="hidden md:block" />
-                <span className="md:inline text-gold italic font-serif leading-none">no seu próprio </span>
-                <span className="md:inline">corpo.</span>
+              <motion.h1 variants={itemVars} className="text-[2.1rem] sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-black leading-[1.05] mb-6">
+                Volte a se sentir bem <br />
+                <span className="text-gold italic font-serif">no seu próprio</span> <span>corpo.</span>
               </motion.h1>
 
               <motion.p variants={itemVars} className="text-black text-sm md:text-lg max-w-2xl mb-8 md:mb-10 leading-relaxed mx-auto lg:mx-0 font-bold italic">

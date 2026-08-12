@@ -15,8 +15,8 @@ export const Bio = () => {
           height={1000}
           loading="lazy"
           decoding="async"
-          className="md:hidden w-full h-full object-cover grayscale-[20%] opacity-90"
-          style={{ objectPosition: 'center 12%' }}
+          className="md:hidden w-full h-full object-cover grayscale-[10%] opacity-90"
+          style={{ objectPosition: 'center 28%' }}
         />
 
         {/* DESKTOP: Zoomed & Blended - Cola na dobra e some no branco */}
@@ -34,9 +34,9 @@ export const Bio = () => {
             height={1000}
             loading="lazy"
             decoding="async"
-            className="w-full h-full object-cover grayscale-[5%] contrast-[1.05] brightness-[1.02] scale-[1.15]"
+            className="w-full h-full object-cover grayscale-[5%] contrast-[1.05] brightness-[1.02] scale-[1.1]"
             style={{
-              objectPosition: '70% 20%',
+              objectPosition: '65% 15%',
               filter: 'drop-shadow(-20px 0 50px white)'
             }}
           />
